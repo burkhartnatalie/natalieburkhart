@@ -1,0 +1,22 @@
+/* ============================================================
+   FONTS — Natalie Burkhart
+   ------------------------------------------------------------
+   DISPLAY / NAME  : brand face is "Acumin Pro Bold" (Adobe Fonts,
+                     licensed — not free to ship). Loaded here as a
+                     free near-match: ARCHIVO (a clean neo-grotesque)
+                     at heavy weights. To go production-accurate,
+                     replace this @import with a self-hosted
+                     @font-face for Acumin Pro and keep --font-display.
+   BODY / BIO      : an elegant serif, used in ITALIC. CORMORANT
+                     GARAMOND — high-contrast, gallery-elegant italics.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* --- Production swap (example) -------------------------------
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('../assets/fonts/AcuminPro-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+------------------------------------------------------------- */

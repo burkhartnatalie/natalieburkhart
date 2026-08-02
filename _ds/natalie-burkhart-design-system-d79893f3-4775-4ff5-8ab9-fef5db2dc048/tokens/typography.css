@@ -1,0 +1,43 @@
+/* ============================================================
+   TYPOGRAPHY
+   Two voices: a very bold grotesque for the NAME / labels, and
+   an elegant serif (italic) for the BIO prose.
+   ============================================================ */
+:root {
+  /* families */
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;   /* Acumin Pro substitute */
+  --font-serif:   'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+
+  /* weights */
+  --weight-hero: 800;     /* the name */
+  --weight-bold: 700;
+  --weight-medium: 600;
+  --weight-regular: 400;
+
+  /* fluid scale */
+  --fs-hero:    clamp(2.9rem, 11vw, 10rem); /* @kind font */
+  --fs-display: clamp(2rem, 5vw, 3.75rem); /* @kind font */
+  --fs-title:   clamp(1.4rem, 2.8vw, 2.1rem); /* @kind font */
+  --fs-bio:     clamp(1.15rem, 1.7vw, 1.6rem); /* @kind font */
+  --fs-body:    clamp(1rem, 1.3vw, 1.18rem); /* @kind font */
+  --fs-small:   0.9rem; /* @kind font */
+  --fs-label:   0.74rem; /* @kind font */
+  --fs-caption: 0.68rem; /* @kind font */
+
+  /* line-height */
+  --lh-hero: 0.92; /* @kind font */
+  --lh-snug: 1.12; /* @kind font */
+  --lh-bio:  1.62; /* @kind font */
+  --lh-body: 1.5; /* @kind font */
+
+  /* tracking */
+  --tracking-hero: -0.035em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.16em;
+  --tracking-label: 0.24em;
+
+  /* ---- semantic ---- */
+  --type-name: var(--weight-hero) var(--fs-hero)/var(--lh-hero) var(--font-display);
+  --type-bio-style: italic;
+}

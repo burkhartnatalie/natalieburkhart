@@ -1,0 +1,43 @@
+/* ============================================================
+   COLOR — strictly achromatic. Black, white, and a structural
+   grey ramp for hairlines and placeholder surfaces only.
+   No hue is ever introduced.
+   ============================================================ */
+:root {
+  /* base */
+  --black: #000000;
+  --white: #ffffff;
+
+  /* structural grey ramp (hairlines, placeholders, disabled) */
+  --grey-950: #0a0a0a;
+  --grey-800: #1f1f1f;
+  --grey-600: #4d4d4d;
+  --grey-500: #777777;
+  --grey-400: #9b9b9b;
+  --grey-300: #c9c9c9;
+  --grey-200: #e6e6e6;
+  --grey-100: #f3f3f3;
+
+  /* hairlines — the architectural signature */
+  --line: rgba(0, 0, 0, 0.16);
+  --line-soft: rgba(0, 0, 0, 0.08);
+  --line-strong: #000000;
+  --line-inverse: rgba(255, 255, 255, 0.24);
+
+  /* image-overlay scrims (keep imagery monochrome-readable) */
+  --scrim-top: rgba(0, 0, 0, 0.30);
+  --scrim-bottom: rgba(0, 0, 0, 0.62);
+
+  /* ---- semantic aliases ---- */
+  --text-primary: var(--black);
+  --text-muted: var(--grey-500);
+  --text-inverse: var(--white);
+  --text-on-image: var(--white);
+
+  --surface: var(--white);
+  --surface-muted: var(--grey-100);
+  --surface-inverse: var(--black);
+
+  --hairline: var(--line);
+  --hairline-strong: var(--line-strong);
+}

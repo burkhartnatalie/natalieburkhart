@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap">
+  <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/styles.css">
+  <script src="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/_ds_bundle.js"></script>
+  <style>
+    html, body { margin:0; padding:0; background:#fff; }
+  </style>
+</helmet>
+<div style="position:relative; width:100%; height:100svh; overflow:hidden; background:var(--white); font-family:var(--font-display);">
+  <!-- FIXED TOP-LEFT LOGO -->
+  <div style="position:fixed; top:0; left:0; z-index:60; display:flex; flex-direction:column; gap:9px; padding:clamp(20px,3vw,32px) clamp(20px,4vw,48px);">
+    <h1 style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.5rem,3vw,2.15rem); line-height:0.96; letter-spacing:-0.035em; text-transform:uppercase; color:var(--black); margin:0;">Natalie Burkhart</h1>
+    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black);">KI als Komplizin — Gestaltung als Prozess</div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div style="position:fixed; bottom:0; left:0; right:0; z-index:60; box-sizing:border-box; padding:clamp(20px,3.5vh,32px) clamp(20px,4vw,48px); display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black);">Coming soon</div>
+    <a href="mailto:mail@natalieburkhart.com" style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); text-decoration:none;" style-hover="{{ mailHoverStyle }}">mail@natalieburkhart.com</a>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { mailHoverStyle: 'opacity:0.6' };
+  }
+}
+</script>
+</body>
+</html>
