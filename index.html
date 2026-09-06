@@ -391,7 +391,7 @@
                     <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin-top:6px;">{{ opt.audience }}</div>
                   </sc-if>
                   <sc-if value="{{ opt.open }}" hint-placeholder-val="{{ false }}">
-                    <div class="anfrage-intro-text" style="margin-top:clamp(12px,1.6vw,16px); max-width:calc(75% - clamp(4px,0.6vw,6px));">
+                    <div style="{{ anfragePanelBodyStyle }}">
                       <sc-if value="{{ opt.hasDescription }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty;">{{ opt.description }}</p></sc-if>
                       <sc-if value="{{ opt.hasSteps }}" hint-placeholder-val="{{ false }}">
                         <sc-if value="{{ opt.hasStepsIntro }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(28px,3.4vw,40px); text-wrap:pretty;">{{ opt.stepsIntro }}</p></sc-if>
@@ -1557,6 +1557,7 @@ class Component extends DCLogic {
       cvContactRowStyle: { display: 'flex', flexDirection: this.state.isNarrow ? 'column' : 'row', gap: this.state.isNarrow ? '10px' : '16px' },
       listTypeColStyle: { gridColumn: this.state.isNarrow ? 2 : 3, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)', paddingRight: '8px' },
       listYearColStyle: { gridColumn: this.state.isNarrow ? 3 : 4, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)' },
+      anfragePanelBodyStyle: { marginTop: 'clamp(12px,1.6vw,16px)', maxWidth: this.state.isNarrow ? '100%' : 'calc(75% - clamp(4px,0.6vw,6px))' },
       isNarrow: this.state.isNarrow,
       heroIntroWidth: this.state.isNarrow ? '100%' : '75%',
     };
