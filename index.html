@@ -26,7 +26,7 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/colors.css">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/typography.css">
@@ -391,7 +391,7 @@
                     <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin-top:6px;">{{ opt.audience }}</div>
                   </sc-if>
                   <sc-if value="{{ opt.open }}" hint-placeholder-val="{{ false }}">
-                    <div style="margin-top:clamp(12px,1.6vw,16px); max-width:calc(75% - clamp(4px,0.6vw,6px));">
+                    <div class="anfrage-intro-text" style="margin-top:clamp(12px,1.6vw,16px); max-width:calc(75% - clamp(4px,0.6vw,6px));">
                       <sc-if value="{{ opt.hasDescription }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty;">{{ opt.description }}</p></sc-if>
                       <sc-if value="{{ opt.hasSteps }}" hint-placeholder-val="{{ false }}">
                         <sc-if value="{{ opt.hasStepsIntro }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(28px,3.4vw,40px); text-wrap:pretty;">{{ opt.stepsIntro }}</p></sc-if>
