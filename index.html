@@ -3,15 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Natalie Burkhart – Architektur, KI und künstlerische Praxis</title>
+<meta name="description" content="Wissen vermitteln, Methodik entwickeln und Gestaltung als Handwerk begreifen. KI-Vermittlung und 1:1-Begleitung für Architekturschaffende.">
+<meta property="og:title" content="Natalie Burkhart – Architektur, KI und künstlerische Praxis">
+<meta property="og:description" content="Wissen vermitteln, Methodik entwickeln und Gestaltung als Handwerk begreifen. KI-Vermittlung und 1:1-Begleitung für Architekturschaffende.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Natalie Burkhart",
+  "jobTitle": "Architektin mit KI-Expertise",
+  "description": "Architektin, die KI aus einer architektonischen Denk- und Entwurfspraxis heraus untersucht, anwendet und vermittelt. Formate für Architekturschaffende und Institutionen in den Bereichen Vermitteln, Anwenden und Gestalten.",
+  "url": "https://natalieburkhart.com",
+  "knowsAbout": ["Architektur", "Künstliche Intelligenz", "BIM", "Gestaltungsprozesse"],
+  "sameAs": ["https://linkedin.com/in/natalie-burkhart", "https://instagram.com/natalie_onsite"]
+}
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
-
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/fonts.css">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/colors.css">
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/tokens/typography.css">
@@ -19,28 +34,1532 @@
   <link rel="stylesheet" href="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/styles.css">
   <script src="_ds/natalie-burkhart-design-system-d79893f3-4775-4ff5-8ab9-fef5db2dc048/_ds_bundle.js"></script>
   <style>
-    html, body { margin:0; padding:0; background:#fff; }
+    :root {
+      --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --font-serif: 'EB Garamond', 'Times New Roman', Georgia, serif;
+    }
+    html, body { margin: 0; padding: 0; background: var(--white); }
+    * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+    a { color: var(--black); }
+    a:hover { color: var(--black); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes heroCursorBlink { 0%, 45% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @media (max-height: 700px) { .app-screen { min-height: auto !important; } }
+    html { scroll-snap-type: y proximity; }
+    .app-screen, .app-snap { scroll-snap-align: start; }
+    .responsive-portrait-media { aspect-ratio: 4/5; }
+    @media (max-width: 859px) { .intro-br { display: none; } }
+    @media (max-width: 859px) { .rich-para { margin-bottom: 20px !important; } }
+    @media (max-width: 859px) {
+      [style*="clamp(1.06rem,1.24vw,1.14rem)"] { font-size: 1.02rem !important; }
+    }
+    [style*="overflow-y:auto"]::-webkit-scrollbar { width: 0; height: 0; }
+    @media (min-width: 701px) and (max-width: 900px) { .responsive-portrait-media { aspect-ratio: 5/6 !important; } }
+    @media (min-width: 901px) and (max-width: 1180px) { .responsive-portrait-media { aspect-ratio: 6/7 !important; } }
+    @media (min-width: 1181px) { .responsive-portrait-media { aspect-ratio: 1/1 !important; } }
+    @media (max-width: 700px) {
+      .kontakt-text-col { grid-column: 1 / -1 !important; }
+      .anfrage-intro-text { max-width: 100% !important; }
+      .kontakt-cta-btn { text-align: center; }
+      .app-hero-screen { min-height: 100svh !important; aspect-ratio: auto !important; }
+      .responsive-portrait-media { aspect-ratio: 4/5 !important; }
+      .format-filter-grid { grid-template-columns: 1fr !important; row-gap: clamp(40px,5.2vw,56px) !important; }
+      .format-filter-grid > div { grid-column: 1 / -1 !important; }
+      .format-intro-p { max-width: 100% !important; }
+    }
   </style>
 </helmet>
-<div style="position:relative; width:100%; height:100svh; overflow:hidden; background:var(--white); font-family:var(--font-display);">
-  <!-- FIXED TOP-LEFT LOGO -->
-  <div style="position:fixed; top:0; left:0; z-index:60; display:flex; flex-direction:column; gap:9px; padding:clamp(20px,3vw,32px) clamp(20px,4vw,48px);">
-    <h1 style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.5rem,3vw,2.15rem); line-height:0.96; letter-spacing:-0.035em; text-transform:uppercase; color:var(--black); margin:0;">Natalie Burkhart</h1>
-    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black);">KI als Komplizin — Gestaltung als Prozess</div>
+
+
+
+<!-- Private admin entrance to the Hero-Medien overview — deliberately not
+     part of the visible site nav (no label, near-invisible until hover):
+     this is Natalie's own working folder, not a public menu item. -->
+
+
+<div class="nb-root-scale" style="position:relative; min-height:100svh; display:flex; flex-direction:column; background:var(--white); font-family:var(--font-display); overflow-x:hidden; width:100%;">
+
+  <!-- TOP FADE — soft white gradient so the header stays legible over any hero photo -->
+  <sc-if value="{{ showTopHeader }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed; top:0; left:0; right:0; z-index:59; height:clamp(120px,16vh,190px); background:linear-gradient(to bottom, rgba(255,255,255,0.92), rgba(255,255,255,0) 100%); pointer-events:none;"></div>
+
+    <!-- FIXED TOP-LEFT HEADER (turns white while any panel is open) -->
+    <div style="position:fixed; top:0; left:0; z-index:60; display:flex; flex-direction:column; gap:9px; padding:clamp(20px,3vw,32px) clamp(20px,4vw,48px); opacity:{{ headerRevealOpacity }}; transform:{{ headerRevealTransform }}; transition:opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1);">
+      <h1 onClick="{{ goHome }}" style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.5rem,3vw,2.15rem); line-height:0.96; letter-spacing:-0.035em; text-transform:uppercase; color:{{ headerColor }}; margin:0; cursor:pointer; transition:color .3s cubic-bezier(.22,1,.36,1);">Natalie Burkhart</h1>
+    </div>
+  </sc-if>
+
+  <!-- SCREEN 1 — HERO: full-bleed Komplizin definition image, nav + closing line docked -->
+  <div style="width:100%; position:relative;">
+    <sc-if value="{{ showHeroIntro }}" hint-placeholder-val="{{ true }}">
+    <div style="min-height:100svh; box-sizing:border-box; padding:clamp(180px,20vh,220px) clamp(24px,7vw,110px) clamp(48px,7vh,90px) clamp(20px,4vw,48px); display:flex; flex-direction:column; justify-content:center; width:100%; position:sticky; top:0; overflow:hidden; background:#f1f0ee; z-index:1;" class="app-hero-screen">
+      <div style="max-width:900px;">
+        <h1 style="font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:0.006em; font-size:clamp(2.4rem,6.5vw,4.2rem); line-height:1; letter-spacing:-0.01em; color:#000; margin:0 0 clamp(10px,1.5vw,16px);">{{ heroTypedTitle }}<sc-if value="{{ heroCursorAfter_title }}" hint-placeholder-val="{{ false }}"><span style="animation:heroCursorBlink 1s step-end infinite;">|</span></sc-if><span style="color:transparent;">{{ heroRestTitle }}</span></h1>
+        <p style="font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:0.006em; font-size:clamp(1rem,1.6vw,1.3rem); color:#000; margin:0 0 clamp(20px,3vw,30px);">{{ heroTypedPhon }}<sc-if value="{{ heroCursorAfter_phon }}" hint-placeholder-val="{{ false }}"><span style="animation:heroCursorBlink 1s step-end infinite;">|</span></sc-if><span style="color:transparent;">{{ heroRestPhon }}</span></p>
+        <p style="font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:0.006em; font-size:clamp(1rem,1.6vw,1.3rem); color:#000; margin:0 0 clamp(10px,1.5vw,14px);">{{ heroTypedGram }}<sc-if value="{{ heroCursorAfter_gram }}" hint-placeholder-val="{{ false }}"><span style="animation:heroCursorBlink 1s step-end infinite;">|</span></sc-if><span style="color:transparent;">{{ heroRestGram }}</span></p>
+        <p style="font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:0.006em; font-size:clamp(1.1rem,1.9vw,1.4rem); line-height:1.5; color:#000; margin:0; text-wrap:pretty;">{{ heroTypedDef }}<sc-if value="{{ heroCursorAfter_def }}" hint-placeholder-val="{{ false }}"><span style="animation:heroCursorBlink 1s step-end infinite;">|</span></sc-if><span style="color:transparent;">{{ heroRestDef }}</span></p>
+      </div>
+    </div>
+    </sc-if>
+    <div style="width:100%; box-sizing:border-box; background:#f1f0ee; padding:clamp(28px,3.4vw,40px) clamp(24px,7vw,110px) clamp(32px,4vw,44px) clamp(20px,4vw,48px); position:relative; z-index:2; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;" class="app-snap">
+      <div style="display:flex; gap:clamp(20px,2.4vw,32px); width:100%; margin-bottom:clamp(10px,1.4vw,14px);">
+      </div>
+      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size: clamp(1.5rem,3vw,2.15rem); line-height: 1.22; color: var(--black); margin: 0; text-align: left; text-wrap: pretty; width:{{ heroIntroWidth }};">Als Architektin vermittle ich Wissen zu KI,<br class="intro-br"> übersetze Methodik in konkrete Workflows und <br class="intro-br"><span style="color: var(--black); font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 2.15rem); letter-spacing: -0.005em; text-wrap-mode: initial;">begreife Gestaltung weiterhin als Handwerk.</span><br></h2>
+      <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:clamp(18px,2.2vw,26px) 0 0;">KEYNOTES, ESSAYS UND FORMATENTWICKLUNG · 1:1-BEGLEITUNG · GESTALTERISCHE PROJEKTE</p>
+      <div style="display:flex; justify-content:flex-start; gap:16px; margin-top:clamp(18px,2.2vw,26px); margin-bottom:clamp(32px,4.5vw,64px);">
+        <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen →</a>
+      </div>
+    </div>
   </div>
 
-  <!-- BOTTOM BAR -->
-  <div style="position:fixed; bottom:0; left:0; right:0; z-index:60; box-sizing:border-box; padding:clamp(20px,3.5vh,32px) clamp(20px,4vw,48px); display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black);">Coming soon</div>
-    <a href="mailto:mail@natalieburkhart.com" style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); text-decoration:none;" style-hover="{{ mailHoverStyle }}">mail@natalieburkhart.com</a>
+  <div style="{{ screen4Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
+
+    <div style="{{ colAktuelleProjekte }}">
+      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.3rem); line-height:1.18; color:var(--black); margin:0 0 clamp(24px,3vw,36px); text-wrap:pretty;">Aus der Praxis</h2>
+      <div style="display:flex; gap:clamp(20px,2.4vw,28px);">
+        <sc-for list="{{ aktuelleProjekteCards }}" as="card" hint-placeholder-count="3">
+          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+            <span style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); display:block;">{{ card.date }}</span>
+            <span style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); line-height:1.3; display:block; min-height:2.6em;">{{ card.partner }}</span>
+            <span style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); display:block; min-height:4.65em;">{{ card.format }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; justify-content:flex-end; margin-top:clamp(20px,2.4vw,28px);">
+        
+      </div>
+    </div>
+
   </div>
+
+  <!-- SCREEN 2 — hero slideshow + aktuelle projekte, fills the viewport -->
+  <div style="{{ screen1Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
+
+    <!-- HERO slideshow, cross-fading, grayscale, 4:5 portrait — columns 1–2, under the intro text -->
+    <div style="{{ colHero }}">
+      <div class="responsive-portrait-media" style="position:relative; width:100%; overflow:hidden;">
+        <img src="uploads/0 - Profilbild.jpg" alt="Natalie Burkhart, Porträt" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1);" loading="eager">
+      </div>
+    </div>
+
+    <!-- Gegenwart text — columns 3–4, bottom-docked beside the slideshow -->
+    <div style="{{ colGegenwartNear }}">
+      <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:0 0 clamp(10px,1.4vw,14px); cursor:pointer;" onClick="{{ toggleCv }}">Mein Hintergrund</p>
+      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2vw,22px);">Zwischen Systemen und Intuition</h2>
+      <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px); text-align:left; text-wrap:pretty;">Ich bin Architektin und untersuche KI aus einer architektonischen Denkweise heraus.&nbsp;<span style="font-size: 16.96px;">KI ist meine Komplizin, wo sie kreative Prozesse erweitert, ohne die sinnliche und räumliche Intelligenz des Menschen zu ersetzen.</span></p>
+      <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px); text-align:left; text-wrap:pretty;"><span style="font-size: 16.96px;">Digitale Planungsprozesse haben mich gelehrt, komplexe Zusammenhänge zu ordnen und präzise zu steuern. Gleichzeitig schärft die analoge Arbeit mit Material und Raum mein Gespür für stimmige Entscheidungen.</span></p>
+      <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px); text-align:left; text-wrap:pretty;">Ich unterstütze Akteur:innen in der Architektur dabei, KI sinnvoll in ihre Praxis zu integrieren – mit Haltung und Orientierung, ohne Gestaltung und Urteilskraft abzugeben.</p>
+    </div>
+
+  </div>
+
+  <div style="{{ screen3Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
+
+    <div class="praxisraum-text" style="{{ praxisraumTextStyle }}">
+      <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:0 0 clamp(10px,1.4vw,14px);">MEINE FORMATE</p>
+      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2vw,22px); text-wrap:pretty;">Wissen – Methodik – Gestaltung</h2>
+    </div>
+    <div class="praxisraum-blocks" style="{{ praxisraumBlocksStyle }}">
+      <div style="border:1px solid var(--black); padding:clamp(20px,2.4vw,26px); display:flex; flex-direction:column; gap:clamp(20px,2.4vw,26px);">
+        <div>
+          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Wissen</h3>
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">KI einordnen und Haltung vermitteln. Keynotes, Essays und Formatentwicklung für Hochschule, Institutionen und Redaktion.</p>
+        </div>
+        <div style="border-top:1px solid var(--black); padding-top:clamp(20px,2.4vw,26px);">
+          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Methodik</h3>
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">KI in konkrete Arbeitsprozesse und Workflows übersetzen. 1:1-Begleitung für Architekt:innen.</p>
+        </div>
+        <div style="border-top:1px solid var(--black); padding-top:clamp(20px,2.4vw,26px);">
+          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Gestaltung</h3>
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">Gestalterische Projekte zu Material und Raum. Auftragsarbeiten sowie Kooperationen und freie Projekte.</p>
+        </div>
+        <div style="display:flex; justify-content:center; margin-top:clamp(28px,3.4vw,40px);">
+          <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">Formate ansehen →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 3 — Haltungen + Bild, fills the viewport -->
+<div style="{{ screen2Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
+
+    <!-- Haltungen — stacked names, spanning the same rows as the Gegenwart text -->
+    <div style="{{ colHaltungen }}">
+      <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:0 0 clamp(10px,1.4vw,14px);">Meine Haltung</p>
+      <sc-for list="{{ fragments }}" as="frag" hint-placeholder-count="3">
+        <div style="padding-top:clamp(16px,2vw,22px);">
+          <div style="{{ frag.ruleStyle }}"></div>
+          <div onClick="{{ frag.toggle }}" style="display:flex; align-items:baseline; gap:10px; cursor:pointer;">
+            <span style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black);">{{ frag.title }}</span>
+            <span style="flex:0 0 auto; margin-left:auto; font-family:var(--font-display); font-weight:300; font-size:clamp(1.9rem,3.8vw,2.7rem); line-height:1.22; letter-spacing:0; color:var(--black);">{{ frag.toggleGlyph }}</span>
+          </div>
+          <sc-if value="{{ frag.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty; animation:fadeInUp 420ms cubic-bezier(.22,1,.36,1) both;">{{ frag.text }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <div style="{{ colHaltungenWrapStyle }}">
+      <div class="responsive-portrait-media" style="position:relative; width:100%; overflow:hidden;">
+        <sc-for list="{{ heroSlides }}" as="slide" hint-placeholder-count="10">
+          <div style="position:absolute; inset:0; opacity:{{ slide.opacity }}; pointer-events:{{ slide.pointerEvents }}; transition:opacity 1.1s cubic-bezier(.22,1,.36,1); background:#fff;">
+            <sc-if value="{{ slide.src }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ slide.src }}" style="{{ imgStyle }}" alt="" loading="{{ slide.loading }}">
+            </sc-if>
+            <sc-if value="{{ slide.noSrc }}" hint-placeholder-val="{{ true }}">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ slide.id }}" shape="rect" placeholder="Bild" hint-size="100%,100%"></x-import>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0) 40%, rgba(0,0,0,0.06) 100%); pointer-events:none;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 4 — Aktuelle Projekte, fills the viewport -->
+  <div style="{{ screenProjectsStyle }}" id="angebote-section" class="app-screen" ref="{{ attachSectionReveal }}">
+
+    <div style="{{ colQuoteInScreen4 }}">
+      <p style="font-family:var(--font-serif); font-style:italic; font-weight:400; letter-spacing:0.006em; font-size:clamp(1.2rem,2vw,1.6rem); line-height:1.6; color:var(--white); -webkit-font-smoothing:antialiased; margin:0; text-align:left; text-wrap:pretty;">„KI berechnet Wahrscheinlichkeiten. Bilder und Worte bleiben Fragmente, die wir bewerten und verknüpfen müssen. Vergessen wir das, riskieren wir perfekt optimierte Entwürfe, die aber den Menschen außen vor lassen. Gerade deshalb bleibt Intuition zentral – im Auswählen, Bewerten und bewussten Gegenentscheiden.“</p>
+      <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--white); -webkit-font-smoothing:antialiased; margin:0;">Aus: „Zwischen Intuition und Algorithmus“, Essay auf Baunetz Campus</p>
+    </div>
+
+    <div style="{{ gestaltenTextColStyle }}">
+      <h3 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(12px,1.4vw,16px);">Zusammenarbeiten?</h3>
+      <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">Ob Wissen einordnen, KI als Komplizin in deine Praxis integrieren oder ein gestalterisches Konzept entwickeln: Sieh dir die Formate im Detail an und schreib mir für ein unverbindliches Erstgespräch.</p>
+    </div>
+
+    <div style="{{ gestaltenButtonColStyle }}">
+      <a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px;">Zusammenarbeit anfragen →</a>
+    </div>
+
+  </div>
+
+  <!-- CONTACT — one link per grid column, inside a slim grey field -->
+  <div style="background:#f1f0ee; padding:clamp(16px,2vw,22px) clamp(24px,7vw,110px) clamp(100px,13vh,140px) clamp(20px,4vw,48px);">
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:clamp(24px,3vw,34px); margin-top:clamp(20px,2.6vw,30px);">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:0 0 8px;">Kontakt</p>
+        <a href="mailto:mail@natalieburkhart.com" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">mail@natalieburkhart.com</a>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:0 0 8px;">Social Media</p>
+        <a href="https://www.linkedin.com/in/natalie-burkhart/" target="_blank" rel="noopener" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">LinkedIn</a>
+        <a href="https://www.instagram.com/natalie_onsite/" target="_blank" rel="noopener" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Instagram</a>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <a href="#impressum" onClick="{{ toggleImpressum }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Impressum</a>
+        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0;">© Natalie Burkhart 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM FADE — soft white gradient so the nav stays legible over any hero photo -->
+  <div style="opacity:{{ bottomChromeOpacity }}; transition:opacity 0.9s cubic-bezier(.22,1,.36,1); position:fixed; left:0; right:0; bottom:0; z-index:54; height:clamp(90px,13vh,150px); background:linear-gradient(to top, rgba(255,255,255,0.94), rgba(255,255,255,0) 100%); pointer-events:none;"></div>
+  <!-- NOTE: each screen*Style section above is its own full-viewport (100svh) block with alignContent:center, giving the scroll-through-a-presentation feel. -->
+
+  <!-- FIXED BOTTOM NAV BAR — four equal columns, each with its own top rule; black text on the white fade above -->
+  <div style="opacity:{{ bottomChromeOpacity }}; transition:opacity 0.9s cubic-bezier(.22,1,.36,1); position:fixed; left:0; right:0; bottom:0; z-index:55; display:grid; grid-template-columns:repeat(4,1fr); column-gap:clamp(16px,2vw,24px); row-gap:10px; padding:0 clamp(24px,7vw,110px) clamp(14px,2vw,18px) clamp(20px,4vw,48px); opacity:{{ headerRevealOpacity }}; transform:{{ headerRevealTransform }}; transition:opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1); pointer-events:{{ navPointerEvents }};">
+    <div style="{{ navRuleStart }}"></div>
+    <div style="{{ navRuleIndex }}"></div>
+    <div style="{{ navRuleCv }}"></div>
+    <div style="{{ navRuleAnfrage }}"></div>
+    <a href="#start" onClick="{{ goHome }}" style="{{ navStartStyle }}">Start</a>
+    <a href="#projekt-index" onClick="{{ toggleIndex }}" style="{{ navIndexStyle }}">Projekte</a>
+    <a href="#ueber-mich" onClick="{{ toggleCv }}" style="{{ navCvStyle }}">Über mich</a>
+    <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="{{ navAnfrageStyle }}">Kontakt</a>
+  </div>
+
+  <!-- PROJEKT INDEX — full-white panel, same top row as the other pages -->
+  <sc-if value="{{ indexOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-scroll-root="projekt-index" style="position:fixed; inset:0; z-index:50; background:#fff; color:#000; display:flex; flex-direction:column; overflow-y:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; touch-action:pan-y; overscroll-behavior:contain;">
+    <div style="width:100%; display:flex; flex-direction:column; flex:1;">
+
+      <!-- LIST VIEW -->
+      <sc-if value="{{ showProjectList }}" hint-placeholder-val="{{ true }}">
+        <div style="{{ pageStartStyle }}" class="app-screen">
+          <div style="grid-column:1 / -1; display:grid; grid-template-columns:repeat(4,1fr); column-gap:clamp(16px,2vw,24px);">
+            <div style="grid-column:1 / -1;">
+              <sc-for list="{{ projects }}" as="proj" hint-placeholder-count="7">
+                <div onClick="{{ proj.onClick }}" style="{{ proj.rowStyle }}">
+                  <span style="grid-column:1; font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); padding-right:8px; display:inline-flex; align-items:center; gap:6px;">{{ proj.thema }}<sc-if value="{{ proj.hasAiTag }}" hint-placeholder-val="{{ false }}"><span title="KI spielt eine Rolle" style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--black); flex-shrink:0;"></span></sc-if></span>
+                  <span style="{{ listTypeColStyle }}">{{ proj.type }}</span>
+                  <span style="{{ listYearColStyle }}">{{ proj.year }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="grid-column:1 / -1; display:flex; align-items:center; justify-content:flex-end; gap:8px; margin-top:14px;">
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--black); flex-shrink:0;"></span>
+              <span style="font-family:var(--font-display); font-weight:600; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--black);">= KI involviert</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- DETAIL VIEW -->
+      <sc-if value="{{ showProjectDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ pageStartStyle }}" class="app-screen">
+
+          <div style="grid-column:1 / -1; margin-bottom:clamp(32px,4vw,48px);">
+            <h1 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.8rem,4vw,3rem); line-height:1.1; color:var(--black); margin:0;">{{ selectedProjectThema }}</h1>
+            <sc-if value="{{ selectedProjectType }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:clamp(10px,1.4vw,14px) 0 0;">{{ selectedProjectType }}</div>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ selectedProjectIsRich }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-column:1 / -1; display:grid; grid-template-columns:repeat(4,1fr); column-gap:clamp(16px,2vw,24px);">
+              <div style="{{ richTextColStyle }}">
+                <sc-for list="{{ selectedProjectParagraphs }}" as="para" hint-placeholder-count="4">
+                  <sc-if value="{{ para.heading }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">{{ para.heading }}</div>
+                  </sc-if>
+                  <p class="rich-para" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px);">{{ para.text }}</p>
+                </sc-for>
+              </div>
+              <div style="{{ richFactsColStyle }}">
+                <sc-for list="{{ selectedProjectFacts }}" as="fact" hint-placeholder-count="4">
+                  <div style="margin-bottom:clamp(14px,1.8vw,18px);">
+                    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--black); margin-bottom:4px;">{{ fact.label }}</div>
+                    <sc-if value="{{ fact.link }}" hint-placeholder-val="{{ false }}">
+                      <a href="{{ fact.link }}" target="_blank" rel="noopener" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">{{ fact.value }}</a>
+                    </sc-if>
+                    <sc-if value="{{ fact.noLink }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-family:var(--font-serif); font-weight:400; font-size:clamp(1.06rem,1.24vw,1.14rem); color:var(--black);">{{ fact.value }}</div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="{{ selectedProjectImagesColStyle }}">
+                <sc-for list="{{ selectedProjectImages }}" as="img" hint-placeholder-count="3">
+                  <div key="{{ img.id }}" style="{{ img.wrapStyle }}">
+                    <sc-if value="{{ img.src }}" hint-placeholder-val="{{ false }}">
+                      <img key="{{ img.id }}" src="{{ img.src }}" alt="{{ img.alt }}" style="width:100%; height:100%; object-fit:cover; display:block;" loading="eager" fetchpriority="high">
+                    </sc-if>
+                    <sc-if value="{{ img.noSrc }}" hint-placeholder-val="{{ true }}">
+                      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ img.id }}" shape="rect" fit="contain" placeholder="Bild" hint-size="100%,100%"></x-import>
+                    </sc-if>
+                  </div>
+                </sc-for>
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:clamp(28px,4vw,40px); margin-bottom:clamp(110px,15vh,170px);">
+                  <sc-if value="{{ prevProjectThema }}" hint-placeholder-val="{{ false }}">
+                    <a href="#" onClick="{{ goToPrevProject }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">← Vorheriges Projekt</a>
+                  </sc-if>
+                  <sc-if value="{{ nextProjectThema }}" hint-placeholder-val="{{ false }}">
+                    <a href="#" onClick="{{ goToNextProject }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">Nächstes Projekt →</a>
+                  </sc-if>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ selectedProjectIsSimple }}" hint-placeholder-val="{{ true }}">
+            <div style="{{ cvGridStyle }}">
+            <div style="{{ panelBodyStyle }}; width:auto; height:clamp(260px,42vw,480px);">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ selectedProjectSlotId }}" shape="rect" placeholder="Projektbild" hint-size="100%,360px"></x-import>
+            </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </div>
+    </div>
+  </sc-if>
+
+  <!-- ANFRAGE — full-white panel -->
+  <sc-if value="{{ anfrageOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:50; background:#fff; color:#000; overflow-y:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; touch-action:pan-y; overscroll-behavior:contain;">
+    <div style="width:100%;">
+      <div style="{{ anfrageScreenStyle }}" class="app-screen">
+        <div style="grid-column:1 / -1;">
+          <div style="padding-bottom:clamp(28px,3.6vw,40px); margin-bottom:clamp(8px,1vw,10px);">
+            <div class="anfrage-intro-text" style="max-width:calc(75% - clamp(4px,0.6vw,6px));">
+              <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2.2vw,24px); text-wrap:pretty;">Zusammenarbeiten</h2>
+            </div>
+        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2.2vw,24px); text-wrap:pretty;">Wähle aus, was deinem Ziel am nächsten kommt und erhalte Vorschläge. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
+            <div style="margin-top:clamp(40px,5.2vw,56px);">
+              <sc-for list="{{ whoOptions }}" as="opt" hint-placeholder-count="3">
+                <div style="padding-top:clamp(16px,2vw,22px);">
+                  <div style="{{ opt.ruleStyle }}"></div>
+                  <div onClick="{{ opt.onClick }}" style="display:flex; align-items:baseline; gap:10px; cursor:pointer;">
+                    <span style="{{ opt.headingStyle }}">{{ opt.label }}</span>
+                    <span style="flex:0 0 auto; margin-left:auto; font-family:var(--font-display); font-weight:300; font-size:clamp(1.9rem,3.8vw,2.7rem); line-height:1.22; letter-spacing:0; color:var(--black);">{{ opt.glyph }}</span>
+                  </div>
+                  <sc-if value="{{ opt.hasAudience }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin-top:6px;">{{ opt.audience }}</div>
+                  </sc-if>
+                  <sc-if value="{{ opt.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="margin-top:clamp(12px,1.6vw,16px); max-width:calc(75% - clamp(4px,0.6vw,6px));">
+                      <sc-if value="{{ opt.hasDescription }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty;">{{ opt.description }}</p></sc-if>
+                      <sc-if value="{{ opt.hasSteps }}" hint-placeholder-val="{{ false }}">
+                        <sc-if value="{{ opt.hasStepsIntro }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(28px,3.4vw,40px); text-wrap:pretty;">{{ opt.stepsIntro }}</p></sc-if>
+                        <div style="margin:0 0 clamp(16px,2vw,20px); display:flex; flex-direction:column; gap:clamp(34px,4vw,48px);">
+                          <sc-for list="{{ opt.steps }}" as="step" hint-placeholder-count="2">
+                            <div style="display:flex; flex-direction:column; gap:6px;">
+                              <p style="font-family:var(--font-display); font-weight:600; font-size:0.94rem; letter-spacing:-0.01em; line-height:1.3; color:#000; margin:0;">{{ step.title }}<sc-if value="{{ step.hasMeta }}" hint-placeholder-val="{{ false }}"><span style="font-weight:400; opacity:0.55;"> · {{ step.meta }}</span></sc-if></p>
+                              <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty; white-space:pre-line;">{{ step.body }}</p>
+                              <sc-if value="{{ step.hasItems }}" hint-placeholder-val="{{ false }}">
+                                <ul style="list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:4px;">
+                                  <sc-for list="{{ step.items }}" as="item" hint-placeholder-count="4">
+                                    <li style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); padding-left:14px; position:relative; text-wrap:pretty;"><span style="position:absolute; left:0; top:0;">–</span>{{ item }}</li>
+                                  </sc-for>
+                                </ul>
+                              </sc-if>
+                              <sc-if value="{{ step.hasAfter }}" hint-placeholder-val="{{ false }}">
+                                <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:2px 0 0; text-wrap:pretty; white-space:pre-line;">{{ step.after }}</p>
+                              </sc-if>
+                              <sc-if value="{{ step.hasCta }}" hint-placeholder-val="{{ false }}">
+                                <a href="{{ step.ctaHref }}" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; margin-top:6px;">{{ step.ctaLabel }} →</a>
+                              </sc-if>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ opt.hasClosing }}" hint-placeholder-val="{{ false }}">
+                        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty; white-space:pre-line;">{{ opt.closing }}</p>
+                      </sc-if>
+<sc-if value="{{ opt.hasCta }}" hint-placeholder-val="{{ false }}">
+                                            <a href="{{ opt.mailtoHref }}" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; margin-bottom:clamp(8px,1vw,12px);">{{ opt.cta }} →</a>
+                      </sc-if>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#f1f0ee; padding:clamp(16px,2vw,22px) clamp(24px,7vw,110px) clamp(70px,10vh,110px) clamp(20px,4vw,48px);">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:clamp(24px,3vw,34px); margin-top:clamp(20px,2.6vw,30px);">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:0 0 8px;">Kontakt</p>
+            <a href="mailto:mail@natalieburkhart.com" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">mail@natalieburkhart.com</a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:0 0 8px;">Social Media</p>
+            <a href="https://www.linkedin.com/in/natalie-burkhart/" target="_blank" rel="noopener" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">LinkedIn</a>
+            <a href="https://www.instagram.com/natalie_onsite/" target="_blank" rel="noopener" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Instagram</a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <a href="#impressum" onClick="{{ toggleImpressum }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Impressum</a>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0;">© Natalie Burkhart 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </sc-if>
+
+  <!-- IMPRESSUM — full-white panel -->
+  <sc-if value="{{ impressumOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:50; background:#fff; color:#000; overflow-y:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; touch-action:pan-y; overscroll-behavior:contain;">
+    <div style="width:100%;">
+      <div style="{{ pageStartStyle }}" class="app-screen">
+
+        <div style="grid-column:1 / -1; margin-bottom:clamp(32px,4vw,48px);">
+          <h1 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.8rem,4vw,3rem); line-height:1.1; color:var(--black); margin:0;">Impressum</h1>
+        </div>
+
+        <div style="grid-column:1 / -1; display:grid; grid-template-columns:repeat(4,1fr); column-gap:clamp(16px,2vw,24px);">
+          <div style="{{ impressumTextColStyle }}">
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">Tätigkeitsbereich</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Architektur, Forschung und Vermittlung an der Schnittstelle von Architektur, künstlicher Intelligenz und digitalen Gestaltungsprozessen.<br>Die Website informiert über eigene Projekte, Forschungs- und Vermittlungsarbeit sowie über Vorträge, Workshops, 1:1-Begleitung und kooperative Projekte.<br>Tätig in Wien, DACH-Raum und remote.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">Haftung für Inhalte</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Vollständigkeit, Richtigkeit und Aktualität der Inhalte wird keine Gewähr übernommen.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">Haftung für Links</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte besteht kein Einfluss. Für die Inhalte der verlinkten Websites ist ausschließlich deren jeweilige Betreiberin bzw. deren jeweiliger Betreiber verantwortlich.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">Urheberrecht</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">Die auf dieser Website veröffentlichten Texte, Bilder, Grafiken, Fotografien, Entwürfe und Projekte sind urheberrechtlich geschützt, soweit nicht anders angegeben.<br>Eine Verwendung, Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der gesetzlichen Schranken des Urheberrechts bedarf der vorherigen Zustimmung der jeweiligen Rechteinhaberin.<br><br>Profilbild: Linda Stix<br>Bild auf Baustelle: Faruch Achmetov<br>Bilder zu Webknoten: Fitz Carraldo</p>
+          </div>
+          <div style="{{ impressumFactsColStyle }}">
+            <div style="margin-bottom:clamp(14px,1.8vw,18px);">
+              <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--black); margin-bottom:4px;">Anschrift</div>
+              <div style="font-family:var(--font-serif); font-weight:400; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black);">Natalie Burkhart<br>c/o POSTFLEX PFX-289-983<br>Emsdettener Straße 10<br>48268 Greven<br>Deutschland</div>
+            </div>
+            <div style="margin-bottom:clamp(14px,1.8vw,18px);">
+              <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--black); margin-bottom:4px;">E-Mail</div>
+              <a href="mailto:mail@natalieburkhart.com" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">mail@natalieburkhart.com</a>
+            </div>
+          </div>
+        </div>
+        <div style="grid-column:1 / -1; margin-top:clamp(28px,4vw,40px); margin-bottom:clamp(110px,15vh,170px);">
+          <a href="#" onClick="{{ toggleImpressum }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">← Zurück</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </sc-if>
+
+  <!-- ÜBER MICH / CV — full-white panel, column layout -->
+  <sc-if value="{{ cvOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:50; background:#fff; color:#000; overflow-y:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; touch-action:pan-y; overscroll-behavior:contain;">
+    <div style="width:100%;">
+
+      <!-- SCREEN 1 — bold intro + close, fills the viewport -->
+      <!-- SLIDE A — image left (col 1–2), text right (col 3–4) -->
+      <div style="{{ compactPanelStyleFirst }}" ref="{{ attachSectionReveal }}">
+        <div style="{{ slideAImageCol }}">
+          <div class="responsive-portrait-media" style="position:relative; width:100%; overflow:hidden;">
+            <img src="uploads/0 - Profilbild.jpg" alt="Natalie Burkhart, Porträt" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1);" loading="eager">
+          </div>
+        </div>
+        <div style="{{ slideATextCol }}">
+          <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2vw,22px); text-wrap:pretty;">Architektur, KI &amp;<br>künstlerische Praktiken</h2>
+          <sc-for list="{{ slideABio }}" as="para" hint-placeholder-count="4">
+            <sc-if value="{{ para.linkLabel }}" hint-placeholder-val="{{ false }}">
+              <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px); text-wrap:pretty;">{{ para.pre }}<a href="{{ para.linkUrl }}" target="_blank" rel="noopener" style="color:var(--black); font-weight:600; text-decoration:none;">{{ para.linkLabel }}</a>{{ para.post }}</p>
+            </sc-if>
+            <sc-if value="{{ para.text }}" hint-placeholder-val="{{ true }}">
+              <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(8px,1vw,10px); text-wrap:pretty;">{{ para.text }}</p>
+            </sc-if>
+          </sc-for>
+        </div>
+      </div>
+
+
+      <div style="{{ compactPanelStyle }}" ref="{{ attachSectionReveal }}">
+        <div style="{{ slideBTextCol }}">
+          <sc-for list="{{ cvCategories }}" as="cat" hint-placeholder-count="4">
+            <div style="padding-top:clamp(16px,2vw,22px);">
+              <div style="{{ cat.ruleStyle }}"></div>
+              <div onClick="{{ cat.toggle }}" style="display:flex; align-items:baseline; gap:10px; cursor:pointer;">
+                <span style="{{ cat.headingStyle }}">{{ cat.heading }}</span>
+                <span style="flex:0 0 auto; margin-left:auto; font-family:var(--font-display); font-weight:300; font-size:clamp(1.9rem,3.8vw,2.7rem); line-height:1.22; letter-spacing:0; color:var(--black);">{{ cat.toggleGlyph }}</span>
+              </div>
+              <sc-if value="{{ cat.open }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:clamp(12px,1.6vw,16px);">
+
+                  <sc-if value="{{ cat.isText }}" hint-placeholder-val="{{ false }}">
+                    <div style="{{ cat.subheadStyle }}">Analog</div>
+                    <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:6px 0 0;">{{ cat.analogText }}</p>
+                    <div style="{{ cat.subheadStyle2 }}">Digital</div>
+                    <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:6px 0 0;">{{ cat.digitalText }}</p>
+                  </sc-if>
+
+                  <sc-if value="{{ cat.isTable }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; border-top:1px solid rgba(0,0,0,0.22);">
+                      <div style="padding:10px 16px 10px 0; border-bottom:1px solid rgba(0,0,0,0.22); font-family:var(--font-display); font-weight:600; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(0,0,0,0.5);">Analoge Prozesse</div>
+                      <div style="padding:10px 0 10px 16px; border-bottom:1px solid rgba(0,0,0,0.22); border-left:1px solid rgba(0,0,0,0.22); font-family:var(--font-display); font-weight:600; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(0,0,0,0.5);">Digitale Modelle</div>
+                      <sc-for list="{{ cat.tableRows }}" as="row" hint-placeholder-count="5">
+                        <div style="padding:12px 16px 12px 0; border-bottom:1px solid rgba(0,0,0,0.12); font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black);">{{ row.analog }}</div>
+                        <div style="padding:12px 0 12px 16px; border-bottom:1px solid rgba(0,0,0,0.12); border-left:1px solid rgba(0,0,0,0.22); font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black);">{{ row.digital }}</div>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+
+                  <sc-if value="{{ cat.isList }}" hint-placeholder-val="{{ true }}">
+                    <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="3">
+                      <sc-if value="{{ it.isGroupHeading }}" hint-placeholder-val="{{ false }}">
+                        <div style="font-family:var(--font-display); font-weight:600; font-size:0.94rem; letter-spacing:-0.01em; line-height:1.3; color:#000; padding:10px 0 2px;">{{ it.title }}</div>
+                      </sc-if>
+                      <sc-if value="{{ it.isItem }}" hint-placeholder-val="{{ true }}">
+                        <div style="display:flex; gap:18px; justify-content:space-between; align-items:baseline; padding:4px 0;">
+                          <div style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); min-width:0;">{{ it.text }}</div>
+                          <div style="font-family:var(--font-display); font-weight:500; font-size:0.66rem; letter-spacing:0.05em; color:var(--black); white-space:nowrap;">{{ it.date }}</div>
+                        </div>
+                      </sc-if>
+                    </sc-for>
+                    <sc-if value="{{ cat.showCvNote }}" hint-placeholder-val="{{ false }}">
+                      <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-align:right; margin:clamp(16px,2vw,22px) 0 0;">Vollständiger CV auf Anfrage</p>
+                    </sc-if>
+                  </sc-if>
+
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="{{ slideBImageCol }}">
+          <div class="responsive-portrait-media" style="position:relative; width:100%; overflow:hidden;">
+            <img src="uploads/0 - Baustelle.jpg" alt="Natalie Burkhart auf der Baustelle" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1);" loading="lazy">
+          </div>
+        </div>
+        <div style="{{ slideBButtonCol }}"><a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen →</a></div>
+      </div>
+    </div>
+    </div>
+  </sc-if>
+
 </div>
-
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900}}">
 class Component extends DCLogic {
+  state = {
+    heroIndex: 0,
+    isNarrow: false,
+    heroOrder: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+    introPassed: false,
+    indexOpen: false, anfrageOpen: false, impressumOpen: false, cvOpen: false,
+    currentKey: null, selected: { thema: [], format: [] },
+    openFrag: [false, false, false],
+    openAngebot: [false, false, false],
+    filterWho: null, showAllFormate: false,
+    openCvCat: [false, false, false, false],
+    selectedProject: null,
+  };
+
+  heroDictText() {
+    return {
+      title: 'Kom·pli·zin',
+      phon: "[kompli'tsi:n]",
+      gram: '[3] (In der digitalen Architekturpraxis)',
+      def: 'Eine künstliche Intelligenz, die nicht bloß Ergebnisse produziert, sondern als Komplizin in den Entwurfsprozess verstrickt ist. Ihre Mittäterinnenschaft eröffnet Perspektiven, widerspricht und macht Autorinnenschaft verhandelbar.',
+    };
+  }
+
+  startHeroTypewriter() {
+    if (this._heroTypeTimer) clearInterval(this._heroTypeTimer);
+    const d = this.heroDictText();
+    const pause = 8;
+    const total = d.title.length + pause + d.phon.length + pause + d.gram.length + pause + d.def.length;
+    const startCount = d.title.length + pause + d.phon.length + pause + d.gram.length;
+    this.setState({ heroTypeCount: startCount });
+    this._heroTypeStart = setTimeout(() => {
+    this._heroTypeTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.heroTypeCount >= total) { clearInterval(this._heroTypeTimer); this._heroTypeTimer = null; return null; }
+        const next = s.heroTypeCount + 1;
+        return next >= total ? { heroTypeCount: next, heroTitleDone: true } : { heroTypeCount: next };
+      });
+    }, 18);
+    }, 1000);
+  }
+
+  attachSectionReveal = (el) => {
+    if (!el || el.dataset.revealBound) return;
+    el.dataset.revealBound = '1';
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1)';
+    if (!this._sectionObserver) {
+      this._sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+          } else if (entry.boundingClientRect.top > 0) {
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(24px)';
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+    }
+    this._sectionObserver.observe(el);
+  };
+
+  contactDictText() {
+    return { title: 'Zusammen arbeiten?', body: 'Wenn du ein Format mit mir entwickeln möchtest, 1:1 Begleitung suchst oder ein künstlerisches Projekt gemeinsam realisieren willst, melde dich gern bei mir.' };
+  }
+
+  attachContactReveal = (el) => {
+    this.attachSectionReveal(el);
+    if (!el || el.dataset.contactBound) return;
+    el.dataset.contactBound = '1';
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.state.contactTypeStarted) {
+          this.setState({ contactTypeStarted: true });
+          this.startContactTypewriter();
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+    obs.observe(el);
+  };
+
+  startContactTypewriter() {
+    if (this._contactTypeTimer) clearInterval(this._contactTypeTimer);
+    const d = this.contactDictText();
+    const pause = 8;
+    const total = d.title.length + pause + d.body.length;
+    this.setState({ contactTypeCount: 0 });
+    this._contactTypeTimer = setInterval(() => {
+      this.setState(s => {
+        if (s.contactTypeCount >= total) { clearInterval(this._contactTypeTimer); this._contactTypeTimer = null; return null; }
+        return { contactTypeCount: s.contactTypeCount + 1 };
+      });
+    }, 26);
+  }
+
+  componentDidMount() {
+    this.startHeroTypewriter();
+    try {
+      const saved = JSON.parse(localStorage.getItem('nb-hero-order-v3') || 'null');
+      const defsLen = this.heroSlotDefs().length;
+      if (Array.isArray(saved) && saved.length === defsLen && saved.slice().sort((a,b)=>a-b).every((v,i)=>v===i)) {
+        this.state.heroOrder = saved;
+      }
+    } catch (e) {}
+    this._heroTimer = setInterval(() => {
+      this.setState(s => (s.heroOrder.length ? { heroIndex: (s.heroIndex + 1) % s.heroOrder.length } : {}));
+    }, 2000);
+    this._onResize = () => {
+      const isNarrow = window.innerWidth < 860;
+      if (isNarrow !== this.state.isNarrow) this.setState({ isNarrow });
+      const raw = window.innerWidth / 1800;
+      const zoomFactor = raw <= 1 ? 1 : Math.min(1 + (raw - 1) * 0.5, 1.25);
+      document.documentElement.style.zoom = zoomFactor;
+    };
+    this._onResize();
+    window.addEventListener('resize', this._onResize);
+    this._onScroll = () => {
+      const past = window.scrollY > window.innerHeight * 0.6;
+      if (past !== this.state.scrolledPastHero) this.setState({ scrolledPastHero: past });
+      if (this.state.introPassed || this._collapsing) return;
+      if (window.scrollY >= window.innerHeight - 2) {
+        const intro = document.querySelector('.app-hero-screen');
+        const h = intro ? intro.offsetHeight : window.innerHeight;
+        const target = Math.max(0, window.scrollY - h);
+        this._collapsing = true;
+        this.setState({ introPassed: true }, () => {
+          window.scrollTo(0, target);
+          this._collapsing = false;
+        });
+      }
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+
+  // Table/column-grid helper: on wide screens, place an item at a given
+  // 1-indexed column start spanning N of the 4 columns; on narrow screens
+  // every item collapses to a plain full-width block (classic stack).
+  colStyle(start, span) {
+    if (this.state.isNarrow) return { gridColumn: '1 / -1' };
+    return { gridColumn: `${start} / span ${span}` };
+  }
+
+  panelCloseStyle() {
+    return {
+      ...this.colStyle(4, 1),
+      fontFamily: 'var(--font-display)', fontWeight: 600,
+      fontSize: '0.7rem', letterSpacing: '0.16em', textTransform: 'uppercase',
+      color: 'var(--black)', background: 'transparent', border: 'none',
+      padding: 0, margin: 0, appearance: 'none', cursor: 'pointer', textAlign: 'left', alignSelf: 'start',
+      justifySelf: 'start', transition: 'opacity .3s cubic-bezier(.22,1,.36,1)',
+    };
+  }
+
+  // Full-viewport screen inside a white panel (Über mich): title/close row
+  // pinned to columns 1–3/4, content vertically centred in the remaining space.
+  panelScreenStyle() {
+    return {
+      minHeight: this.state.isNarrow ? 'auto' : '100svh',
+      boxSizing: 'border-box',
+      padding: this.state.isNarrow ? '48px clamp(24px,7vw,110px) 48px clamp(20px,4vw,48px)' : 'clamp(48px,7vh,90px) clamp(24px,7vw,110px) clamp(48px,7vh,90px) clamp(20px,4vw,48px)',
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      columnGap: 'clamp(16px,2vw,24px)',
+      rowGap: this.state.isNarrow ? '96px' : 'clamp(56px,7.5vh,90px)',
+      alignContent: 'center',
+      width: '100%',
+      maxWidth: '100%',
+      flexShrink: 0,
+    };
+  }
+
+  // Compact variant (Über mich body): flows with content height instead of
+  // forcing each block to fill the viewport, so the page reads as fewer, denser screens.
+  compactPanelStyle() {
+    return {
+      boxSizing: 'border-box',
+      padding: this.state.isNarrow
+        ? '48px clamp(24px,7vw,110px) 48px clamp(20px,4vw,48px)'
+        : 'clamp(32px,4.5vh,56px) clamp(24px,7vw,110px) clamp(32px,4.5vh,56px) clamp(20px,4vw,48px)',
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      columnGap: 'clamp(16px,2vw,24px)',
+      rowGap: this.state.isNarrow ? '96px' : 'clamp(28px,4vw,40px)',
+      alignContent: 'start',
+      alignItems: 'stretch',
+      width: '100%',
+      maxWidth: '100%',
+      flexShrink: 0,
+    };
+  }
+
+  panelGridStyle(rowGap) {
+    return {
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      columnGap: 'clamp(16px,2vw,24px)',
+      rowGap: rowGap || 'clamp(56px,7.5vh,90px)',
+      width: '100%',
+    };
+  }
+
+  gridContainerStyle(rowGap) {
+    return {
+      flex: '1 1 auto',
+      padding: 'clamp(64px,9vh,110px) clamp(24px,7vw,110px) clamp(96px,15vh,168px) clamp(20px,4vw,48px)',
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      columnGap: 'clamp(16px,2vw,24px)',
+      rowGap: rowGap || 'clamp(56px,7.5vh,90px)',
+      width: '100%',
+      boxSizing: 'border-box',
+    };
+  }
+
+  // One "screen" of the scroll-through-a-presentation feel: a full-viewport
+  // block, its content vertically centred, generous whitespace above/below.
+  screenGridStyle(rowGap) {
+    return {
+      minHeight: '100svh',
+      boxSizing: 'border-box',
+      padding: this.state.isNarrow ? '48px clamp(24px,7vw,110px) 48px clamp(20px,4vw,48px)' : 'clamp(48px,7vh,90px) clamp(24px,7vw,110px) clamp(48px,7vh,90px) clamp(20px,4vw,48px)',
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      columnGap: 'clamp(16px,2vw,24px)',
+      rowGap: this.state.isNarrow ? (rowGap || '96px') : (rowGap || 'clamp(56px,7.5vh,90px)'),
+      alignContent: 'center',
+      width: '100%',
+      maxWidth: '100%',
+    };
+  }
+
+  // Subtle scroll-in reveal for the three "Aktuelle Kooperationen" and three
+  // "Angebote" blocks on the homepage — fade + tiny rise, once per element.
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._heroTimer) clearInterval(this._heroTimer);
+    if (this._heroTypeTimer) clearInterval(this._heroTypeTimer);
+    if (this._contactTypeTimer) clearInterval(this._contactTypeTimer);
+    if (this._sectionObserver) this._sectionObserver.disconnect();
+  }
+
+  // Fixed hero media — 10 photos only, in the order Natalie numbered them.
+  // To add more later: drop the new file in uploads/ and add an entry below;
+  // heroOrder/positions adjust automatically.
+  // Hero media — leer, bis Natalie neue Bilder hochlädt.
+  // Neue Bilder: Datei in uploads/ ablegen und hier einen Eintrag ergänzen
+  // ({ idx, id, src, pad }); heroOrder passt sich automatisch an.
+  heroSlotDefs() {
+    return [
+      { idx: 0, id: 'hero-0', src: 'uploads/0 - Gropius Competition.jpg', pad: '0' },
+      { idx: 1, id: 'hero-1', src: 'uploads/0 -Leinen.jpg', pad: '0' },
+      { idx: 2, id: 'hero-2', src: 'uploads/0-aftermacbeth_nanobanana.jpg', pad: '0' },
+      { idx: 3, id: 'hero-3', src: 'uploads/0-Build Your Bauhaus.jpg', pad: '0' },
+      { idx: 4, id: 'hero-4', src: 'uploads/0-cyanotypie.jpg', pad: '0' },
+      { idx: 5, id: 'hero-5', src: 'uploads/0-EntwurfsprozessKI.jpg', pad: '0' },
+      { idx: 6, id: 'hero-6', src: 'uploads/0-framework.jpg', pad: '0' },
+      { idx: 7, id: 'hero-7', src: 'uploads/0-jacquardloom and cards.jpg', pad: '0' },
+      { idx: 8, id: 'hero-8', src: 'uploads/0-KK.jpg', pad: '0' },
+      { idx: 9, id: 'hero-9', src: 'uploads/0-Schnitt.jpg', pad: '0' },
+      { idx: 10, id: 'hero-10', src: 'uploads/0-stuetzenaxo.jpg', pad: '0' },
+      { idx: 11, id: 'hero-11', src: 'uploads/0-Vibe Coding.jpg', pad: '0' },
+      { idx: 12, id: 'hero-12', src: 'uploads/0-Wiener Geflecht.jpg', pad: '0' },
+      { idx: 13, id: 'hero-13', src: 'uploads/0-Woven.jpg', pad: '0' },
+      { idx: 14, id: 'hero-14', src: 'uploads/0-WOWA_Modell.jpg', pad: '0' },
+    ];
+  }
+
+
+
+  toggleFrag(i) {
+    this.setState(s => {
+      const wasOpen = s.openFrag[i];
+      const openFrag = s.openFrag.map(() => false);
+      openFrag[i] = !wasOpen;
+      return { openFrag };
+    });
+  }
+
+  toggleAngebot(i) {
+    this.setState(s => {
+      const wasOpen = s.openAngebot[i];
+      const openAngebot = s.openAngebot.map(() => false);
+      openAngebot[i] = !wasOpen;
+      return { openAngebot };
+    });
+  }
+
+  // Seven project rows for the Projekt Index.
+  projectDefs() {
+    return [
+      { key: 'schnelle-bilder', thema: 'After Macbeth', type: 'Gestaltung, Methodik', category: 'KI vermitteln', year: '2025, 2026' },
+      { key: 'webknoten', thema: 'Webknoten', type: 'Gestaltung, Methodik', category: 'Künstlerisches Projekt', year: '2026' },
+      { key: 'komplizinnen', thema: 'Künstliche Komplizinnen', type: 'Wissen, Methodik', category: 'KI vermitteln', year: '2026' },
+      { key: 'intuition-algorithmus', thema: 'Intuition & Algorithmus', type: 'Methodik', category: 'KI vermitteln', year: '2026' },
+      { key: 'aaa-framework', thema: 'AAA', type: 'Wissen', category: 'KI vermitteln', year: '2026' },
+      { key: 'cyanotypie', thema: 'Übers Weben', type: 'Gestaltung, Methodik', category: 'Künstlerisches Projekt', year: '2020 - 2026' },
+      { key: 'rezeption', thema: 'Referenzen', type: 'Wissen', category: 'KI vermitteln', year: '2018, 2023, 2026' },
+      { key: 'wooden-wassily', thema: 'Wooden Wassily', type: 'Gestaltung', category: 'Künstlerisches Projekt', year: '2015' },
+    ];
+  }
+
+  // Rich 4-column detail content, keyed by project. Projects not listed here
+  // fall back to the plain single-image detail view.
+  richProjectDetails() {
+    return {
+      webknoten: {
+        subheading: 'Textiles Design',
+        paragraphs: [
+          { heading: 'Gestaltung', text: 'Stoffbahnen verweben sich unter- und übereinander und ergeben ein Fragment der einfachsten Bindung im Weben, der Leinwandbindung. Es entsteht ein Muster aus der Logik des Webens, angewandt auf Körper und Raum. Je nach Kontext verändert sich die Wahrnehmung: Was auf dem Boden als flaches Gitter und in der Luft als skulpturales Objekt lesbar ist, wird am Körper zur gewebten Rüstung.' },
+          { heading: 'Methodik', text: 'Die Arbeit war ausschließlich analog zwischen Handskizzen, Material und Körper. Gemeinsam mit einer Designerin wurde der Körper vermessen, Stoffmuster analysiert und Prototypen anprobiert. Die matt-glänzende Dupion-Seide ist ein Material, das sich durch seine Steifigkeit und Drapierbarkeit architektonisch verhält.' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2026' },
+          { label: 'Material', value: 'Dupion-Seide' },
+          { label: 'Kollaboration', value: 'BiBí Atelier' },
+          { label: 'Fotos (analog und digital)', value: 'Fitz Carraldo' },
+        ],
+        images: [
+          { id: 'webknoten-image-1', ratio: '1665/2067', src: 'uploads/1-webskulpturinluft.jpg', alt: 'Webknoten, gewebte Skulptur über Betonpyramide' },
+          { id: 'webknoten-image-2', ratio: '2067/2067', src: 'uploads/2-webknotenkonzept.jpg', alt: 'Webknoten, Konzept in Leinwandbindung' },
+          { id: 'webknoten-image-3', ratio: '3069/2067', src: 'uploads/3-ankoerper.JPG', alt: 'Webknoten, Trägerin am Wasser vor Betonpyramide' },
+          { id: 'webknoten-image-4', ratio: '1550/2067', src: 'uploads/4-webskulpturaufboden.jpg', alt: 'Webknoten, Gewebe auf Kies' },
+          { id: 'webknoten-image-5', ratio: '2864/1929', src: 'uploads/5-ankoerper.JPG', alt: 'Webknoten, gewebtes Oberteil am liegenden Körper' },
+          { id: 'webknoten-image-6', ratio: '2864/1929', src: 'uploads/6-rueckenansicht.JPG', alt: 'Webknoten, Rückenansicht des gewebten Oberteils' },
+          { id: 'webknoten-image-7', ratio: '1550/2067', src: 'uploads/7-ankoerper.JPG', alt: 'Webknoten, Trägerin im gewebten Oberteil' },
+          { id: 'webknoten-image-8', ratio: '1550/2067', src: 'uploads/8-inluft.jpg', alt: 'Webknoten, Gewebe in der Luft' },
+          { id: 'webknoten-image-9', ratio: '1556/2067', src: 'uploads/9-prozess.jpg', alt: 'Webknoten, Werkzeuge und Skizzenbuch im Prozess' },
+        ],
+      },
+      'wooden-wassily': {
+        subheading: 'Lounge Chair, Raumskulptur',
+        paragraphs: [
+          { heading: 'Gestaltung', text: 'Durch die Neuinterpretation des Marcel-Breuer-Stuhls B3 mit Sperrholz zollt dieser Entwurf dem Designklassiker Respekt und löst sich zugleich von ihm. Vier Rahmen aus gleich breiten Lamellen sind so geneigt, dass sie ergonomischen Sitzkomfort bieten. Naturbelassene Lamellen bilden Sitz, Rücken- und Armlehne, während schwarz beschichtete Lamellen das statische Gerüst markieren. Jede Holzlamelle (im Querschnitt 2,1 × 12,5 cm) ist über Lamellenanker in präzise gefrästen Löchern verbunden; die exakte Ausrichtung lässt die Sperrholzschichten optisch verschmelzen und steigert sowohl Stabilität als auch Präzision der Details. Im Detail als auch in der Struktur entsteht eine harmonische Gesamtfigur, die die Qualitäten beider Materialien betont.' },
+        ],
+        images: [
+          { id: 'wooden-wassily-image-1', ratio: '1969/2460', src: 'uploads/1WOWA_Modell2.jpg', alt: 'Wooden Wassily, Modellfoto im Raum' },
+          { id: 'wooden-wassily-image-2', ratio: '1575/1969', src: 'uploads/2WOWA_Schnitt.jpg', alt: 'Wooden Wassily, Schnittzeichnung mit Ergonomie' },
+          { id: 'wooden-wassily-image-3', ratio: '1575/2100', src: 'uploads/3WOWA_1zu1.jpg', alt: 'Wooden Wassily, 1:1-Modell seitlich' },
+          { id: 'wooden-wassily-image-4', ratio: '1575/1968', src: 'uploads/4WOWA_Axo.jpg', alt: 'Wooden Wassily, Axonometrie' },
+          { id: 'wooden-wassily-image-5', ratio: '1575/1969', src: 'uploads/5WOWA_Prozess.JPG', alt: 'Wooden Wassily, Werkstattprozess' },
+          { id: 'wooden-wassily-image-6', ratio: '1575/2252', src: 'uploads/6WOWA_1zu1Detail.jpg', alt: 'Wooden Wassily, Detail der Lamellenverbindung' },
+          { id: 'wooden-wassily-image-7', ratio: '1575/1969', src: 'uploads/7WOWA_Modell.jpg', alt: 'Wooden Wassily, Modell in der Hand' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2015' },
+          { label: 'Material', value: 'Sperrholz' },
+          { label: 'Maßstab', value: '1:10, 1:1' },
+        ],
+      },
+      komplizinnen: {
+        subheading: 'Essay',
+        paragraphs: [
+          { heading: 'Wissen', text: 'KI im Entwurfsprozess bedeutet mehr als schnelle Bildgenerierung. Der Essay beschreibt anhand meines eigenen KI-Setups, wie ein Team aus dauerhaft eingerichteten KI-Rollen, sogenannten „künstlichen Komplizinnen“, aufgebaut ist und ich so alleine Ideenwettbewerbe bearbeiten konnte, ohne auf kritische Gegenstimmen verzichten zu müssen. KI löst keine Probleme auf Knopfdruck, aber sie verschiebt den Dialog und trainiert das Bewusstsein, den eigenen Prozess aktiv zu steuern.' },
+          { heading: 'Methodik', text: 'Der Kern der Methode: Erst die Rolle definieren, dann die KI einsetzen. Jede Komplizin, von Kuratorin, über Kritikerin bis zur Jurorin wird über fünf Bausteine konfiguriert: Rolle, Charakter, Kontext, Aufgabe, Output. So entsteht keine einmalige Abfrage, sondern eine dauerhafte Gesprächspartnerin mit Gedächtnis und Haltung.' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2026' },
+          { label: 'Kooperation', value: 'Baunetz Campus' },
+          { label: 'Tools', value: 'Langdock' },
+          { label: 'Essay', value: 'online nachlesen ↗', link: 'https://www.baunetz-campus.de/studium/kuenstliche-komplizinnen-warum-ki-mehr-kann-als-schnelle-bilder-10310107' },
+        ],
+        linkLabel: 'Vollständigen Essay lesen ↗',
+        linkUrl: 'https://www.baunetz-campus.de/studium/kuenstliche-komplizinnen-warum-ki-mehr-kann-als-schnelle-bilder-10310107',
+        imagesColSpan: 3,
+        images: [
+          { id: 'komplizinnen-image-1', ratio: '2800/1575', src: 'uploads/1-rollenkarten.jpeg', alt: 'Künstliche Komplizinnen, handschriftliche Rollenkarten: Mentorin, Kuratorin, Nutzerin, Lektorin, Partnerin, Texterin, Kritikerin, Jurorin' },
+          { id: 'komplizinnen-image-2', ratio: '2800/1575', src: 'uploads/2-promptagent.jpeg', alt: 'Künstliche Komplizinnen, Vergleich Chat, Prompt und Komplizin als Gesprächsformen' },
+          { id: 'komplizinnen-image-3', ratio: '2800/1575', src: 'uploads/3-framework.jpeg', alt: 'Künstliche Komplizinnen, Framework mit fünf Bausteinen: Name und Rolle, Charakter, Kontext, Aufgabe, Output' },
+          { id: 'komplizinnen-image-4', ratio: '2800/1575', src: 'uploads/4-rollenprofil.jpeg', alt: 'Künstliche Komplizinnen, Rollenprofil der Texterin Tessa mit den fünf Bausteinen' },
+          { id: 'komplizinnen-image-5', ratio: '2800/1575', src: 'uploads/5-rolleimkontext.jpeg', alt: 'Künstliche Komplizinnen, Kuratorin im Einsatz für Portfolio, Referenzsammlung, Präsentationen und Social Media' },
+          { id: 'komplizinnen-image-6', ratio: '2800/1575', src: 'uploads/6-entwurfszyklus.jpeg', alt: 'Künstliche Komplizinnen, Entwurfszyklus zwischen KI-Output und menschlicher Evaluation mit wechselnden Rollen' },
+          { id: 'komplizinnen-image-7', ratio: '2800/1575', src: 'uploads/7-teamimkontext.jpeg', alt: 'Künstliche Komplizinnen, Rollenkarten Kuratorin, Jurorin, Texterin und Lektorin für jedes Szenario ein anderes Team' },
+        ],
+      },
+      'intuition-algorithmus': {
+        subheading: 'Essay',
+        paragraphs: [
+          { heading: 'Methodik', text: 'Tageslicht ist das Medium, durch das Architektur erlebt wird. Der Essay untersucht anhand meines eigenen Studienentwurfs, der Leinenweberei, wie drei KI-Werkzeuge, eine spezialisierte KI-Lichtplanerin, Bildgeneratoren und Tageslichtsimulationen, den intuitiven Entwurfsprozess ergänzen, hinterfragen und manchmal auch verflachen.' },
+          'Das Ergebnis ist keine Ablehnung der Werkzeuge, aber eine klare Haltung: KI kann Lichtoptimierung unterstützen, aber nur im Zusammenspiel mit dem Gespür für Raum, Material und Nutzung. Le Corbusiers „Spiel unter dem Licht" wird heute mit mehr Daten geplant, dirigiert wird es immer noch von Menschen.',
+        ],
+        facts: [
+          { label: 'Jahr', value: '2026' },
+          { label: 'Kooperation', value: 'Baunetz Campus' },
+          { label: 'Tools', value: 'Langdock, Nano Banana, Midjourney, Forma' },
+          { label: 'Essay', value: 'online nachlesen ↗', link: 'https://www.baunetz-campus.de/studium/zwischen-intuition-und-algorithmus-wenn-ki-tageslicht-plant-10340461' },
+        ],
+        linkLabel: 'Vollständigen Essay lesen ↗',
+        linkUrl: 'https://www.baunetz-campus.de/studium/zwischen-intuition-und-algorithmus-wenn-ki-tageslicht-plant-10340461',
+        imagesColSpan: 3,
+        images: [
+          { id: 'intuition-algorithmus-image-1', ratio: '2800/1575', src: 'uploads/1-Visuelles Gedaechtnis.jpeg', alt: 'Zwischen Intuition und Algorithmus, visuelles Gedächtnis' },
+          { id: 'intuition-algorithmus-image-2', ratio: '2800/1575', src: 'uploads/2-Entwurfsprozess ohne KI.jpeg', alt: 'Zwischen Intuition und Algorithmus, Entwurfsprozess ohne KI' },
+          { id: 'intuition-algorithmus-image-3', ratio: '2800/1575', src: 'uploads/3-Entwurf Leinenweberei- gewebte Fassade.jpeg', alt: 'Zwischen Intuition und Algorithmus, Entwurf Leinenweberei, gewebte Fassade' },
+          { id: 'intuition-algorithmus-image-4', ratio: '2800/1575', src: 'uploads/4-Entwurfsprozess mit KI.jpg', alt: 'Zwischen Intuition und Algorithmus, Entwurfsprozess mit KI' },
+          { id: 'intuition-algorithmus-image-5', ratio: '2800/1575', src: 'uploads/5-KI-Experiment- Prozess in Midjourney.jpeg', alt: 'Zwischen Intuition und Algorithmus, KI-Experiment: Prozess in Midjourney' },
+          { id: 'intuition-algorithmus-image-6', ratio: '2800/1575', src: 'uploads/6-Arten, KI im Bezug auf Lichtplanung zu testen.jpg', alt: 'Zwischen Intuition und Algorithmus, Arten, KI im Bezug auf Lichtplanung zu testen' },
+          { id: 'intuition-algorithmus-image-7', ratio: '2800/1575', src: 'uploads/7-KI-Experiment- Rendering im Regen.jpg', alt: 'Zwischen Intuition und Algorithmus, KI-Experiment: Rendering im Regen' },
+        ],
+      },
+      rezeption: {
+        subheading: 'Die Arbeit mit Referenzen im Entwurfsprozess',
+        paragraphs: [
+          { heading: 'Wissen', text: '2018 entstand ein Katalog von Rezeptionsverfahren. Ausgangspunkt war die Beobachtung, dass Begriffe wie Adaption, Analogie, Collage oder Zitat unterschiedlich verwendet oder unpräzise gebraucht werden. Der Katalog definiert die Verfahren und macht sie anhand konkreter Beispiele unterscheidbar.' },
+          { heading: '', text: '2023 verschob sich die Frage, wie mit Referenzen entworfen werden kann. Im Manuskript wurden die Denkprozesse Beobachten, Sammeln, Erinnern, Vorstellen und Erfinden untersucht: Wie gelangen Referenzen in unser Repertoire, wie werden sie erinnert und wie werden sie im Entwurf wieder wirksam?' },
+          { heading: '', text: '2026 wird diese Frage durch generative KI neu verhandelt. Referenzbilder können heute direkt in KI-Systeme eingespeist, miteinander verknüpft und transformiert werden. Damit verändert sich die Beziehung zwischen Referenz und Entwurf – und es stellt sich neu die Frage, was es bedeutet, mit Referenzen zu entwerfen.' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2018, 2023, 2026' },
+          { label: 'Art des Projekts', value: 'Katalog, Manuskript, laufende Forschung' },
+        ],
+        imagesColSpan: 3,
+        images: [
+          { id: 'rezeption-image-1', ratio: '2067/2171', src: 'uploads/1 - rezeptionsverfahren.jpg', alt: 'Rezeption, Katalog der Rezeptionsverfahren' },
+          { id: 'rezeption-image-2', ratio: '1181/1575', src: 'uploads/2- collage.jpg', alt: 'Rezeption, Katalogseite Collage' },
+          { id: 'rezeption-image-3', ratio: '2800/1575', src: 'uploads/3-Entwurfsprozess ohne KI.jpeg', alt: 'Rezeption, Entwurfsprozess ohne KI' },
+          { id: 'rezeption-image-4', ratio: '1654/2067', src: 'uploads/4-sammelnunderinnern.jpg', alt: 'Rezeption, Sammeln und Erinnern' },
+          { id: 'rezeption-image-5', ratio: '1654/2067', src: 'uploads/5-vorstellen.jpg', alt: 'Rezeption, Vorstellen' },
+          { id: 'rezeption-image-6', ratio: '2800/1575', src: 'uploads/6-Entwurfsprozess mit KI.jpg', alt: 'Rezeption, Entwurfsprozess mit KI' },
+          { id: 'rezeption-image-7', ratio: '2626/1476', src: 'uploads/7-referenzeninKI.jpg', alt: 'Rezeption, Referenzen in KI' },
+        ],
+      },
+      cyanotypie: {
+        subheading: 'Serie',
+        images: [
+          { id: 'weben-image-1', ratio: '1585/2362', src: 'uploads/1-cyanotypie.jpg', alt: 'Übers Weben, Cyanotypie' },
+          { id: 'weben-image-2', ratio: '1476/1969', src: 'uploads/2-cyanotypie.jpg', alt: 'Übers Weben, Cyanotypie' },
+          { id: 'weben-image-3', ratio: '1575/1969', src: 'uploads/3-cad-webstruktur.jpg', alt: 'Übers Weben, CAD-Webstruktur' },
+          { id: 'weben-image-4', ratio: '1575/1969', src: 'uploads/4-cadwebaxonometrie.jpg', alt: 'Übers Weben, CAD-Axonometrie' },
+          { id: 'weben-image-5', ratio: '3874/1575', src: 'uploads/5-webfassade.jpg', alt: 'Übers Weben, Webfassade' },
+          { id: 'weben-image-6', ratio: '1575/1969', src: 'uploads/6-webfassadedetail.jpg', alt: 'Übers Weben, Webfassade Detail' },
+          { id: 'weben-image-7', ratio: '1772/2362', src: 'uploads/7-wollefaerben.jpg', alt: 'Übers Weben, Wolle färben' },
+          { id: 'weben-image-8', ratio: '1476/1969', src: 'uploads/8-tapisserie.jpg', alt: 'Übers Weben, Tapisserie' },
+          { id: 'weben-image-9', ratio: '1889/2362', src: 'uploads/9-stuetzenaxo.jpg', alt: 'Übers Weben, Stützenaxonometrie' },
+        ],
+        paragraphs: [
+          { heading: 'Gestaltung', text: 'Übers Weben (in Anlehnung an Anni Albers Werk On Weaving) untersucht, wie aus einer einfachen Über-/Unter-Logik und deren Interpretation räumliche Figuren werden. In unterschiedlichen Medien werden Materialität, Transparenzen und Abläufe getestet – als Fassade, als Tapisserie, als Tragwerk oder als strukturelles Bild. Die Serie zeigt, wie sich dieselbe Struktur je nach Material, Lichteinfall und Bewegung verändert. Sie macht das Potential von Webstrukturen in unterschiedlichen Kontexten sichtbar.' },
+          { heading: 'Methodik', text: 'Die Arbeit bewegt sich bewusst zwischen analogen und digitalen Medien. Es entstehen gewebte Proben, Färbeversuche und Cyanotypien, die dieselben Muster körperlich und zeitlich erfahrbar machen. Durch das permanente Hin- und Herwechseln zwischen Bildschirm, Webstuhl und Dunkelkammer werden Regeln und Prozesse getestet. So entsteht weniger eine fertige Form als ein offenes Vokabular von Webstrukturen, das sich auf unterschiedliche Maßstäbe und Materialien übertragen lässt.' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2020 - 2026' },
+          { label: 'Tools', value: 'Cyanotypie, Weben (Wolle färben und Rahmen aufsetzen), CAD-Zeichnungen, Modelle' },
+        ],
+      },
+      'schnelle-bilder': {
+        subheading: 'Fiktives Bühnenbild',
+        imagesColSpan: 2,
+        images: [
+          { id: 'aftermacbeth-image-1', ratio: '1760/2185', src: 'uploads/1aftermacbeth_nanobanana.jpg', alt: 'After Macbeth, Nano Banana Rendering' },
+          { id: 'aftermacbeth-image-3', ratio: '1903/2362', src: 'uploads/2aftermacbeth_midjourneystudies.jpg', alt: 'After Macbeth, Midjourney-Studien' },
+          { id: 'aftermacbeth-image-2', ratio: '2088/1476', src: 'uploads/3aftermacbeth_competitionlayout.jpg', alt: 'After Macbeth, Wettbewerbslayout' },
+          { id: 'aftermacbeth-image-4', ratio: '2626/1476', src: 'uploads/4aftermacbeth_gendooptimierung.jpg', alt: 'After Macbeth, Gendo-Optimierung' },
+        ],
+        paragraphs: [
+          { heading: 'Gestaltung', text: 'After Macbeth ist eine räumliche Reflexion über Macht und Sichtbarkeit. Eine Corten-Doppelhelix steht auf der Bühne; zur Audience hin offen, nach hinten geschlossen. Figuren kreuzen sich, verschwinden hinter der Achse und tauchen auf der anderen Seite wieder auf. Shakespeares Tragodie wird nicht nacherzählt, aber in eine Geometrie übersetzt, in der Gesehenwerden und Verstecken Taktik wird.' },
+          { heading: 'Methodik', text: 'August 2025: Erste Midjourney-Studien zu Erkundungen von Szenerie, Licht und Material. Entwicklung der Struktur in ArchiCad. Geometrie in ChatGPT (DALL-E 3) Bildgenerierung eingespeist. Atmosphärisch war das Ergebnis überzeugend, im Detail (z.B. Gesichtszüge) nicht.\n' },
+          'Juli 2026: Testen neuer Möglichkeiten in Gendo, mit den Ziel, ein fotorealistisches Rendering aus der Vorlage des ChatGPT-Bilds zu erstellen. Technisch besser gemacht als das Vorgängerbild, war aber die künstlerische Spannung wegoptimiert.',
+          'August 2026. Das Original-Rendering von 2025 wurde in Nano Banana Pro mit einer einzigen Korrektur, die unscharfen Gesichter der Figuren,  weiterbearbeitet. Die Erkenntnis: bessere Tools bedeuten nicht bessere Bilder.',
+        ],
+        facts: [
+          { label: 'Jahr', value: '2025, 2026' },
+          { label: 'Art des Projekts', value: 'Ideenwettbewerb' },
+          { label: 'Preis', value: 'The Architects Stair 2, Buildner (Anerkennung)' },
+          { label: 'Tools', value: 'Midjourney, ArchiCad, ChatGPT, \nGendo, Nano Banana' },
+          { label: 'Interview zum Projekt', value: 'hier nachlesen ↗', link: 'https://architecturecompetitions.com/the-architects-stair-competition-participants-natalie-maria-burkhart-8028' },
+        ],
+        linkLabel: 'Interview zum Projekt ↗',
+        linkUrl: 'https://architecturecompetitions.com/the-architects-stair-competition-participants-natalie-maria-burkhart-8028',
+      },
+      'aaa-framework': {
+        subheading: 'Framework',
+        imagesColSpan: 3,
+        paragraphs: [
+          { heading: 'Wissen', text: 'Mein Zugang zu Algorithmen begann nicht mit Code, sondern mit Material. Die binäre Entscheidung des einfachsten Webmusters – Über, Unter, Über, Unter – wiederholt über Tausende von Fäden, erzeugt Struktur und Variation. Mit dem Jacquard-Webstuhl wurden Muster zu codierten Anweisungen auf Lochkarten, ein Prinzip, das digitale Systeme bis heute prägt.' },
+          'AAA (Algorithmic Accomplices in Architecture) ist ein Framework, das aus dieser Erfahrung mit Material, Entwurf und KI gewachsen ist. Wie beim Weben produziert KI keine fertigen Entwürfe, sondern Fragmente, die erst durch Beziehungen Bedeutung gewinnen. Im AAA-Framework werden Datensätze zur Kettfaden, Entwurfsentscheidungen zum Schuss, Prompts und Werkzeuge zum Webstuhl.',
+          '– Dialog: Rollenbasierte KI – etwa als Kritikerin, Jurorin oder Autorin – verändert das Gespräch über Entwurf und macht implizite Entscheidungen sichtbar.',
+          '– Urteil: Wenn Architekt:innen zunehmend kuratieren statt jede Variante selbst zu zeichnen, wird die Frage zentral, wo Optimierung endet und architektonisches Urteil beginnt.',
+          '– Wissen: KI-Modelle lernen aus dokumentierter Architekturgeschichte und reproduzieren ihre blinden Flecken. AAA fragt, welche Formen räumlichen Wissens fehlen, wenn Datensätze zur Grundlage zukünftiger Entwürfe werden.',
+          'AAA ist damit weniger ein geschlossenes System als eine laufende Forschungs- und Entwurfspraxis, in der Regeln, Intuition und maschinelles Lernen immer wieder neu miteinander verhandelt werden.',
+        ],
+        images: [
+          { id: 'aaa-framework-image-1', ratio: '2100/1575', src: 'uploads/1-jacquardloom and cards.jpg', alt: 'AAA Framework, Jacquard-Webstuhl und Lochkarten' },
+          { id: 'aaa-framework-image-2', ratio: '2053/2566', src: 'uploads/2-framework.jpg', alt: 'AAA Framework, Diagramm des Frameworks' },
+        ],
+        facts: [
+          { label: 'Jahr', value: '2026' },
+          { label: 'Art des Projekts', value: 'Framework' },
+        ],
+      },
+    };
+  }
+
+  currentProjectDefs() {
+    return [
+      { slotId: 'current-project-1', placeholder: 'Projektbild', title: 'Wissen', audience: 'Für Redaktion, Hochschule oder Institution:', category: 'Vorträge, Essays, Lehre', description: 'Vorträge und Texte über KI als gestalterische Frage: Was verschiebt sich im Entwurfsprozess, welche neuen Verantwortlichkeiten entstehen, wenn Modelle „mitdenken"?', modules: [
+        { number: '', heading: 'Mögliche Formate', intro: '', bullets: ['Keynote, Vortrag, Essay / Kolumne'] },
+        { number: '', heading: 'Beispielthemen', intro: '', bullets: ['KI als Komplizin: Autorinnenschaft im Entwurfsprozess', 'Intuition und Algorithmus: Licht, Atmosphäre, Entscheidung', 'Schneller als Haltung: KI-Entwicklung, Unsicherheit, Entscheidung'] },
+      ], modulesCta: 'Themenvorschlag anfragen →', homeDescription: 'KI als gestalterische Frage vermitteln – für Hochschulen, Institutionen und Redaktion.' },
+      { slotId: 'current-project-2', placeholder: 'Projektbild', title: 'Methodik', audience: 'Für Solo-Selbstständige und Architekt:innen mit Entscheidungsverantwortung:', category: '1:1, Orientierung, Begleitung', description: 'Im kostenlosen Erstgespräch klären wir Voraussetzungen, Dauer der Begleitung, Ziele und Kontext. Danach ist klar, welche Form der Begleitung passt.', modules: [
+        { number: '1', heading: 'Orientierung / Haltung', intro: 'Wenn zuerst die Frage geklärt werden muss, wo KI sinnvoll ist:', bullets: ['Tool-Überblick und Einordnung', 'Haltung, Grenzen, Autorinnenschaft'] },
+        { number: '2', heading: 'Anwendung / Sessions', intro: 'Wenn KI konkret in Arbeitsabläufe übersetzt werden soll:', bullets: ['Bildgenerierung (Ziel, Promptlogik, Referenzen, Grenzen)', 'Claude-Einführung (Text, Struktur, Denkpartner:in)', 'Agentinnensystem in Langdock (Rollen, Aufgaben, Qualitätssicherung)', 'Weitere Use Cases möglich, je nach Bedarf: Datenstrukturierung, Onboarding, Wettbewerbe, Präsentationen, Kommunikation'] },
+        { number: '3', heading: 'Implementierung / Basis-Begleitung', intro: 'Wenn KI im Büro strukturiert implementiert werden soll:', bullets: ['Basis-Begleitung beim Implementierungsprozess'] },
+      ], modulesNote: 'Im Anschluss an die Begleitung besteht optional die Möglichkeit, innerhalb von 4 Wochen Rückfragen per Mail zu stellen.', modulesCta: 'Kostenloses Erstgespräch anfragen →', homeDescription: 'KI in die eigene architektonische Praxis übersetzen, ohne Gestaltung zu delegieren.' },
+      { slotId: 'current-project-3', placeholder: 'Projektbild', title: 'Gestalten', audience: 'Für Architekt:in, Lehrende:r oder Kurator:in:', category: 'Kooperative Projekte', description: 'Gemeinsam neue Formen entwickeln, in denen Material und Algorithmus zusammenkommen.', modules: [
+        { number: '', heading: 'Mögliche Formate', intro: '', bullets: ['Workshop, Seminar/Studio, Konzeptentwicklung, Ausstellungskapitel, Lecture + Lab, künstlerische Kollaboration'] },
+        { number: '', heading: 'Beispielthemen', intro: '', bullets: ['KI als Material: Referenzen, Regeln, Iteration, Auswahl', 'Autorinnenschaft im Prozess: Rollen, Entscheidungspunkte, Verantwortung', 'Atmosphäre und Wahrnehmung: was sich simulieren lässt – und was nicht'] },
+      ], modulesCta: 'Kooperation vorschlagen →', homeDescription: 'Du bist Architekt:in, Lehrende:r oder Kurator:in und willst KI als Material im Prozess untersuchen. Wir entwickeln gemeinsam Workshops und künstlerische Projekte, in denen Material und Algorithmus zusammenkommen.' },
+    ];
+  }
+
+  fragmentDefs() {
+    return [
+      { title: 'Prozess > Output', question: 'Was macht KI mit dem Prozess? Was entsteht neu, wo liegen Grenzen? Wo bleibt menschliches Gespür unersetzbar?', text: 'KI verändert Workflows grundlegend. Aber nur, wer seinen Prozess wirklich versteht, kann entscheiden, wo ein Werkzeug sinnvoll ist und wo es den Denkprozess unterbricht. Das gilt genauso für analoge Verfahren für künstlerische Projekte und Denkprozesse. Mich interessiert, welche Schritte aufeinander folgen und wie sie sich bedingen, mehr als der schnelle Weg zum Output. Prozessgetriebenes Arbeiten bedeutet, Entstehung sichtbar zu machen und daraus neue Erkenntnisse zu gewinnen.' },
+      { title: 'Fragment > Ganzes', question: 'Was bleibt Ausschnitt, was wird Ganzes? Wo genügt der Blick auf einen Teil?', text: 'Ein Fragment ist ein Ausschnitt eines größeren Ganzen, das eine eigene Geschichte erzählt. Ein Detail erzählt die Haltung eines Gebäudes. Ein Raumprogramm zeigt, wie gedacht wurde, nicht nur was gebaut wurde. Eine einzelne Information kann Ausgangspunkt für eine neue Untersuchung sein, gerade weil sie neue Zusammenhänge erst möglich macht. KI arbeitet mit Fragmenten: mit dem, was ich ihr zeige, nicht mit dem, was ich weiß. Das ist ihre Grenze und gleichzeitig ihr Potenzial. Der Ausschnitt zwingt zur Präzision und verlangt, dass ich genau weiß, was ich frage und warum.' },
+      { title: 'Komplizin > Werkzeug', question: 'Wo wird KI zur Gestaltungspartnerin, wo bleibt sie bloßes Werkzeug?', text: 'Das Wort Komplizin impliziert mehr als Unterstützung. Es impliziert Verstrickung und Verstrickung wirft Fragen auf. Wenn KI in den Entwurfsprozess eintritt, beschleunigt sie nicht einfach bestehende Abläufe. Sie fragt, wer entscheidet, wer Autorin ist und wer Verantwortung trägt. Ich denke KI deshalb nicht als Werkzeug, sondern als Gegenüber, das mitdenkt und widerspricht. Partnerschaft heißt dann produktive Reibung, bewusste Eigenständigkeit, und die Bereitschaft, Entscheidungen zu begründen.' },
+    ];
+  }
+
+  // Three collapsible categories at the bottom of the "Über mich" panel.
+  cvCategoryDefs() {
+    return [
+      { heading: 'Werkzeuge', analogText: 'Textilarbeit, Fotografie, Keramik, Schreiben, Skizzieren', digitalText: 'KI-Sprach- und Agentensysteme, Bildgeneratoren, Vibe Coding, Adobe Tools, ArchiCad, Solibri' },
+      { heading: 'Werdegang', items: [
+        { title: 'Praktische Erfahrung', isGroupHeading: true },
+        { title: 'aktuell bei Mohr Niklas Architekten, davor bei Allcolours Architecture, Delugan Meissl, Andreas Gruber und Kuehn Malvezzi', org: '', date: '', isItem: true },
+        { title: 'Aus- und Weiterbildung', isGroupHeading: true },
+        { title: 'Weiterbildung in KI und BIM, darunter Master Business of AI (Leaders of AI), KI-Expertinnen-Ausbildung (Akademie für Raum und Wandel) und BIM Professional Certification Practitioner (buildingSMART Austria). Studium der Architektur mit MSc. (Technischen Universität Wien) und BSc. (Bauhaus-Universität Weimar)', org: '', date: '', isItem: true },
+        { title: 'Auszeichnungen und Stipendien', isGroupHeading: true },
+        { title: 'Auszeichnungen und Anerkennungen bei Ideen- und offenen Wettbewerben, „The next generation“ des Österreichischen Stahlbauverbands, Deutschlandstipendium und Baumeister Academy Stipendium', org: '', date: '', isItem: true },
+      ]},
+
+      { heading: 'Kollaborateur:innen', items: [
+        { title: 'Akademie für Raum und Wandel, Baumeister Architekturmagazin, Bauhaus-Universität Weimar, Baunetz Campus, Brown University, Women Writing Architecture und BiBí Atelier', org: '', date: '', isItem: true },
+      ]},
+    ];
+  }
+
+  toggleCvCat(i) {
+    this.setState(s => {
+      const wasOpen = s.openCvCat[i];
+      const openCvCat = s.openCvCat.map(() => false);
+      openCvCat[i] = !wasOpen;
+      return { openCvCat };
+    });
+  }
+
+  selectProject(key) {
+    this.setState({ selectedProject: key });
+    const panel = document.querySelector('[data-scroll-root="projekt-index"]');
+    if (panel) panel.scrollTop = 0; else window.scrollTo(0, 0);
+  }
+
+  goHome = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    this.setState({ indexOpen: false, anfrageOpen: false, impressumOpen: false, cvOpen: false });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  toggleIndex = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    this.setState(s => {
+      if (s.indexOpen && s.selectedProject) return { selectedProject: null };
+      return { indexOpen: !s.indexOpen, selectedProject: null, anfrageOpen: false, impressumOpen: false, cvOpen: false };
+    });
+  };
+  closeIndex = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ indexOpen: false, selectedProject: null }); };
+  toggleAnfrage = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ anfrageOpen: !s.anfrageOpen, indexOpen: false, impressumOpen: false, cvOpen: false })); };
+  setFilterWho = (i) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ filterWho: s.filterWho === i ? null : i })); };
+  toggleShowAllFormate = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ showAllFormate: !s.showAllFormate })); };
+  toggleImpressum = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ impressumOpen: !s.impressumOpen, indexOpen: false, anfrageOpen: false, cvOpen: false })); };
+  toggleCv = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    this.setState(s => ({ cvOpen: !s.cvOpen, indexOpen: false, anfrageOpen: false, impressumOpen: false }));
+  };
+
+  navStyle(active) {
+    return {
+      fontFamily: "var(--font-display)", fontWeight: 600,
+      fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase',
+      color: 'var(--black)',
+      textDecoration: 'none', cursor: 'pointer', whiteSpace: 'nowrap',
+      transition: 'color .3s cubic-bezier(.22,1,.36,1)',
+    };
+  }
+
+  navRuleStyle(active) {
+    return {
+      width: '100%',
+      height: active ? '2px' : '1px',
+      background: 'var(--black)',
+      transition: 'all .3s cubic-bezier(.22,1,.36,1)',
+    };
+  }
+
   renderVals() {
-    return { mailHoverStyle: 'opacity:0.6' };
+    const anyOpen = this.state.indexOpen || this.state.anfrageOpen || this.state.impressumOpen || this.state.cvOpen;
+    const rowBase = {
+      paddingTop: '10px', paddingBottom: '10px',
+      borderTop: '1px solid #000',
+      display: 'grid',
+      gridTemplateColumns: this.state.isNarrow ? '1.4fr 1fr 0.7fr' : 'repeat(4,1fr)',
+      columnGap: this.state.isNarrow ? '10px' : 'clamp(16px,2vw,24px)',
+      alignItems: 'baseline',
+    };
+    const projectRows = this.projectDefs();
+    const selectedDef = projectRows.find(p => p.key === this.state.selectedProject);
+    const richDetail = this.richProjectDetails()[this.state.selectedProject];
+    const selectedIdx = projectRows.findIndex(p => p.key === this.state.selectedProject);
+    const nextProjectDef = selectedIdx >= 0 ? projectRows[(selectedIdx + 1) % projectRows.length] : null;
+    const prevProjectDef = selectedIdx >= 0 ? projectRows[(selectedIdx - 1 + projectRows.length) % projectRows.length] : null;
+    const slotDefsByIdx = this.heroSlotDefs();
+    const filterOptStyle = (active) => ({
+      cursor: 'pointer', fontFamily: 'var(--font-display)', fontWeight: 600,
+      fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)',
+      borderTop: '1px solid #000', padding: '10px 0 10px 28px',
+      textDecoration: active ? 'underline' : 'none',
+    });
+    const whoLabels = ['Wissen, Einordnung und Haltung', '1:1 Begleitung für konkrete Use Cases', 'Gestalterische Zusammenarbeit'];
+    const whoAudiences = ['Für Lehrende, Redakteur:innen und institutionelle Akteur:innen', 'Für Architekt:innen', ''];
+    const whoCtaDefs = [
+      {
+        title: 'Wissen, Einordnung und Haltung',
+        description: '',
+        stepsIntro: '',
+        steps: [
+          {
+            title: 'Lehrende:r',
+            meta: 'Impulsvortrag und/oder strategische Begleitung',
+            body: 'Du möchtest KI im Architekturstudium nicht nur als Werkzeug, sondern als Gegenstand des Entwerfens und Reflektierens behandeln?\nIch gebe Impulsvorträge für Entwurfsstudios und begleite Lehrende bei der Entwicklung von Lehrveranstaltungen, die technische Möglichkeiten mit Entwurfspraxis, Autor:innenschaft und architektonischem Urteil verbinden.\nSchreibe mir deine Idee für einen ersten Austausch.',
+            items: [], hasItems: false, after: '', hasAfter: false,
+            ctaLabel: 'Format anfragen', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: Format für Lehre'), hasCta: true,
+          },
+          {
+            title: 'Redakteur:in',
+            meta: 'Essay und Fachbeiträge',
+            body: 'Du suchst eine architektonische Perspektive auf KI, die über Toolneuheiten und schnelle Bilder hinausgeht?\nIch schreibe Essays und Fachbeiträge zu KI in gestalterischen Prozessen, aus der Perspektive von Architektur, Entwurf und Praxis.\nMögliche Themen:',
+            items: [
+              'Was bedeutet die zunehmende Geschwindigkeit der KI-Entwicklung für architektonische Prozesse?',
+              'Was verändert sich, wenn KI-Bilder zunehmend realistisch werden?',
+              'Welchen Stellenwert haben Referenzen, wenn man sie in die KI einspeist, und diese dann neue Varianten erzeugt?',
+            ],
+            hasItems: true,
+            after: 'Schreibe mir deine Idee für einen Beitrag und wir kommen ins Gespräch.',
+            hasAfter: true,
+            ctaLabel: 'Beitrag anfragen', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: Beitrag'), hasCta: true,
+          },
+          {
+            title: 'Institutionelle:r Akteur:in (Kammermitarbeiter:in, Kurator:in, …)',
+            meta: 'Vorträge, Konzepte und Formatentwicklung',
+            body: 'Du möchtest ein Format zu Architektur und KI entwickeln?\nIch begleite die Konzeption von Formaten, die aktuelle Entwicklungen einordnen und mit Fragen zu Gestaltung, Verantwortung und Praxis verbinden. Oder vermittle selbst direkt Wissen in Form eines Vortrages.\nDabei kann es um ein konkretes Veranstaltungsformat, eine Ausstellung, ein Bildungsangebot oder eine längerfristige Zusammenarbeit gehen.\nSchreibe mir deine Idee für einen ersten Austausch.',
+            items: [], hasItems: false, after: '', hasAfter: false,
+            ctaLabel: 'Format anfragen', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: Format'), hasCta: true,
+          },
+        ],
+        closing: '',
+        cta: '',
+      },
+      {
+        title: '1:1 Begleitung für konkrete Use Cases',
+        description: '',
+        stepsIntro: '',
+        steps: [
+          {
+            title: 'Orientierungsgespräch',
+            meta: '',
+            body: 'Du möchtest verstehen, was KI für deine eigene architektonische Praxis bedeutet, ohne dich durch die tägliche Flut an Tools und Entwicklungen arbeiten zu müssen?\nIm Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten.\nDu gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.',
+            items: [], hasItems: false, after: '', hasAfter: false,
+            ctaLabel: 'Orientierungsgespräch anfragen', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: Orientierungsgespräch'), hasCta: true,
+          },
+          {
+            title: 'Konkrete Anwendung in Sessions',
+            meta: '',
+            body: 'Du arbeitest im Team oder als Solo-Selbstständige und möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?\nVielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.\nIch biete kein Komplettpaket über alle verfügbaren KI-Tools. Stattdessen gebe ich etablierte und in eigener Praxis getestete Workflows weiter. Ich teste ständig neue Werkzeuge und kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.\nMögliche Themen sind zum Beispiel:',
+            items: [
+              'Einführung in Claude',
+              'Konsistente Bilder mit KI',
+              'Aufbau von Agentensystemen, z. B. mit Langdock',
+            ],
+            hasItems: true,
+            after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter.\nSchreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
+            hasAfter: true,
+            ctaLabel: 'Anliegen schildern', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anliegen: 1:1 Begleitung'), hasCta: true,
+          },
+        ],
+        closing: '',
+        cta: '',
+      },
+      { title: 'Gestalterische Zusammenarbeit', description: 'Du arbeitest an, mit oder über Architektur und möchtest untersuchen, was entsteht, wenn Material, Raum und algorithmische Systeme aufeinandertreffen? Ich verbinde architektonisches Denken mit analogem Handwerk und digitalen Werkzeugen, um neue Formen und Prozesse zu entwickeln.', closing: 'Das kann als Kooperation, freie Arbeit oder Auftragsprojekt entstehen, immer mit Raum für Experiment und gemeinsames Erproben.\n\nDu hast eine Idee, einen offenen Gedanken oder ein Material, das du weiterdenken möchtest? Schreibe mir und wir kommen ins Gespräch.', cta: 'Projekt anfragen' },
+    ];
+    const matchedDef = this.state.filterWho !== null ? whoCtaDefs[this.state.filterWho] : null;
+    const whoOptions = whoLabels.map((label, i) => {
+      const d = whoCtaDefs[i] || {};
+      const open = this.state.filterWho === i;
+      return {
+        label, open,
+        audience: whoAudiences[i] || '',
+        hasAudience: !!whoAudiences[i],
+        onClick: this.setFilterWho(i),
+        glyph: open ? '–' : '+',
+        ruleStyle: this.navRuleStyle(open),
+        headingStyle: { fontFamily: 'var(--font-serif)', fontWeight: 400, fontSize: 'clamp(1.5rem,3vw,2.15rem)', letterSpacing: '-0.005em', lineHeight: 1.22, color: 'var(--black)' },
+        description: d.description || '',
+        hasDescription: !!d.description,
+        stepsIntro: d.stepsIntro || '',
+        hasStepsIntro: !!d.stepsIntro,
+        steps: (d.steps || []).map(st => ({ ...st, hasMeta: !!st.meta })),
+        hasSteps: !!(d.steps && d.steps.length),
+        closing: d.closing || '',
+        hasClosing: !!d.closing,
+        cta: d.cta || '',
+        hasCta: !!d.cta,
+        mailtoHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: ' + (d.title || label)),
+      };
+    });
+    const matchedAng = matchedDef
+      ? {
+          ...matchedDef,
+          steps: matchedDef.steps || [],
+          stepsIntro: matchedDef.stepsIntro || '',
+          closing: matchedDef.closing || '',
+          hasSteps: !!(matchedDef.steps && matchedDef.steps.length),
+          hasDescription: !!matchedDef.description,
+          hasStepsIntro: !!matchedDef.stepsIntro,
+          hasClosing: !!matchedDef.closing,
+          mailtoHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anfrage: ' + matchedDef.title),
+        }
+      : { title: '', audience: '', category: '', description: '', cta: '', steps: [], stepsIntro: '', closing: '', hasSteps: false, hasDescription: false, hasStepsIntro: false, hasClosing: false, mailtoHref: 'mailto:mail@natalieburkhart.com' };
+
+    return {
+      showHeroIntro: !this.state.introPassed,
+      imgStyle: { width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1)' },
+      // Fixed hero media (real files, sent via chat). Display order comes
+      // from heroOrder, set from the private Hero-Medien overview panel.
+      heroSlides: this.state.heroOrder.map((slotIdx, position) => ({
+        ...slotDefsByIdx[slotIdx],
+        src: slotDefsByIdx[slotIdx].src || null,
+        noSrc: !slotDefsByIdx[slotIdx].src,
+        opacity: this.state.heroIndex === position ? 1 : 0,
+        pointerEvents: this.state.heroIndex === position ? 'auto' : 'none',
+        loading: position === 0 ? 'eager' : 'lazy',
+      })),
+      project3ColStyle: { ...this.colStyle(4, 1), display: 'flex', flexDirection: 'column', gap: '12px' },
+      projects: projectRows.map((p, i) => {
+        const clickable = !p.format || p.format !== 'Coming Soon';
+        const aiKeys = ['schnelle-bilder', 'komplizinnen', 'intuition-algorithmus', 'aaa-framework', 'rezeption'];
+        return {
+          ...p,
+          hasAiTag: aiKeys.includes(p.key),
+          onClick: clickable ? () => this.selectProject(p.key) : null,
+          rowStyle: { ...rowBase, ...(i === 0 ? { borderTop: 'none' } : {}), cursor: clickable ? 'pointer' : 'default', color: '#000' },
+          rowHoverStyle: {},
+        };
+      }),
+      showProjectList: this.state.indexOpen && !this.state.selectedProject,
+      showProjectDetail: this.state.indexOpen && !!this.state.selectedProject,
+      selectedProjectThema: selectedDef ? selectedDef.thema : '',
+      selectedProjectSlotId: this.state.selectedProject ? 'project-' + this.state.selectedProject : 'project-none',
+      selectedProjectIsRich: !!richDetail,
+      selectedProjectIsSimple: !richDetail,
+      richTextColStyle: this.colStyle(1, 3),
+      richFactsColStyle: { ...this.colStyle(4, 1), marginTop: this.state.isNarrow ? '44px' : 0, marginBottom: this.state.isNarrow ? '36px' : 0 },
+      impressumTextColStyle: { ...this.colStyle(1, 3), order: this.state.isNarrow ? 2 : 0 },
+      impressumFactsColStyle: { ...this.colStyle(4, 1), order: this.state.isNarrow ? 1 : 0 },
+      selectedProjectParagraphs: richDetail ? (richDetail.paragraphs || []).map(p => typeof p === 'string' ? { text: p, heading: '' } : { text: p.text, heading: p.heading || '' }) : [],
+      selectedProjectFacts: richDetail ? (richDetail.facts || []).map(f => ({ ...f, noLink: !f.link })) : [],
+      selectedProjectHeading: richDetail ? (richDetail.heading || '') : '',
+      selectedProjectType: richDetail ? (richDetail.subheading || (selectedDef ? selectedDef.type : '') || '') : '',
+      selectedProjectLinkUrl: richDetail ? (richDetail.linkUrl || '') : '',
+      selectedProjectLinkLabel: richDetail ? (richDetail.linkLabel || '') : '',
+      nextProjectThema: nextProjectDef ? nextProjectDef.thema : '',
+      goToNextProject: nextProjectDef ? ((e) => { if (e && e.preventDefault) e.preventDefault(); this.selectProject(nextProjectDef.key); }) : ((e) => { if (e && e.preventDefault) e.preventDefault(); }),
+      prevProjectThema: prevProjectDef ? prevProjectDef.thema : '',
+      goToPrevProject: prevProjectDef ? ((e) => { if (e && e.preventDefault) e.preventDefault(); this.selectProject(prevProjectDef.key); }) : ((e) => { if (e && e.preventDefault) e.preventDefault(); }),
+      selectedProjectImagesColStyle: { ...this.colStyle(1, (richDetail && richDetail.imagesColSpan) || 2), display: 'flex', flexDirection: 'column', gap: 'clamp(16px,2vw,24px)', marginTop: 'clamp(24px,3vw,36px)' },
+      selectedProjectImages: (richDetail ? richDetail.images : []).map(img => ({
+        id: img.id, src: img.src || null, noSrc: !img.src, alt: img.alt || '', wrapStyle: { width: '100%', aspectRatio: img.ratio },
+      })),
+      closeIndex: this.closeIndex,
+      headerColor: 'var(--black)',
+      showTopHeader: this.state.isNarrow ? (!anyOpen && !this.state.selectedProject) : true,
+      introActive: !this.state.introPassed && !this.state.heroTitleDone && !this.state.scrolledPastHero,
+      headerRevealOpacity: (this.state.heroTitleDone || this.state.scrolledPastHero || this.state.introPassed) ? 1 : 0,
+      headerRevealTransform: (this.state.heroTitleDone || this.state.scrolledPastHero || this.state.introPassed) ? 'translateY(0)' : 'translateY(-8px)',
+      bottomChromeOpacity: (!this.state.introPassed && !this.state.heroTitleDone && !this.state.scrolledPastHero) ? 0 : 1,
+      navPointerEvents: (this.state.heroTitleDone || this.state.scrolledPastHero) ? 'auto' : 'none',
+      fragments: this.fragmentDefs().map((f, i) => ({
+        ...f,
+        open: !!this.state.openFrag[i],
+        toggle: () => this.toggleFrag(i),
+        toggleGlyph: this.state.openFrag[i] ? '−' : '+',
+        ruleStyle: this.navRuleStyle(!!this.state.openFrag[i]),
+      })),
+      angebote: this.currentProjectDefs().map((p, i) => ({
+        ...p,
+        open: !!this.state.openAngebot[i],
+        toggle: () => this.toggleAngebot(i),
+        toggleGlyph: this.state.openAngebot[i] ? '−' : '+',
+        ruleStyle: this.navRuleStyle(!!this.state.openAngebot[i]),
+        hasModules: Array.isArray(p.modules) && p.modules.length > 0,
+      })),
+      toggleShowAllFormate: this.toggleShowAllFormate,
+      showAllFormate: this.state.showAllFormate,
+      showAllFormateLabel: this.state.showAllFormate ? 'Formate ausblenden' : 'Alle Formate durchsehen',
+      hasMatch: !!matchedDef,
+      noMatch: !matchedDef,
+      matchedAng: matchedAng,
+      whoOptions: whoOptions,
+      slideAImageCol: this.colStyle(1, 2),
+      slideATextCol: { ...this.colStyle(3, 2), display: 'flex', flexDirection: 'column', justifyContent: 'center', alignSelf: this.state.isNarrow ? 'start' : 'center' },
+      compactPanelStyle: this.compactPanelStyle(),
+      compactPanelStyleFirst: { ...this.compactPanelStyle(), minHeight: this.state.isNarrow ? 'auto' : '100svh', paddingTop: this.state.isNarrow ? 'clamp(48px,7vh,90px)' : 'clamp(140px,20vh,200px)', alignItems: 'end' },
+      homeGridCols: this.state.isNarrow ? 'minmax(0,1fr)' : 'repeat(4, minmax(0,1fr))',
+      attachSectionReveal: this.attachSectionReveal,
+      ...(() => {
+        const d = this.heroDictText();
+        const pause = 8;
+        const t = this.state.heroTypeCount || 0;
+        const titleEnd = d.title.length;
+        const phonStart = titleEnd + pause;
+        const phonEnd = phonStart + d.phon.length;
+        const gramStart = phonEnd + pause;
+        const gramEnd = gramStart + d.gram.length;
+        const defStart = gramEnd + pause;
+        const defEnd = defStart + d.def.length;
+        const heroTypedTitle = d.title.slice(0, Math.max(0, Math.min(t, titleEnd)));
+        const heroTypedPhon = d.phon.slice(0, Math.max(0, Math.min(t - phonStart, d.phon.length)));
+        const heroTypedGram = d.gram.slice(0, Math.max(0, Math.min(t - gramStart, d.gram.length)));
+        const heroTypedDef = d.def.slice(0, Math.max(0, Math.min(t - defStart, d.def.length)));
+        return {
+          heroTypedTitle, heroTypedPhon, heroTypedGram, heroTypedDef,
+          heroRestTitle: d.title.slice(heroTypedTitle.length),
+          heroRestPhon: d.phon.slice(heroTypedPhon.length),
+          heroRestGram: d.gram.slice(heroTypedGram.length),
+          heroRestDef: d.def.slice(heroTypedDef.length),
+          heroCursorAfter_title: t < titleEnd,
+          heroCursorAfter_phon: t >= titleEnd && t < phonEnd,
+          heroCursorAfter_gram: t >= phonEnd && t < gramEnd,
+          heroCursorAfter_def: t >= gramEnd && t < defEnd,
+        };
+      })(),
+      slideABio: [
+        { text: 'Ich bin Natalie und arbeite als Architektin mit 8 Jahren Berufserfahrung. Aktuell bin ich tätig bei Mohr Niklas in Wien, wo ich Architektur als gemeinschaftlichen Prozess denke. Meine Tätigkeiten reichen vom Wettbewerb über den Entwurf bis zur Implementierung digitaler Planungsstrategien – von einfachen CAD-Workflows bis zu komplexen BIM-Datenwelten.' },
+        { text: '2024 begann ich, KI anhand eigener Ideenwettbewerbe in meiner gestalterischen Praxis anzuwenden. Seither teste ich laufend Tools und vertiefe mein Wissen in Weiterbildungen. Meine Erfahrungen mit Sprachmodellen, Bildgeneratoren, Agentensystemen und Vibe Coding übersetze ich in neue architekturrelevante Methoden.' },
+        { text: 'Die Arbeit mit Material und Handwerk ist für mich kein Gegensatz dazu. Mit den Händen an textilen Projekten zu arbeiten, schärft meinen Blick und prägt mein strukturelles Denken. Mich interessiert der Moment, in dem aus Informationen und Beobachtungen eine Entscheidung entsteht – und wann es sinnvoll ist, ein System bewusst zu verlassen.' },
+        { text: 'Ich gebe Wissen und Methodik weiter aus der Überzeugung, dass ein reflektierter Umgang mit KI durch Austausch und konkretes Tun entsteht. Meine Haltung bleibt dabei die gleiche, meine Rolle wechselt: als Referentin, Autorin von Essays, Beraterin in der 1:1-Begleitung oder Gestalterin künstlerischer Projekte.' },
+],
+      slideBTextCol: { ...this.colStyle(1, 2), display: 'flex', flexDirection: 'column', justifyContent: 'center', alignSelf: this.state.isNarrow ? 'start' : 'center' },
+      slideBImageCol: this.colStyle(3, 2),
+      slideBButtonCol: { ...this.colStyle(1, 2), display: 'flex', justifyContent: 'flex-start', marginTop: this.state.isNarrow ? '0' : 'clamp(24px,3vw,32px)', marginBottom: this.state.isNarrow ? '48px' : 'clamp(90px,13vh,140px)' },
+      slideBButtonsRow: { ...this.colStyle(1, 4), display: 'flex', gap: 'clamp(12px,1.6vw,16px)', flexWrap: 'wrap', justifyContent: 'space-between', margin: 'clamp(56px,8vh,100px) 0 clamp(56px,8vh,100px)' },
+      slideBBio: [
+        { text: 'Parallel zur architektonischen Praxis gehe ich künstlerischen Projekten nach und untersuche KI als gestalterisches Gegenüber. In freien Projekten, Essays und eigenen Experimenten erforsche ich, was passiert, wenn algorithmische Systeme in intuitive Entwurfsprozesse eingreifen.' },
+        { text: 'Ich arbeite mit unterschiedlichen KI-Systemen – von einfachen Chats über programmierte Agenten-Rollen bis hin zu Vibe Coding. Durch das kontinuierliche Testen und Bewerten neuer Werkzeuge entwickle ich daraus eigene Methoden für meine Praxis.' },
+      ],
+      categoriesColStyle: { ...this.colStyle(1, 4), paddingBottom: 'clamp(90px,13vh,150px)' },
+      cvCategories: this.cvCategoryDefs().map((c, i) => ({
+        ...c,
+        open: !!this.state.openCvCat[i],
+        toggle: () => this.toggleCvCat(i),
+        toggleGlyph: this.state.openCvCat[i] ? '–' : '+',
+        ruleStyle: this.navRuleStyle(!!this.state.openCvCat[i]),
+        isText: !!c.analogText,
+        isTable: !!c.tableRows,
+        isList: !c.tableRows && !c.analogText,
+        showCvNote: c.heading === 'Werdegang',
+        items: c.items && c.items.map(it => it.isGroupHeading ? it : { ...it, isItem: true, text: it.org ? `${it.title} (${it.org})` : it.title }),
+        headingStyle: { fontFamily: 'var(--font-serif)', fontWeight: 400, fontSize: 'clamp(1.5rem,3vw,2.15rem)', letterSpacing: '-0.005em', lineHeight: 1.22, color: 'var(--black)' },
+        subheadStyle: { fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '-0.01em', fontSize: '0.94rem', color: '#000', lineHeight: 1.3 },
+        subheadStyle2: { fontFamily: 'var(--font-display)', fontWeight: 600, letterSpacing: '-0.01em', fontSize: '0.94rem', color: '#000', lineHeight: 1.3, marginTop: '20px' },
+      })),
+      year: new Date().getFullYear(),
+
+      goHome: this.goHome,
+      indexOpen: this.state.indexOpen,
+      toggleIndex: this.toggleIndex,
+      anfrageOpen: this.state.anfrageOpen,
+      toggleAnfrage: this.toggleAnfrage,
+      aktuelleProjekteCards: [
+        { date: '18.05.2026', partner: 'Baunetz Campus', format: 'Essay zu "Künstlichen Komplizinnen: Warum KI mehr kann als schnelle Bilder" über KI-Teams im Studium', type: 'Essay' },
+        { date: '01.10.2026', partner: 'Akademie für Raum und Wandel', format: 'Vortrag als Gastdozentin über KI und Expertise im Rahmen der KI-Ausbildung', type: 'Gastvortrag' },
+        { date: '10/11.2026', partner: 'Brown University', format: 'Online-Lecture und -Workshop zu Image Generation "Public Space" and "Window Light"', type: 'Lecture + Workshop' },
+      ],
+      impressumOpen: this.state.impressumOpen,
+      toggleImpressum: this.toggleImpressum,
+      cvOpen: this.state.cvOpen,
+      toggleCv: this.toggleCv,
+      navIndexStyle: this.navStyle(this.state.indexOpen),
+      navCvStyle: this.navStyle(this.state.cvOpen),
+      navStartStyle: this.navStyle(!anyOpen),
+      navAnfrageStyle: this.navStyle(this.state.anfrageOpen),
+      navRuleIndex: this.navRuleStyle(this.state.indexOpen),
+      navRuleCv: this.navRuleStyle(this.state.cvOpen),
+      navRuleStart: this.navRuleStyle(!anyOpen),
+      navRuleAnfrage: this.navRuleStyle(this.state.anfrageOpen),
+      portraitFilterStyle: { filter: 'grayscale(1)' },
+      gridStyle: this.gridContainerStyle(),
+      screen1Style: { ...this.screenGridStyle(), minHeight: this.state.isNarrow ? 'auto' : '62svh' },
+      screen2Style: { ...this.screenGridStyle(), minHeight: this.state.isNarrow ? 'auto' : '62svh' },
+      screen3Style: { ...this.screenGridStyle('clamp(16px,2vw,22px)'), minHeight: this.state.isNarrow ? 'auto' : '62svh' },
+      screen4Style: { ...this.screenGridStyle(), minHeight: this.state.isNarrow ? 'auto' : '44svh' },
+      closingScreenStyle: { ...this.screenGridStyle(), minHeight: 'auto', padding: 'clamp(48px,6vh,70px) clamp(24px,7vw,110px) clamp(28px,3.6vh,40px) clamp(20px,4vw,48px)', background: '#f1f0ee' },
+      attachContactReveal: this.attachContactReveal,
+      contactTextColStyle: this.state.isNarrow ? { gridColumn: '1 / -1' } : { gridColumn: '1 / span 3' },
+      contactButtonColStyle: this.state.isNarrow ? { gridColumn: '1 / -1', marginTop: 'clamp(20px,2.6vw,28px)', display: 'flex', justifyContent: 'flex-start' } : { gridColumn: '4 / span 1', alignSelf: 'start', marginTop: 'clamp(48px,6vh,64px)', display: 'flex', justifyContent: 'flex-end' },
+      ...(() => {
+        const d = this.contactDictText();
+        const pause = 8;
+        const t = this.state.contactTypeCount || 0;
+        const titleEnd = d.title.length;
+        const bodyStart = titleEnd + pause;
+        const bodyEnd = bodyStart + d.body.length;
+        return {
+          contactTypedTitle: d.title.slice(0, Math.max(0, Math.min(t, titleEnd))),
+          contactTypedBody: d.body.slice(0, Math.max(0, Math.min(t - bodyStart, d.body.length))),
+          contactCursorAfter_title: t < titleEnd,
+          contactCursorAfter_body: t >= titleEnd && t < bodyEnd,
+        };
+      })(),
+      contactShowCursor: !this.state.contactMessage && !this.state.contactFocused,
+      contactMessage: this.state.contactMessage || '',
+      onContactMessageChange: (e) => this.setState({ contactMessage: e.target.value }),
+      onContactFocus: () => this.setState({ contactFocused: true }),
+      onContactBlur: () => this.setState({ contactFocused: false }),
+      contactEmail: this.state.contactEmail || '',
+      onContactEmailChange: (e) => this.setState({ contactEmail: e.target.value }),
+      submitContact: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        const subject = encodeURIComponent('Kontaktanfrage von der Website');
+        const bodyParts = [this.state.contactMessage || '', '', this.state.contactEmail ? ('E-Mail: ' + this.state.contactEmail) : ''].filter(Boolean);
+        window.location.href = 'mailto:mail@natalieburkhart.com?subject=' + subject + '&body=' + encodeURIComponent(bodyParts.join('\n'));
+      },
+      screenProjectsStyle: { ...this.screenGridStyle(), minHeight: this.state.isNarrow ? 'auto' : '62svh', paddingBottom: 'clamp(100px,12vh,150px)' },
+      colHero: this.colStyle(1, 2),
+      colGegenwartNear: { ...this.colStyle(3, 2), alignSelf: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+      colProjectsLabel: { gridColumn: '1 / -1', marginBottom: '0' },
+      colHaltungenWrapStyle: { gridColumn: this.state.isNarrow ? '1 / -1' : '3 / span 2', gridRow: '1', alignSelf: 'start', width: '100%' },
+      colHaltungenImageStyle: { width: '100%', aspectRatio: '2409/3012' },
+      colHaltungen: this.state.isNarrow
+        ? { gridColumn: '1 / -1' }
+        : { gridColumn: '1 / span 2', gridRow: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center' },
+      colProjectsLabelInScreen3: { gridColumn: '1 / -1', marginBottom: '0' },
+      praxisraumBlocksStyle: { gridColumn: '1 / -1', width: '100%', display: 'flex', flexDirection: 'column', gap: 'clamp(16px,2vw,22px)' },
+      praxisraumTextStyle: { gridColumn: '1 / -1', width: '100%' },
+      colQuoteInScreen4: { ...this.colStyle(1, 4), background: 'var(--black)', padding: 'clamp(28px,4vw,44px) clamp(24px,4vw,44px)', display: 'flex', flexDirection: 'column', gap: 'clamp(16px,2vw,22px)' },
+      gestaltenTextColStyle: { gridColumn: this.state.isNarrow ? '1 / -1' : '2 / 4', marginTop: 'clamp(24px,3vw,34px)' },
+      gestaltenButtonColStyle: { gridColumn: this.state.isNarrow ? '1 / -1' : '2 / 4', display: 'flex', justifyContent: 'flex-start', marginTop: this.state.isNarrow ? 'calc(-96px + 22px)' : 'clamp(2px,0.3vw,4px)', marginBottom: this.state.isNarrow ? '40px' : '0' },
+      kontaktBlockStyle: this.state.isNarrow ? { gridColumn: '1 / 3', maxWidth: '100%' } : { gridColumn: '1 / 3', maxWidth: 'calc(50% - clamp(8px,1vw,12px))' },
+      colAktuelleProjekte: { ...this.colStyle(2, 3), display: 'flex', flexDirection: 'column', gap: '6px' },
+      cvGridStyle: this.panelGridStyle(),
+      pageStartStyle: { ...this.panelScreenStyle(), alignContent: this.state.isNarrow ? 'start' : 'start', paddingTop: this.state.isNarrow ? 'clamp(48px,7vh,90px)' : 'clamp(140px,20vh,200px)' },
+      anfrageScreenStyle: { ...this.panelScreenStyle(), minHeight: 'auto', alignContent: 'start', paddingTop: this.state.isNarrow ? 'clamp(48px,7vh,90px)' : 'clamp(140px,20vh,200px)' },
+      panelScreen1Style: { ...this.panelScreenStyle(), alignItems: 'start', paddingTop: 'clamp(140px,18vh,190px)' },
+      panelScreen2Style: this.panelScreenStyle(),
+      panelCloseStyle: this.panelCloseStyle(),
+      panelBodyStyle: this.colStyle(1, 3),
+      cvColBio: { ...this.colStyle(1, 2), gridRow: this.state.isNarrow ? 'auto' : '2' },
+      cvColMenus: { ...this.colStyle(4, 1), gridRow: this.state.isNarrow ? 'auto' : '1 / span 2' },
+      // photo spans columns 1–2, row 1; bio sits below it in row 2; menus stay at column 4 spanning both rows
+      cvColPhoto: { ...this.colStyle(1, 1), gridRow: this.state.isNarrow ? 'auto' : '1', aspectRatio: '2054/2054' },
+      roleColLabel: { ...this.colStyle(1, 1) },
+      roleColImage: { ...this.colStyle(2, 1) },
+      roleColBodyWithImage: { ...this.colStyle(3, 2) },
+      roleColBodyFull: { ...this.colStyle(2, 3) },
+      cvIntroStyle: { ...this.colStyle(1, 4), margin: 0, fontFamily: 'var(--font-display)', fontStyle: 'normal', fontWeight: 800, letterSpacing: '-0.02em', fontSize: 'clamp(1.4rem,2.6vw,2rem)', lineHeight: 1.24, color: '#000' },
+      cvContactRowStyle: { display: 'flex', flexDirection: this.state.isNarrow ? 'column' : 'row', gap: this.state.isNarrow ? '10px' : '16px' },
+      listTypeColStyle: { gridColumn: this.state.isNarrow ? 2 : 3, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)', paddingRight: '8px' },
+      listYearColStyle: { gridColumn: this.state.isNarrow ? 3 : 4, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)' },
+      isNarrow: this.state.isNarrow,
+      heroIntroWidth: this.state.isNarrow ? '100%' : '75%',
+    };
   }
 }
 </script>
