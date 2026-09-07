@@ -106,8 +106,9 @@
       </div>
       <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size: clamp(1.5rem,3vw,2.15rem); line-height: 1.22; color: var(--black); margin: 0; text-align: left; text-wrap: pretty; width:{{ heroIntroWidth }};">Als Architektin vermittle ich Wissen zu KI,<br class="intro-br"> übersetze Methodik in konkrete Workflows und <br class="intro-br"><span style="color: var(--black); font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 2.15rem); letter-spacing: -0.005em; text-wrap-mode: initial;">begreife Gestaltung weiterhin als Handwerk.</span><br></h2>
       <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:clamp(18px,2.2vw,26px) 0 0;">KEYNOTES, ESSAYS UND FORMATENTWICKLUNG · 1:1-BEGLEITUNG · GESTALTERISCHE PROJEKTE</p>
-      <div style="display:flex; justify-content:flex-start; gap:16px; margin-top:clamp(18px,2.2vw,26px); margin-bottom:clamp(32px,4.5vw,64px);">
-        <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen →</a>
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:flex-start; gap:12px 16px; margin-top:clamp(18px,2.2vw,26px); margin-bottom:clamp(32px,4.5vw,64px);">
+        <a href="#formate" onClick="{{ goToFormate }}" style="white-space:nowrap; background:transparent; color:var(--black); border:1px solid var(--black); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:13px 21px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.62;">Formate ansehen</a>
+        <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen</a>
       </div>
     </div>
   </div>
@@ -153,29 +154,34 @@
 
   </div>
 
-  <div style="{{ screen3Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
+  <div id="formate" style="{{ screen3Style }}" class="app-screen" ref="{{ attachSectionReveal }}">
 
     <div class="praxisraum-text" style="{{ praxisraumTextStyle }}">
       <p style="font-family:var(--font-display); font-weight:600; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--black); margin:0 0 clamp(10px,1.4vw,14px);">MEINE FORMATE</p>
-      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2vw,22px); text-wrap:pretty;">Wissen – Methodik – Gestaltung</h2>
+      <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2vw,22px); text-wrap:pretty;">Wissen vermitteln – Methodik entwickeln – Gestaltung als Handwerk</h2>
     </div>
     <div class="praxisraum-blocks" style="{{ praxisraumBlocksStyle }}">
-      <div style="border:1px solid var(--black); padding:clamp(20px,2.4vw,26px); display:flex; flex-direction:column; gap:clamp(20px,2.4vw,26px);">
-        <div>
-          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Wissen</h3>
-          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">KI einordnen und Haltung vermitteln. Keynotes, Essays und Formatentwicklung für Hochschule, Institutionen und Redaktion.</p>
+      <div style="{{ formateRowStyle }}">
+      <div style="{{ formateScrollerStyle }}">
+        <div ref="{{ attachFormateTrack }}" style="{{ formateTrackStyle }}">
+        <sc-for list="{{ formatCards }}" as="card" hint-placeholder-count="4">
+          <div style="{{ formatCardStyle }}">
+            <div>
+              <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black);">{{ card.audience }}</div>
+              <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.3; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; min-height:2.6em; text-wrap:pretty;">{{ card.konkret }}</h3>
+              <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.02rem,1.18vw,1.08rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ card.teaser }}</p>
+              <a href="#mehr-erfahren" onClick="{{ card.onMore }}" style="display:inline-block; margin-top:clamp(12px,1.6vw,16px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">Mehr erfahren →</a>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:auto; height:52px;">
+              <a href="{{ card.ctaHref }}" style="background:transparent; color:var(--black); border:1px solid var(--black); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:0 21px; height:52px; display:inline-flex; align-items:center; line-height:1.2;" style-hover="opacity:0.62;">{{ card.ctaLabel }}</a>
+            </div>
+          </div>
+        </sc-for>
         </div>
-        <div style="border-top:1px solid var(--black); padding-top:clamp(20px,2.4vw,26px);">
-          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Methodik</h3>
-          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">KI in konkrete Arbeitsprozesse und Workflows übersetzen. 1:1-Begleitung für Architekt:innen.</p>
-        </div>
-        <div style="border-top:1px solid var(--black); padding-top:clamp(20px,2.4vw,26px);">
-          <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); margin:0 0 10px;">Gestaltung</h3>
-          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty;">Gestalterische Projekte zu Material und Raum. Auftragsarbeiten sowie Kooperationen und freie Projekte.</p>
-        </div>
-        <div style="display:flex; justify-content:center; margin-top:clamp(28px,3.4vw,40px);">
-          <a href="#anfrage" onClick="{{ toggleAnfrage }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">Formate ansehen →</a>
-        </div>
+      </div>
+      <div style="{{ formateArrowWrapStyle }}">
+        <button onClick="{{ advanceFormate }}" aria-label="Weitere Formate" style="width:48px; height:48px; border:1px solid var(--black); background:transparent; color:var(--black); font-family:var(--font-display); font-weight:300; font-size:1.15rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 200ms ease, color 200ms ease;" style-hover="background:var(--black); color:#fff;">→</button>
+      </div>
       </div>
     </div>
 
@@ -232,7 +238,7 @@
     </div>
 
     <div style="{{ gestaltenButtonColStyle }}">
-      <a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px;">Zusammenarbeit anfragen →</a>
+      <a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px;">Zusammenarbeit anfragen</a>
     </div>
 
   </div>
@@ -376,58 +382,21 @@
       <div style="{{ anfrageScreenStyle }}" class="app-screen">
         <div style="grid-column:1 / -1;">
           <div style="padding-bottom:clamp(28px,3.6vw,40px); margin-bottom:clamp(8px,1vw,10px);">
-            <div class="anfrage-intro-text" style="max-width:calc(75% - clamp(4px,0.6vw,6px));">
-              <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2.2vw,24px); text-wrap:pretty;">Zusammenarbeiten</h2>
+            <div class="anfrage-intro-text" style="{{ anfrageTextWidthStyle }}">
+              <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:0 0 clamp(10px,1.2vw,14px);">Meine Formate</div>
+              <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.15rem); line-height:1.22; color:var(--black); margin:0 0 clamp(16px,2.2vw,24px);">Wie wir zusammen arbeiten können</h2>
             </div>
-        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2.2vw,24px); text-wrap:pretty;">Wähle aus, was deinem Ziel am nächsten kommt und erhalte Vorschläge. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
             <div style="margin-top:clamp(40px,5.2vw,56px);">
-              <sc-for list="{{ whoOptions }}" as="opt" hint-placeholder-count="3">
-                <div style="padding-top:clamp(16px,2vw,22px);">
-                  <div style="{{ opt.ruleStyle }}"></div>
-                  <div onClick="{{ opt.onClick }}" style="display:flex; align-items:baseline; gap:10px; cursor:pointer;">
-                    <span style="{{ opt.headingStyle }}">{{ opt.label }}</span>
-                    <span style="flex:0 0 auto; margin-left:auto; font-family:var(--font-display); font-weight:300; font-size:clamp(1.9rem,3.8vw,2.7rem); line-height:1.22; letter-spacing:0; color:var(--black);">{{ opt.glyph }}</span>
-                  </div>
-                  <sc-if value="{{ opt.hasAudience }}" hint-placeholder-val="{{ false }}">
-                    <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin-top:6px;">{{ opt.audience }}</div>
-                  </sc-if>
-                  <sc-if value="{{ opt.open }}" hint-placeholder-val="{{ false }}">
-                    <div style="{{ anfragePanelBodyStyle }}">
-                      <sc-if value="{{ opt.hasDescription }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty;">{{ opt.description }}</p></sc-if>
-                      <sc-if value="{{ opt.hasSteps }}" hint-placeholder-val="{{ false }}">
-                        <sc-if value="{{ opt.hasStepsIntro }}" hint-placeholder-val="{{ false }}"><p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(28px,3.4vw,40px); text-wrap:pretty;">{{ opt.stepsIntro }}</p></sc-if>
-                        <div style="margin:0 0 clamp(16px,2vw,20px); display:flex; flex-direction:column; gap:clamp(34px,4vw,48px);">
-                          <sc-for list="{{ opt.steps }}" as="step" hint-placeholder-count="2">
-                            <div style="display:flex; flex-direction:column; gap:6px;">
-                              <p style="font-family:var(--font-display); font-weight:600; font-size:0.94rem; letter-spacing:-0.01em; line-height:1.3; color:#000; margin:0;">{{ step.title }}<sc-if value="{{ step.hasMeta }}" hint-placeholder-val="{{ false }}"><span style="font-weight:400; opacity:0.55;"> · {{ step.meta }}</span></sc-if></p>
-                              <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0; text-wrap:pretty; white-space:pre-line;">{{ step.body }}</p>
-                              <sc-if value="{{ step.hasItems }}" hint-placeholder-val="{{ false }}">
-                                <ul style="list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:4px;">
-                                  <sc-for list="{{ step.items }}" as="item" hint-placeholder-count="4">
-                                    <li style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); padding-left:14px; position:relative; text-wrap:pretty;"><span style="position:absolute; left:0; top:0;">–</span>{{ item }}</li>
-                                  </sc-for>
-                                </ul>
-                              </sc-if>
-                              <sc-if value="{{ step.hasAfter }}" hint-placeholder-val="{{ false }}">
-                                <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:2px 0 0; text-wrap:pretty; white-space:pre-line;">{{ step.after }}</p>
-                              </sc-if>
-                              <sc-if value="{{ step.hasCta }}" hint-placeholder-val="{{ false }}">
-                                <a href="{{ step.ctaHref }}" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; margin-top:6px;">{{ step.ctaLabel }} →</a>
-                              </sc-if>
-                            </div>
-                          </sc-for>
-                        </div>
-                      </sc-if>
-                      <sc-if value="{{ opt.hasClosing }}" hint-placeholder-val="{{ false }}">
-                        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(16px,2vw,20px); text-wrap:pretty; white-space:pre-line;">{{ opt.closing }}</p>
-                      </sc-if>
-<sc-if value="{{ opt.hasCta }}" hint-placeholder-val="{{ false }}">
-                                            <a href="{{ opt.mailtoHref }}" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; margin-bottom:clamp(8px,1vw,12px);">{{ opt.cta }} →</a>
-                      </sc-if>
-                    </div>
-                  </sc-if>
+              <sc-for list="{{ contactCtaRows }}" as="row" hint-placeholder-count="6">
+                <div style="{{ row.rowStyle }}">
+                  <span style="{{ contactCellStyle }}">{{ row.konkret }}</span>
+                  <span style="{{ contactAudienceStyle }}">{{ row.audience }}</span>
                 </div>
               </sc-for>
+            </div>
+            <p style="{{ anfrageOutroStyle }}">Das ist eine Übersicht über meine Formate. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
+            <div style="display:flex; margin-top:clamp(20px,2.6vw,28px);">
+              <a href="mailto:mail@natalieburkhart.com?subject=Zusammenarbeit" style="background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center;" style-hover="opacity:0.82;">Zusammenarbeit anfragen</a>
             </div>
           </div>
         </div>
@@ -621,13 +590,40 @@
             <img src="uploads/0 - Baustelle.jpg" alt="Natalie Burkhart auf der Baustelle" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1);" loading="lazy">
           </div>
         </div>
-        <div style="{{ slideBButtonCol }}"><a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen →</a></div>
+        <div style="{{ slideBButtonCol }}"><a href="#kontakt" onClick="{{ toggleAnfrage }}" style="white-space:nowrap; background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center; gap:10px;" style-hover="opacity:0.82;">Zusammenarbeit anfragen</a></div>
       </div>
     </div>
     </div>
   </sc-if>
 
 </div>
+
+  <sc-if value="{{ formatModalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeFormatModal }}" style="position:fixed; inset:0; z-index:120; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; padding:clamp(16px,4vw,48px); animation:fadeInUp 260ms cubic-bezier(.22,1,.36,1) both;">
+      <div onClick="{{ stopModalClick }}" style="{{ modalPanelStyle }}">
+        <button onClick="{{ closeFormatModal }}" aria-label="Schließen" style="position:absolute; top:14px; right:14px; width:36px; height:36px; border:none; background:transparent; color:var(--black); font-family:var(--font-display); font-weight:300; font-size:1.5rem; line-height:1; cursor:pointer;">×</button>
+        <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black);">{{ modalAudience }}</div>
+        <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1.2rem,1.8vw,1.45rem); line-height:1.3; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ modalKonkret }}</h3>
+        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(16px,2vw,20px) 0 0; text-wrap:pretty;">{{ modalTeaser }}</p>
+        <sc-for list="{{ modalBody }}" as="para" hint-placeholder-count="2">
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty; white-space:pre-line;">{{ para }}</p>
+        </sc-for>
+        <sc-if value="{{ modalHasItems }}" hint-placeholder-val="{{ false }}">
+          <ul style="list-style:none; margin:clamp(10px,1.4vw,14px) 0 0; padding:0; display:flex; flex-direction:column; gap:4px;">
+            <sc-for list="{{ modalItems }}" as="item" hint-placeholder-count="3">
+              <li style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); padding-left:14px; position:relative; text-wrap:pretty;"><span style="position:absolute; left:0; top:0;">–</span>{{ item }}</li>
+            </sc-for>
+          </ul>
+        </sc-if>
+        <sc-if value="{{ modalHasAfter }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty; white-space:pre-line;">{{ modalAfter }}</p>
+        </sc-if>
+        <div style="display:flex; margin-top:clamp(24px,3vw,32px);">
+          <a href="{{ modalCtaHref }}" onClick="{{ onModalCta }}" style="background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px;">{{ modalCtaLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900}}">
 class Component extends DCLogic {
@@ -641,6 +637,7 @@ class Component extends DCLogic {
     openFrag: [false, false, false],
     openAngebot: [false, false, false],
     filterWho: null, showAllFormate: false,
+    formatModal: null, formatOffset: 0,
     openCvCat: [false, false, false, false],
     selectedProject: null,
   };
@@ -867,6 +864,7 @@ class Component extends DCLogic {
   // Subtle scroll-in reveal for the three "Aktuelle Kooperationen" and three
   // "Angebote" blocks on the homepage — fade + tiny rise, once per element.
   componentWillUnmount() {
+    clearTimeout(this._slideTimer);
     if (this._onResize) window.removeEventListener('resize', this._onResize);
     if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
     if (this._heroTimer) clearInterval(this._heroTimer);
@@ -1262,6 +1260,86 @@ class Component extends DCLogic {
     };
   }
 
+  formatCardDefs() {
+    const all = this.formatCardDefsRaw();
+    return [3, 1, 4, 0, 2, 5].map(i => all[i]);
+  }
+  formatCardDefsRaw() {
+    const mail = (s) => 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent(s);
+    return [
+      {
+        format: 'Wissen vermitteln', audience: 'Für Lehrende', konkret: 'Vortrag · Konzeption von LVAs',
+        teaser: 'Du möchtest KI im Architekturstudium nicht nur als Werkzeug, sondern als Gegenstand des Entwerfens und Reflektierens behandeln?',
+        body: ['Ich gebe Impulsvorträge für Entwurfsstudios und begleite Lehrende bei der Entwicklung von Lehrveranstaltungen, die technische Möglichkeiten mit Entwurfspraxis, Autor:innenschaft und architektonischem Urteil verbinden.', 'Schreibe mir deine Idee für einen ersten Austausch.'],
+        items: [], after: '', ctaLabel: 'Format anfragen', ctaHref: mail('Anfrage: Format für Lehre'),
+      },
+      {
+        format: 'Wissen vermitteln', audience: 'Für Redakteur:innen', konkret: 'Essay · Fachbeitrag',
+        teaser: 'Du suchst eine architektonische Perspektive auf KI, die über Toolneuheiten und schnelle Bilder hinausgeht?',
+        body: ['Ich schreibe Essays und Fachbeiträge zu KI in gestalterischen Prozessen, aus der Perspektive von Architektur, Entwurf und Praxis.', 'Mögliche Themen:'],
+        items: [
+          'Was bedeutet die zunehmende Geschwindigkeit der KI-Entwicklung für architektonische Prozesse?',
+          'Was verändert sich, wenn KI-Bilder zunehmend realistisch werden?',
+          'Welchen Stellenwert haben Referenzen, wenn man sie in die KI einspeist, und diese dann neue Varianten erzeugt?',
+        ],
+        after: 'Schreibe mir deine Idee für einen Beitrag und wir kommen ins Gespräch.',
+        ctaLabel: 'Beitrag anfragen', ctaHref: mail('Anfrage: Beitrag'),
+      },
+      {
+        format: 'Wissen vermitteln', audience: 'Für Institutionen', konkret: 'Vortrag · Formatentwicklung',
+        teaser: 'Du möchtest ein Format zu Architektur und KI entwickeln?',
+        body: ['Ich begleite die Konzeption von Formaten, die aktuelle Entwicklungen einordnen und mit Fragen zu Gestaltung, Verantwortung und Praxis verbinden. Oder vermittle selbst direkt Wissen in Form eines Vortrages.', 'Dabei kann es um ein konkretes Veranstaltungsformat, eine Ausstellung, ein Bildungsangebot oder eine längerfristige Zusammenarbeit gehen.', 'Schreibe mir deine Idee für einen ersten Austausch.'],
+        items: [], after: '', ctaLabel: 'Format anfragen', ctaHref: mail('Anfrage: Format'),
+      },
+      {
+        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: 'Orientierungsgespräch',
+        teaser: 'Du möchtest verstehen, was KI für deine eigene architektonische Praxis bedeutet, ohne dich durch die tägliche Flut an Tools und Entwicklungen arbeiten zu müssen?',
+        body: ['Im Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten.', 'Du gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.'],
+        items: [], after: '', ctaLabel: 'Orientierungsgespräch anfragen', ctaHref: mail('Anfrage: Orientierungsgespräch'),
+      },
+      {
+        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: '1:1 - Session an eigenen Use Cases',
+        teaser: 'Du arbeitest im Team oder als Solo-Selbstständige und möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?',
+        body: ['Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich biete kein Komplettpaket über alle verfügbaren KI-Tools. Stattdessen gebe ich etablierte und in eigener Praxis getestete Workflows weiter. Ich teste ständig neue Werkzeuge und kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
+        items: ['Einführung in Claude', 'Konsistente Bilder mit KI', 'Aufbau von Agentensystemen, z. B. mit Langdock'],
+        after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter.\nSchreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
+        ctaLabel: 'Anliegen schildern', ctaHref: mail('Anliegen: 1:1 Begleitung'),
+      },
+      {
+        format: 'Gestalterisch zusammenarbeiten', audience: 'GESTALTUNG', konkret: 'Kooperation · Auftragsprojekt',
+        teaser: 'Du arbeitest an, mit oder über Architektur und möchtest untersuchen, was entsteht, wenn Material, Raum und algorithmische Systeme aufeinandertreffen?',
+        body: ['Ich verbinde architektonisches Denken mit analogem Handwerk und digitalen Werkzeugen, um neue Formen und Prozesse zu entwickeln.', 'Das kann als Kooperation, freie Arbeit oder Auftragsprojekt entstehen, immer mit Raum für Experiment und gemeinsames Erproben.', 'Du hast eine Idee, einen offenen Gedanken oder ein Material, das du weiterdenken möchtest? Schreibe mir und wir kommen ins Gespräch.'],
+        items: [], after: '', ctaLabel: 'Projekt anfragen', ctaHref: mail('Anfrage: Projekt'),
+      },
+    ];
+  }
+  attachFormateTrack = (el) => { this._track = el; };
+  advanceFormate = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    if (this._sliding) return;
+    const n = this.formatCardDefs().length;
+    const el = this._track;
+    const first = el && el.firstElementChild;
+    if (!first) { this.setState(s => ({ formatOffset: (s.formatOffset + 1) % n })); return; }
+    const gap = parseFloat(getComputedStyle(el).columnGap || '0') || 0;
+    const step = first.getBoundingClientRect().width + gap;
+    this._sliding = true;
+    this.setState({ slideAnim: true, slidePx: step });
+    this._slideTimer = setTimeout(() => {
+      this._sliding = false;
+      this.setState(s => ({ formatOffset: (s.formatOffset + 1) % n, slideAnim: false, slidePx: 0 }));
+    }, 460);
+  };
+  goToFormate = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById('formate');
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 24;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+  openFormatModal = (i) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ formatModal: i }); };
+  closeFormatModal = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ formatModal: null }); };
+
   renderVals() {
     const anyOpen = this.state.indexOpen || this.state.anfrageOpen || this.state.impressumOpen || this.state.datenschutzOpen || this.state.cvOpen;
     const rowBase = {
@@ -1613,6 +1691,107 @@ class Component extends DCLogic {
       colProjectsLabelInScreen3: { gridColumn: '1 / -1', marginBottom: '0' },
       praxisraumBlocksStyle: { gridColumn: '1 / -1', width: '100%', display: 'flex', flexDirection: 'column', gap: 'clamp(16px,2vw,22px)' },
       praxisraumTextStyle: { gridColumn: '1 / -1', width: '100%' },
+      ...(() => {
+        const defs = this.formatCardDefs();
+        const narrow = this.state.isNarrow;
+        const mi = this.state.formatModal;
+        const m = (mi !== null && mi !== undefined) ? defs[mi] : null;
+        const off = this.state.formatOffset % defs.length;
+        const rotated = defs.map((_, k) => defs[(off + k) % defs.length])
+          .map((c) => ({ ...c, onMore: this.openFormatModal(defs.indexOf(c)) }));
+        return {
+          formatCards: rotated,
+          formatCardStyle: {
+            flex: narrow ? '0 0 84%' : '0 0 calc((100% - 3 * clamp(16px,2vw,24px)) / 3.5)',
+            minWidth: 0,
+            height: 'clamp(420px,32vw,520px)',
+            boxSizing: 'border-box',
+            background: '#f1f0ee',
+            padding: 'clamp(20px,2.4vw,26px)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            gap: 'clamp(18px,2.2vw,24px)',
+            scrollSnapAlign: 'start',
+          },
+          formateScrollerStyle: narrow ? {
+            display: 'flex',
+            gap: 'clamp(16px,2vw,24px)',
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            scrollbarWidth: 'none',
+            WebkitOverflowScrolling: 'touch',
+            paddingBottom: '2px',
+          } : {
+            gridColumn: 'span 4',
+            minWidth: 0,
+            overflow: 'hidden',
+            width: 'calc(100% - 0.5 * ((100% - 3 * clamp(16px,2vw,24px)) / 4))',
+          },
+          formateTrackStyle: narrow ? { display: 'contents' } : {
+            display: 'flex',
+            gap: 'clamp(16px,2vw,24px)',
+            alignItems: 'stretch',
+            transform: 'translateX(-' + (this.state.slidePx || 0) + 'px)',
+            transition: this.state.slideAnim ? 'transform 440ms cubic-bezier(.22,1,.36,1)' : 'none',
+            willChange: 'transform',
+          },
+          attachFormateTrack: this.attachFormateTrack,
+          formateRowStyle: narrow
+            ? { display: 'block' }
+            : { position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 'clamp(16px,2vw,24px)', alignItems: 'stretch' },
+          formateArrowWrapStyle: narrow
+            ? { display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }
+            : { position: 'absolute', right: 0, bottom: 0, display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' },
+          advanceFormate: this.advanceFormate,
+          goToFormate: this.goToFormate,
+          formatModalOpen: !!m,
+          closeFormatModal: this.closeFormatModal,
+          modalFormat: m ? m.format : '',
+          modalAudience: m ? m.audience : '',
+          modalKonkret: m ? m.konkret : '',
+          modalTeaser: m ? m.teaser : '',
+          modalBody: m ? m.body : [],
+          modalItems: m ? m.items : [],
+          modalHasItems: !!(m && m.items && m.items.length),
+          modalAfter: m ? m.after : '',
+          modalHasAfter: !!(m && m.after),
+          modalCtaLabel: m ? m.ctaLabel : '',
+          modalCtaHref: m ? m.ctaHref : '',
+          onModalCta: (e) => {
+            if (e && e.stopPropagation) e.stopPropagation();
+            if (e && e.preventDefault) e.preventDefault();
+            if (m) window.location.href = m.ctaHref;
+            this.setState({ formatModal: null });
+          },
+          stopModalClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+          modalPanelStyle: {
+            position: 'relative',
+            background: '#fff',
+            width: 'min(640px, 100%)',
+            maxHeight: '86svh',
+            overflowY: 'auto',
+            padding: narrow ? '28px 22px 32px' : 'clamp(36px,4vw,48px)',
+            boxSizing: 'border-box',
+          },
+          contactCtaRows: defs.map((d, i) => ({
+            ...d,
+            rowStyle: {
+              paddingTop: '10px', paddingBottom: '10px',
+              borderTop: i === 0 ? 'none' : '1px solid #000',
+              display: 'grid',
+              gridTemplateColumns: narrow ? '1fr' : 'repeat(4,1fr)',
+              columnGap: narrow ? '10px' : 'clamp(16px,2vw,24px)',
+              alignItems: 'baseline',
+            },
+          })),
+          anfrageTextWidthStyle: { maxWidth: narrow ? '100%' : 'calc(75% - clamp(4px,0.6vw,6px))' },
+          anfrageOutroStyle: { fontFamily: 'var(--font-serif)', fontStyle: 'normal', fontWeight: 400, letterSpacing: 0, fontSize: 'clamp(1.06rem,1.24vw,1.14rem)', lineHeight: 1.4, color: 'var(--black)', margin: 'clamp(28px,3.4vw,40px) 0 0', maxWidth: narrow ? '100%' : 'calc(75% - clamp(4px,0.6vw,6px))', textWrap: 'pretty' },
+          contactCellStyle: { gridColumn: narrow ? 1 : '1 / span 2', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)', paddingRight: '8px' },
+          contactAudienceStyle: { gridColumn: narrow ? 1 : 3, marginTop: narrow ? '4px' : 0, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)', paddingRight: '8px' },
+          contactCtaColStyle: { gridColumn: narrow ? 1 : 4, marginTop: narrow ? '6px' : 0, fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--black)', textDecoration: 'none' },
+        };
+      })(),
       colQuoteInScreen4: { ...this.colStyle(1, 4), background: 'var(--black)', padding: 'clamp(28px,4vw,44px) clamp(24px,4vw,44px)', display: 'flex', flexDirection: 'column', gap: 'clamp(16px,2vw,22px)' },
       gestaltenTextColStyle: { gridColumn: this.state.isNarrow ? '1 / -1' : '2 / 4', marginTop: 'clamp(24px,3vw,34px)' },
       gestaltenButtonColStyle: { gridColumn: this.state.isNarrow ? '1 / -1' : '2 / 4', display: 'flex', justifyContent: 'flex-start', marginTop: this.state.isNarrow ? 'calc(-96px + 22px)' : 'clamp(2px,0.3vw,4px)', marginBottom: this.state.isNarrow ? '40px' : '0' },
