@@ -251,6 +251,7 @@
       </div>
       <div style="display:flex; flex-direction:column; align-items:center;">
         <a href="#impressum" onClick="{{ toggleImpressum }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Impressum</a>
+            <a href="#datenschutz" onClick="{{ toggleDatenschutz }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Datenschutz</a>
         <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0;">© Natalie Burkhart 2026</p>
       </div>
     </div>
@@ -444,6 +445,7 @@
           </div>
           <div style="display:flex; flex-direction:column; align-items:center;">
             <a href="#impressum" onClick="{{ toggleImpressum }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Impressum</a>
+            <a href="#datenschutz" onClick="{{ toggleDatenschutz }}" style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); text-decoration:none;">Datenschutz</a>
             <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0;">© Natalie Burkhart 2026</p>
           </div>
         </div>
@@ -489,6 +491,46 @@
         </div>
         <div style="grid-column:1 / -1; margin-top:clamp(28px,4vw,40px); margin-bottom:clamp(110px,15vh,170px);">
           <a href="#" onClick="{{ toggleImpressum }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">← Zurück</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </sc-if>
+
+  <!-- DATENSCHUTZ — full-white panel -->
+  <sc-if value="{{ datenschutzOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:50; background:#fff; color:#000; overflow-y:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; touch-action:pan-y; overscroll-behavior:contain;">
+    <div style="width:100%;">
+      <div style="{{ pageStartStyle }}" class="app-screen">
+
+        <div style="grid-column:1 / -1; margin-bottom:clamp(32px,4vw,48px);">
+          <h1 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.8rem,4vw,3rem); line-height:1.1; color:var(--black); margin:0;">Datenschutzerklärung</h1>
+          <p style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black); margin:10px 0 0;"><br></p>
+        </div>
+
+        <div style="grid-column:1 / -1; display:grid; grid-template-columns:repeat(4,1fr); column-gap:clamp(16px,2vw,24px);">
+          <div style="{{ impressumTextColStyle }}">
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">1. Verantwortliche</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Natalie Burkhart<br>E-Mail: <a href="mailto:mail@natalieburkhart.com" style="color:var(--black); text-decoration:none; border-bottom:1px solid rgba(0,0,0,0.25);">mail@natalieburkhart.com</a></p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">2. Aufruf der Website und Hosting</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Beim Aufruf dieser Website werden durch den Hostinganbieter technisch erforderliche Verbindungs- und Zugriffsdaten verarbeitet, insbesondere IP-Adresse, Zeitpunkt des Zugriffs sowie technische Daten des verwendeten Browsers und Geräts.<br><br>Die Verarbeitung erfolgt zur sicheren, stabilen und funktionsfähigen Bereitstellung der Website auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.<br><br>Die Website und das zugehörige E-Mail-Postfach werden bei IONOS SE betrieben. Soweit IONOS personenbezogene Daten in meinem Auftrag verarbeitet, erfolgt dies auf Grundlage eines Vertrags zur Auftragsverarbeitung gemäß Art. 28 DSGVO.<br><br>Weitere Informationen finden Sie in der Datenschutzerklärung von IONOS.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">3. Kontakt per E-Mail</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Wenn Sie mich per E-Mail kontaktieren, verarbeite ich die von Ihnen übermittelten Daten, insbesondere Ihre E-Mail-Adresse und den Inhalt Ihrer Nachricht.<br><br>Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage sowie gegebenenfalls zur Anbahnung oder Durchführung eines Vertragsverhältnisses. Die E-Mail-Kommunikation erfolgt über IONOS.<br><br>Die Daten werden gelöscht, sobald der Zweck der Verarbeitung entfällt und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">4. Cookies, Tracking und externe Inhalte</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Diese Website verwendet keine eigenen Cookies zu Analyse-, Marketing- oder Trackingzwecken und keine Webanalyse- oder Trackingdienste.<br><br>Es werden keine externen Inhalte wie Videos, Karten oder Social-Media-Plugins eingebunden. Die verwendeten Schriftarten werden lokal geladen.<br><br>Links zu LinkedIn und Instagram sind einfache externe Links. Erst beim Anklicken eines solchen Links verlassen Sie diese Website und es gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">5. Ihre Rechte</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 clamp(24px,3vw,32px); text-wrap:pretty;">Sie haben insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gemäß den Art. 15–21 DSGVO.<br><br>Zur Ausübung Ihrer Rechte können Sie sich an <a href="mailto:mail@natalieburkhart.com" style="color: var(--black); text-decoration: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0.25);">mail@natalieburkhart.com</a> wenden.<br></p>
+
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:0 0 8px;">6. Aktualität</div>
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:0 0 0; text-wrap:pretty;">Diese Datenschutzerklärung kann angepasst werden, wenn sich die technische Ausgestaltung der Website, die eingesetzten Dienste oder die rechtlichen Anforderungen ändern.<br><br>Stand: 7. September 2026</p>
+          </div>
+        </div>
+        <div style="grid-column:1 / -1; margin-top:clamp(28px,4vw,40px); margin-bottom:clamp(110px,15vh,170px);">
+          <a href="#" onClick="{{ toggleDatenschutz }}" style="font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;">← Zurück</a>
         </div>
       </div>
     </div>
@@ -594,7 +636,7 @@ class Component extends DCLogic {
     isNarrow: false,
     heroOrder: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
     introPassed: false,
-    indexOpen: false, anfrageOpen: false, impressumOpen: false, cvOpen: false,
+    indexOpen: false, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false,
     currentKey: null, selected: { thema: [], format: [] },
     openFrag: [false, false, false],
     openAngebot: [false, false, false],
@@ -861,20 +903,45 @@ class Component extends DCLogic {
 
 
 
-  toggleFrag(i) {
+  // Beim Öffnen eines Aufklappmenüs die Überschrift nach oben holen.
+  scrollRowToTop(el) {
+    if (!el) return;
+    let sc = el.parentElement;
+    while (sc && sc !== document.body) {
+      const oy = getComputedStyle(sc).overflowY;
+      if ((oy === 'auto' || oy === 'scroll') && sc.scrollHeight > sc.clientHeight + 4) break;
+      sc = sc.parentElement;
+    }
+    if (window.innerWidth > 700) return;
+    const offset = Math.round(window.innerHeight / 6);
+    requestAnimationFrame(() => {
+      if (sc && sc !== document.body) {
+        const delta = el.getBoundingClientRect().top - sc.getBoundingClientRect().top - offset;
+        sc.scrollTo({ top: sc.scrollTop + delta, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - offset, behavior: 'smooth' });
+      }
+    });
+  }
+
+  toggleFrag(i, e) {
+    const el = e && e.currentTarget;
     this.setState(s => {
       const wasOpen = s.openFrag[i];
       const openFrag = s.openFrag.map(() => false);
       openFrag[i] = !wasOpen;
+      if (!wasOpen) this.scrollRowToTop(el);
       return { openFrag };
     });
   }
 
-  toggleAngebot(i) {
+  toggleAngebot(i, e) {
+    const el = e && e.currentTarget;
     this.setState(s => {
       const wasOpen = s.openAngebot[i];
       const openAngebot = s.openAngebot.map(() => false);
       openAngebot[i] = !wasOpen;
+      if (!wasOpen) this.scrollRowToTop(el);
       return { openAngebot };
     });
   }
@@ -1128,11 +1195,13 @@ class Component extends DCLogic {
     ];
   }
 
-  toggleCvCat(i) {
+  toggleCvCat(i, e) {
+    const el = e && e.currentTarget;
     this.setState(s => {
       const wasOpen = s.openCvCat[i];
       const openCvCat = s.openCvCat.map(() => false);
       openCvCat[i] = !wasOpen;
+      if (!wasOpen) this.scrollRowToTop(el);
       return { openCvCat };
     });
   }
@@ -1145,24 +1214,33 @@ class Component extends DCLogic {
 
   goHome = (e) => {
     if (e && e.preventDefault) e.preventDefault();
-    this.setState({ indexOpen: false, anfrageOpen: false, impressumOpen: false, cvOpen: false });
+    this.setState({ indexOpen: false, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   toggleIndex = (e) => {
     if (e && e.preventDefault) e.preventDefault();
     this.setState(s => {
       if (s.indexOpen && s.selectedProject) return { selectedProject: null };
-      return { indexOpen: !s.indexOpen, selectedProject: null, anfrageOpen: false, impressumOpen: false, cvOpen: false };
+      return { indexOpen: !s.indexOpen, selectedProject: null, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false };
     });
   };
   closeIndex = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ indexOpen: false, selectedProject: null }); };
-  toggleAnfrage = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ anfrageOpen: !s.anfrageOpen, indexOpen: false, impressumOpen: false, cvOpen: false })); };
-  setFilterWho = (i) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ filterWho: s.filterWho === i ? null : i })); };
+  toggleAnfrage = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ anfrageOpen: !s.anfrageOpen, indexOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false })); };
+  setFilterWho = (i) => (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = e && e.currentTarget;
+    this.setState(s => {
+      const opening = s.filterWho !== i;
+      if (opening) this.scrollRowToTop(el);
+      return { filterWho: opening ? i : null };
+    });
+  };
   toggleShowAllFormate = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ showAllFormate: !s.showAllFormate })); };
-  toggleImpressum = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ impressumOpen: !s.impressumOpen, indexOpen: false, anfrageOpen: false, cvOpen: false })); };
+  toggleImpressum = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ impressumOpen: !s.impressumOpen, indexOpen: false, anfrageOpen: false, datenschutzOpen: false, cvOpen: false })); };
+  toggleDatenschutz = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState(s => ({ datenschutzOpen: !s.datenschutzOpen, indexOpen: false, anfrageOpen: false, impressumOpen: false, cvOpen: false })); };
   toggleCv = (e) => {
     if (e && e.preventDefault) e.preventDefault();
-    this.setState(s => ({ cvOpen: !s.cvOpen, indexOpen: false, anfrageOpen: false, impressumOpen: false }));
+    this.setState(s => ({ cvOpen: !s.cvOpen, indexOpen: false, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false }));
   };
 
   navStyle(active) {
@@ -1185,7 +1263,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const anyOpen = this.state.indexOpen || this.state.anfrageOpen || this.state.impressumOpen || this.state.cvOpen;
+    const anyOpen = this.state.indexOpen || this.state.anfrageOpen || this.state.impressumOpen || this.state.datenschutzOpen || this.state.cvOpen;
     const rowBase = {
       paddingTop: '10px', paddingBottom: '10px',
       borderTop: '1px solid #000',
@@ -1378,14 +1456,14 @@ class Component extends DCLogic {
       fragments: this.fragmentDefs().map((f, i) => ({
         ...f,
         open: !!this.state.openFrag[i],
-        toggle: () => this.toggleFrag(i),
+        toggle: (e) => this.toggleFrag(i, e),
         toggleGlyph: this.state.openFrag[i] ? '−' : '+',
         ruleStyle: this.navRuleStyle(!!this.state.openFrag[i]),
       })),
       angebote: this.currentProjectDefs().map((p, i) => ({
         ...p,
         open: !!this.state.openAngebot[i],
-        toggle: () => this.toggleAngebot(i),
+        toggle: (e) => this.toggleAngebot(i, e),
         toggleGlyph: this.state.openAngebot[i] ? '−' : '+',
         ruleStyle: this.navRuleStyle(!!this.state.openAngebot[i]),
         hasModules: Array.isArray(p.modules) && p.modules.length > 0,
@@ -1448,7 +1526,7 @@ class Component extends DCLogic {
       cvCategories: this.cvCategoryDefs().map((c, i) => ({
         ...c,
         open: !!this.state.openCvCat[i],
-        toggle: () => this.toggleCvCat(i),
+        toggle: (e) => this.toggleCvCat(i, e),
         toggleGlyph: this.state.openCvCat[i] ? '–' : '+',
         ruleStyle: this.navRuleStyle(!!this.state.openCvCat[i]),
         isText: !!c.analogText,
@@ -1474,6 +1552,8 @@ class Component extends DCLogic {
       ],
       impressumOpen: this.state.impressumOpen,
       toggleImpressum: this.toggleImpressum,
+      datenschutzOpen: this.state.datenschutzOpen,
+      toggleDatenschutz: this.toggleDatenschutz,
       cvOpen: this.state.cvOpen,
       toggleCv: this.toggleCv,
       navIndexStyle: this.navStyle(this.state.indexOpen),
