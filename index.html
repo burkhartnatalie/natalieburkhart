@@ -24,6 +24,8 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="./uploads/Favicon.png">
+  <link rel="apple-touch-icon" href="./uploads/Favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap">
@@ -123,6 +125,7 @@
             <span style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); display:block;">{{ card.date }}</span>
             <span style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); line-height:1.3; display:block; min-height:2.6em;">{{ card.partner }}</span>
             <span style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); display:block; min-height:4.65em;">{{ card.format }}</span>
+            <a href="#mehr-erfahren" onClick="{{ card.onMore }}" style="display:inline-block; margin-top:4px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; align-self:flex-start;" style-hover="opacity:0.62;">Mehr erfahren →</a>
           </div>
         </sc-for>
       </div>
@@ -388,10 +391,10 @@
             </div>
             <div style="margin-top:clamp(40px,5.2vw,56px);">
               <sc-for list="{{ contactCtaRows }}" as="row" hint-placeholder-count="6">
-                <div style="{{ row.rowStyle }}">
+                <a href="#format" onClick="{{ row.onOpen }}" style="{{ row.rowStyle }}" style-hover="opacity:0.62;">
                   <span style="{{ contactCellStyle }}">{{ row.konkret }}</span>
                   <span style="{{ contactAudienceStyle }}">{{ row.audience }}</span>
-                </div>
+                </a>
               </sc-for>
             </div>
             <p style="{{ anfrageOutroStyle }}">Das ist eine Übersicht über meine Formate. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
@@ -598,6 +601,20 @@
 
 </div>
 
+  <sc-if value="{{ praxisModalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closePraxisModal }}" style="position:fixed; inset:0; z-index:120; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; padding:clamp(16px,4vw,48px); animation:fadeInUp 260ms cubic-bezier(.22,1,.36,1) both;">
+      <div onClick="{{ stopModalClick }}" style="{{ modalPanelStyle }}">
+        <button onClick="{{ closePraxisModal }}" aria-label="Schließen" style="position:absolute; top:14px; right:14px; width:36px; height:36px; border:none; background:transparent; color:var(--black); font-family:var(--font-display); font-weight:300; font-size:1.5rem; line-height:1; cursor:pointer;">×</button>
+        <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black);">{{ praxisModalDate }}</div>
+        <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1.2rem,1.8vw,1.45rem); line-height:1.3; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ praxisModalPartner }}</h3>
+        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(16px,2vw,20px) 0 0; text-wrap:pretty;">{{ praxisModalFormat }}</p>
+        <sc-for list="{{ praxisModalBody }}" as="para" hint-placeholder-count="2">
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ para }}</p>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
   <sc-if value="{{ formatModalOpen }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closeFormatModal }}" style="position:fixed; inset:0; z-index:120; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; padding:clamp(16px,4vw,48px); animation:fadeInUp 260ms cubic-bezier(.22,1,.36,1) both;">
       <div onClick="{{ stopModalClick }}" style="{{ modalPanelStyle }}">
@@ -637,7 +654,7 @@ class Component extends DCLogic {
     openFrag: [false, false, false],
     openAngebot: [false, false, false],
     filterWho: null, showAllFormate: false,
-    formatModal: null, formatOffset: 0,
+    formatModal: null, formatOffset: 0, praxisModal: null,
     openCvCat: [false, false, false, false],
     selectedProject: null,
   };
@@ -1299,11 +1316,11 @@ class Component extends DCLogic {
       },
       {
         format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: '1:1 - Session an eigenen Use Cases',
-        teaser: 'Du arbeitest im Team oder als Solo-Selbstständige und möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?',
-        body: ['Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich biete kein Komplettpaket über alle verfügbaren KI-Tools. Stattdessen gebe ich etablierte und in eigener Praxis getestete Workflows weiter. Ich teste ständig neue Werkzeuge und kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
-        items: ['Einführung in Claude', 'Konsistente Bilder mit KI', 'Aufbau von Agentensystemen, z. B. mit Langdock'],
-        after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter.\nSchreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
-        ctaLabel: 'Anliegen schildern', ctaHref: mail('Anliegen: 1:1 Begleitung'),
+        teaser: 'Du möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?',
+        body: ['Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
+        items: ['Einführung in Claude', 'Konsistente Bilder mit KI', 'MCPs von Claude zu CAD-Programmen', 'Aufbau von Agentensystemen, z. B. mit Langdock'],
+        after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter. Schreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
+        ctaLabel: 'Kostenloses Erstgespräch anfragen', ctaHref: mail('Anliegen: 1:1 Begleitung'),
       },
       {
         format: 'Gestalterisch zusammenarbeiten', audience: 'GESTALTUNG', konkret: 'Kooperation · Auftragsprojekt',
@@ -1337,6 +1354,24 @@ class Component extends DCLogic {
     const y = el.getBoundingClientRect().top + window.pageYOffset - 24;
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
+  praxisDefs() {
+    return [
+      { date: 'Essay', partner: 'Baunetz Campus', format: 'Essay zu "Künstlichen Komplizinnen - KI kann mehr als schnelle Bilder", Mai 2026', body: [
+        'Der Essay für Baunetz Campus fragt, was passiert, wenn Studierende KI nicht als Bildautomat, sondern als Gegenüber im Entwurfsprozess begreifen.',
+        'Anhand von Beispielen aus der Lehre zeige ich, wie sich Recherche, Argumentation und Bildproduktion verschieben, sobald ein Modell im Team mitarbeitet – und welche Verantwortung dabei bei den Entwerfenden bleibt.'
+      ] },
+      { date: 'Vortrag', partner: 'Akademie für Raum und Wandel', format: 'Gastdozentin mit Vortrag über meine KI-Praxis, im Rahmen der KI-Ausbildung, Oktober 2026', body: [
+        'Im Rahmen der KI-Ausbildung der Akademie für Raum und Wandel spreche ich als Gastdozentin über das Verhältnis von fachlicher Expertise und generativen Werkzeugen.',
+        'Der Vortrag verbindet Praxisbeispiele aus Architekturkommunikation und Redaktion mit einer Methodik, die Fachwissen zur Voraussetzung guter KI-Arbeit macht statt es zu ersetzen.'
+      ] },
+      { date: 'Lecture + Workshop', partner: 'Brown University, Providence (US)', format: 'Online-Lecture zu AI in Architectural Design, Workshop und Reviews, Herbst 2026', body: [
+        'Für ein Design-Studio an der Brown University halte ich eine Online-Lecture mit anschließendem Workshop zur Bildgenerierung entlang zweier Motive: „Public Space“ und „Window Light“.',
+        'Die Teilnehmenden arbeiten an eigenen Bildserien und lernen, Prompts, Referenzen und Auswahlentscheidungen als gestalterische Arbeit zu behandeln.'
+      ] },
+    ];
+  }
+  openPraxisModal = (i) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ praxisModal: i }); };
+  closePraxisModal = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ praxisModal: null }); };
   openFormatModal = (i) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ formatModal: i }); };
   closeFormatModal = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ formatModal: null }); };
 
@@ -1418,16 +1453,17 @@ class Component extends DCLogic {
           {
             title: 'Konkrete Anwendung in Sessions',
             meta: '',
-            body: 'Du arbeitest im Team oder als Solo-Selbstständige und möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?\nVielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.\nIch biete kein Komplettpaket über alle verfügbaren KI-Tools. Stattdessen gebe ich etablierte und in eigener Praxis getestete Workflows weiter. Ich teste ständig neue Werkzeuge und kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.\nMögliche Themen sind zum Beispiel:',
+            body: 'Du möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?\nVielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.\nIch gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.\nMögliche Themen sind zum Beispiel:',
             items: [
               'Einführung in Claude',
               'Konsistente Bilder mit KI',
+              'MCPs von Claude zu CAD-Programmen',
               'Aufbau von Agentensystemen, z. B. mit Langdock',
             ],
             hasItems: true,
-            after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter.\nSchreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
+            after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter. Schreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
             hasAfter: true,
-            ctaLabel: 'Anliegen schildern', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anliegen: 1:1 Begleitung'), hasCta: true,
+            ctaLabel: 'Kostenloses Erstgespräch anfragen', ctaHref: 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent('Anliegen: 1:1 Begleitung'), hasCta: true,
           },
         ],
         closing: '',
@@ -1623,11 +1659,13 @@ class Component extends DCLogic {
       toggleIndex: this.toggleIndex,
       anfrageOpen: this.state.anfrageOpen,
       toggleAnfrage: this.toggleAnfrage,
-      aktuelleProjekteCards: [
-        { date: '18.05.2026', partner: 'Baunetz Campus', format: 'Essay zu "Künstlichen Komplizinnen: Warum KI mehr kann als schnelle Bilder" über KI-Teams im Studium', type: 'Essay' },
-        { date: '01.10.2026', partner: 'Akademie für Raum und Wandel', format: 'Vortrag als Gastdozentin über KI und Expertise im Rahmen der KI-Ausbildung', type: 'Gastvortrag' },
-        { date: '10/11.2026', partner: 'Brown University', format: 'Online-Lecture und -Workshop zu Image Generation "Public Space" and "Window Light"', type: 'Lecture + Workshop' },
-      ],
+      aktuelleProjekteCards: this.praxisDefs().map((c, i) => ({ ...c, onMore: this.openPraxisModal(i) })),
+      praxisModalOpen: this.state.praxisModal !== null && this.state.praxisModal !== undefined,
+      closePraxisModal: this.closePraxisModal,
+      praxisModalDate: (this.praxisDefs()[this.state.praxisModal] || {}).date || '',
+      praxisModalPartner: (this.praxisDefs()[this.state.praxisModal] || {}).partner || '',
+      praxisModalFormat: (this.praxisDefs()[this.state.praxisModal] || {}).format || '',
+      praxisModalBody: (this.praxisDefs()[this.state.praxisModal] || {}).body || [],
       impressumOpen: this.state.impressumOpen,
       toggleImpressum: this.toggleImpressum,
       datenschutzOpen: this.state.datenschutzOpen,
@@ -1776,7 +1814,9 @@ class Component extends DCLogic {
           },
           contactCtaRows: defs.map((d, i) => ({
             ...d,
+            onOpen: this.openFormatModal(i),
             rowStyle: {
+              color: 'var(--black)', textDecoration: 'none', cursor: 'pointer',
               paddingTop: '10px', paddingBottom: '10px',
               borderTop: i === 0 ? 'none' : '1px solid #000',
               display: 'grid',
