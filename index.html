@@ -122,18 +122,25 @@
 
     <div style="{{ colAktuelleProjekte }}">
       <h2 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.5rem,3vw,2.3rem); line-height:1.18; color:var(--black); margin:0 0 clamp(24px,3vw,36px); text-wrap:pretty;">Aus der Praxis</h2>
-      <div style="display:flex; gap:clamp(20px,2.4vw,28px);">
-        <sc-for list="{{ aktuelleProjekteCards }}" as="card" hint-placeholder-count="3">
-          <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+      <div ref="{{ attachPraxisTrack }}" style="display:flex; gap:clamp(20px,2.4vw,28px); overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;">
+        <sc-for list="{{ aktuelleProjekteCards }}" as="card" hint-placeholder-count="4">
+          <div style="{{ praxisCardStyle }}">
+            <a href="#mehr-erfahren" onClick="{{ card.onMore }}" aria-label="Mehr erfahren" style="display:block; aspect-ratio:4 / 5; width:100%; background:#f1f0ee; overflow:hidden; margin-bottom:8px; cursor:pointer;" style-hover="opacity:0.88;">
+              <sc-if value="{{ card.hasImage }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ card.image }}" alt="{{ card.partner }}" style="display:block; width:100%; height:100%; object-fit:cover;">
+              </sc-if>
+            </a>
             <span style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--black); display:block;">{{ card.date }}</span>
             <span style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1rem,1.4vw,1.15rem); color:var(--black); line-height:1.3; display:block; min-height:2.6em;">{{ card.partner }}</span>
             <span style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); display:block; min-height:4.65em;">{{ card.format }}</span>
-            <a href="#mehr-erfahren" onClick="{{ card.onMore }}" style="display:inline-block; margin-top:4px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; align-self:flex-start;" style-hover="opacity:0.62;">Mehr erfahren →</a>
+            <sc-if value="{{ card.isReal }}" hint-placeholder-val="{{ true }}">
+              <a href="#mehr-erfahren" onClick="{{ card.onMore }}" style="display:inline-block; margin-top:4px; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none; align-self:flex-start;" style-hover="opacity:0.62;">Mehr erfahren →</a>
+            </sc-if>
           </div>
         </sc-for>
       </div>
       <div style="display:flex; justify-content:flex-end; margin-top:clamp(20px,2.4vw,28px);">
-        
+        <button onClick="{{ advancePraxis }}" aria-label="Weitere Beiträge" style="width:48px; height:48px; border:1px solid var(--black); background:transparent; color:var(--black); font-family:var(--font-display); font-weight:300; font-size:1.15rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 200ms ease, color 200ms ease;" style-hover="background:var(--black); color:#fff;">→</button>
       </div>
     </div>
 
@@ -400,7 +407,7 @@
                 </a>
               </sc-for>
             </div>
-            <p style="{{ anfrageOutroStyle }}">Das ist eine Übersicht über meine Formate. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
+            <p style="{{ anfrageOutroStyle }}">Das ist eine Übersicht über meine Formate. Wenn kein passendes Format dabei ist, schreib mir gerne eine Mail mit deiner Idee. Auch für gestalterische Kooperationen oder künstlerische Auftragsprojekte kannst du mir einfach direkt schreiben. Den genauen Rahmen schärfen wir – unabhängig davon welches Format – sowieso im kostenlosen Erstgespräch. Ich arbeite in Wien und remote.</p>
             <div style="display:flex; margin-top:clamp(20px,2.6vw,28px);">
               <a href="mailto:mail@natalieburkhart.com?subject=Zusammenarbeit" style="background:var(--black); color:#fff; font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; text-decoration:none; padding:14px 22px; display:inline-flex; align-items:center;" style-hover="opacity:0.82;">Zusammenarbeit anfragen</a>
             </div>
@@ -610,10 +617,22 @@
         <button onClick="{{ closePraxisModal }}" aria-label="Schließen" style="position:absolute; top:14px; right:14px; width:36px; height:36px; border:none; background:transparent; color:var(--black); font-family:var(--font-display); font-weight:300; font-size:1.5rem; line-height:1; cursor:pointer;">×</button>
         <div style="font-family:var(--font-display); font-weight:600; font-size:0.66rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--black);">{{ praxisModalDate }}</div>
         <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1.2rem,1.8vw,1.45rem); line-height:1.3; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ praxisModalPartner }}</h3>
-        <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(16px,2vw,20px) 0 0; text-wrap:pretty;">{{ praxisModalFormat }}</p>
+        <sc-if value="{{ praxisModalHasTitle }}" hint-placeholder-val="{{ false }}">
+          <h4 style="font-family:var(--font-serif); font-weight:400; letter-spacing:-0.005em; font-size:clamp(1.35rem,2vw,1.7rem); line-height:1.22; color:var(--black); margin:clamp(16px,2vw,20px) 0 0; text-wrap:pretty;">{{ praxisModalTitle }}</h4>
+        </sc-if>
+        
         <sc-for list="{{ praxisModalBody }}" as="para" hint-placeholder-count="2">
           <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ para }}</p>
         </sc-for>
+        <sc-if value="{{ praxisModalHasWhen }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0;">{{ praxisModalWhen }}</p>
+        </sc-if>
+        <sc-if value="{{ praxisModalHasProject }}" hint-placeholder-val="{{ false }}">
+          <a href="#projekt" onClick="{{ openPraxisProject }}" style="display:inline-block; margin-top:clamp(16px,2vw,20px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;" style-hover="opacity:0.62;">{{ praxisModalProjectLabel }} →</a>
+        </sc-if>
+        <sc-if value="{{ praxisModalHasLink }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ praxisModalLink }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:clamp(16px,2vw,20px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;" style-hover="opacity:0.62;">Link zur Sammlung ↗</a>
+        </sc-if>
       </div>
     </div>
   </sc-if>
@@ -712,7 +731,7 @@ class Component extends DCLogic {
   };
 
   contactDictText() {
-    return { title: 'Zusammen arbeiten?', body: 'Wenn du ein Format mit mir entwickeln möchtest, 1:1 Begleitung suchst oder ein künstlerisches Projekt gemeinsam realisieren willst, melde dich gern bei mir.' };
+    return { title: 'Zusammen arbeiten?', body: 'Wenn du ein Format mit mir entwickeln möchtest, 1:1 Begleitung suchst oder ein künstlerisches Projekt gemeinsam realisieren willst, melde dich gern bei mir. Auch für Kooperationen oder Auftragsprojekte schreib mir einfach direkt.' };
   }
 
   attachContactReveal = (el) => {
@@ -1138,7 +1157,7 @@ class Component extends DCLogic {
         facts: [
           { label: 'Jahr', value: '2025, 2026' },
           { label: 'Art des Projekts', value: 'Ideenwettbewerb' },
-          { label: 'Preis', value: 'The Architects Stair 2, Buildner (Anerkennung)' },
+          { label: 'Preis', value: 'The Architects Stair 2, Buildner (Anerkennung), AI Architecture Awards 2026 (Anerkennung, Kategorie Interior)' },
           { label: 'Tools', value: 'Midjourney, ArchiCad, ChatGPT, \nGendo, Nano Banana' },
           { label: 'Interview zum Projekt', value: 'hier nachlesen ↗', link: 'https://architecturecompetitions.com/the-architects-stair-competition-participants-natalie-maria-burkhart-8028' },
         ],
@@ -1282,7 +1301,7 @@ class Component extends DCLogic {
 
   formatCardDefs() {
     const all = this.formatCardDefsRaw();
-    return [3, 1, 4, 0, 2, 5].map(i => all[i]);
+    return [3, 1, 0, 2].map(i => all[i]).filter(Boolean);
   }
   formatCardDefsRaw() {
     const mail = (s) => 'mailto:mail@natalieburkhart.com?subject=' + encodeURIComponent(s);
@@ -1312,15 +1331,9 @@ class Component extends DCLogic {
         items: [], after: '', ctaLabel: 'Format anfragen', ctaHref: mail('Anfrage: Format'),
       },
       {
-        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: 'Orientierungsgespräch',
-        teaser: 'Du möchtest verstehen, was KI für deine eigene architektonische Praxis bedeutet, ohne dich durch die tägliche Flut an Tools und Entwicklungen arbeiten zu müssen?',
-        body: ['Im Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten.', 'Du gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.'],
-        items: [], after: '', ctaLabel: 'Orientierungsgespräch anfragen', ctaHref: mail('Anfrage: Orientierungsgespräch'),
-      },
-      {
-        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: '1:1 - Session an eigenen Use Cases',
-        teaser: 'Du möchtest KI an konkreten Aufgaben aus deiner eigenen Praxis sinnvoll einsetzen?',
-        body: ['Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
+        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: 'Orientierungsgespräch und 1:1 Sessions',
+        teaser: 'Du möchtest verstehen, was KI für deine architektonische Praxis bedeutet, oder sie an konkreten Aufgaben sinnvoll einsetzen?',
+        body: ['Im Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten – ohne dass du dich durch die tägliche Flut an Tools und Entwicklungen arbeiten musst. Du gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.', 'In den 1:1 Sessions arbeiten wir an konkreten Aufgaben aus deiner eigenen Praxis. Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
         items: ['Einführung in Claude', 'Konsistente Bilder mit KI', 'MCPs von Claude zu CAD-Programmen', 'Aufbau von Agentensystemen, z. B. mit Langdock'],
         after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter. Schreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
         ctaLabel: 'Kostenloses Erstgespräch anfragen', ctaHref: mail('Anliegen: 1:1 Begleitung'),
@@ -1357,19 +1370,59 @@ class Component extends DCLogic {
     const y = el.getBoundingClientRect().top + window.pageYOffset - 24;
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
+  attachPraxisTrack = (el) => { this._praxisTrack = el; };
+  advancePraxis = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = this._praxisTrack;
+    const first = el && el.firstElementChild;
+    if (!first) return;
+    const gap = parseFloat(getComputedStyle(el).columnGap || '0') || 0;
+    const step = first.getBoundingClientRect().width + gap;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
+  };
   praxisDefs() {
+    const order = ['Brown', 'AI Architecture', 'Akademie', 'Baunetz', 'Women Writing', 'One Million'];
+    const rank = (d) => { const i = order.findIndex(k => (d.partner || '').includes(k)); return i < 0 ? 99 : i; };
+    return this.praxisDefsRaw().slice().sort((a, b) => rank(a) - rank(b));
+  }
+  praxisDefsRaw() {
     return [
-      { date: 'Essay', partner: 'Baunetz Campus', format: 'Essay zu "Künstlichen Komplizinnen - KI kann mehr als schnelle Bilder", Mai 2026', body: [
+      { date: 'Nominierung', partner: 'One Million Women', format: 'Nominierung "Women in AI" bei der Kampagne #ONEMILLIONWOMEN', image: './uploads/Nominierung Women in AI.png',
+        title: 'Women in AI', body: [
+        'Ich freue mich über die Nominierung bei der Kampagne #ONEMILLIONWOMEN.',
+        'Die Kampagne macht Frauen sichtbar, die KI erforschen, bauen, anwenden und verantworten – mit dem Ziel, eine Million Frauen in KI sichtbar zu machen. Getragen wird sie von Partnern wie Hapag-Lloyd, der Deutschen Telekom, N26 und The Female AI Club.'
+      ] },
+      { when: 'Oktober 2026', date: 'Anerkennung', partner: 'AI Architecture Awards 2026', format: 'Anerkennung in der Kategorie Interior für das Projekt "After Macbeth"', image: './uploads/After Macbeth.png',
+        projectKey: 'schnelle-bilder', projectLabel: 'Zum Projekt',
+        title: 'After Macbeth', body: [
+        'After Macbeth spiegelt mein Interesse an KI als kreativer Komplizin in der Architektur wider. Mein Ansatz verbindet digitale Systeme mit räumlicher und sinnlicher Intelligenz: KI-generierte Bilder können Möglichkeiten eröffnen, bleiben aber Fragmente, die ausgewählt, bewertet und mit einer klaren Entwurfsabsicht verbunden werden müssen.',
+        'Ich freue mich sehr, dass das Projekt bei den AI Architecture Awards 2026 eine Anerkennung in der Kategorie Interior erhalten hat.'
+      ] },
+      { when: 'Juli 2026', date: 'Sammlung', partner: 'Women Writing Architecture', format: 'Gründung der Sammlung "Artificial Accomplices in Architecture"', image: './uploads/AAA.png',
+        link: 'https://womenwritingarchitecture.org/collection/artificial-accomplices-in-architecture/',
+        title: 'WOMEN x ARCHITECTURE x AI - Beiträge gesucht!', body: [
+        'Der Diskurs um KI in der Architektur ist bislang überwiegend männlich geprägt. Anlass für mich, die Sammlung „Artificial Accomplices in Architecture“ bei Women Writing Architecture zu gründen. Diese enthält bisher eine Handvoll Beiträge und soll wachsen.',
+        'Gesucht: Blog-Posts, Bücher, Buchkapitel, Essays, Podcasts, Filme, die den Diskurs bereichern.',
+        'Kennst du Beiträge? Dann schreib mir gerne!'
+      ] },
+      { when: 'Mai 2026', date: 'Essay', partner: 'Baunetz Campus', format: 'Essay zu "Künstlichen Komplizinnen - KI kann mehr als schnelle Bilder", Mai 2026', image: './uploads/Kuenstliche Komplizinnen.png', projectKey: 'komplizinnen', projectLabel: 'Zum Essay', title: 'Künstliche Komplizinnen', body: [
         'Der Essay für Baunetz Campus fragt, was passiert, wenn Studierende KI nicht als Bildautomat, sondern als Gegenüber im Entwurfsprozess begreifen.',
         'Anhand von Beispielen aus der Lehre zeige ich, wie sich Recherche, Argumentation und Bildproduktion verschieben, sobald ein Modell im Team mitarbeitet – und welche Verantwortung dabei bei den Entwerfenden bleibt.'
       ] },
-      { date: 'Vortrag', partner: 'Akademie für Raum und Wandel', format: 'Gastdozentin mit Vortrag über meine KI-Praxis, im Rahmen der KI-Ausbildung, Oktober 2026', body: [
+      { when: 'Oktober 2026', date: 'KEYNOTE', partner: 'Akademie für Raum und Wandel', format: 'Keynote über meine KI-Praxis, vom Interesse über Bildung bis zur Sichtbarkeit zum Angebot', image: './uploads/Keynote Raum und Wandel.png', title: 'Über Expertise, Sichtbarkeit und Positionierung', body: [
         'Im Rahmen der KI-Ausbildung der Akademie für Raum und Wandel spreche ich als Gastdozentin über das Verhältnis von fachlicher Expertise und generativen Werkzeugen.',
-        'Der Vortrag verbindet Praxisbeispiele aus Architekturkommunikation und Redaktion mit einer Methodik, die Fachwissen zur Voraussetzung guter KI-Arbeit macht statt es zu ersetzen.'
+        'Der Vortrag verbindet Praxisbeispiele aus Architekturkommunikation und Redaktion mit einer Methodik, die Fachwissen zur Voraussetzung guter KI-Arbeit macht.'
       ] },
-      { date: 'Lecture + Workshop', partner: 'Brown University, Providence (US)', format: 'Online-Lecture zu AI in Architectural Design, Workshop und Reviews, Herbst 2026', body: [
-        'Für ein Design-Studio an der Brown University halte ich eine Online-Lecture mit anschließendem Workshop zur Bildgenerierung entlang zweier Motive: „Public Space“ und „Window Light“.',
-        'Die Teilnehmenden arbeiten an eigenen Bildserien und lernen, Prompts, Referenzen und Auswahlentscheidungen als gestalterische Arbeit zu behandeln.'
+      { when: 'Herbst 2026', date: 'VORTRAG + Workshop', partner: 'Brown University, Providence (US)', format: 'Online-Vortrag zu AI in Architectural Design, inkl. Workshop und Reviews', image: './uploads/Brown.png',
+        projectKey: 'intuition-algorithmus', projectLabel: 'Zum Essay',
+        title: 'KI in der Lehre. Und die Frage nach der architektonischen Idee', body: [
+        'Ein schönes Rendering lässt sich aus einem Modell mit KI auf Knopfdruck erzeugen. Ein konsistenter Entwurf entsteht dadurch aber noch nicht.',
+        'Die Initiative entstand durch meinen Essay „Intuition und Algorithmus“ bei Baunetz Campus.',
+        'An der Brown University durfte ich eine Online-Gastvorlesung halten und einen Workshop zum Thema „Intuition und Algorithmus“ mitkonzipieren. Die Studierenden bearbeiteten darin abstrakte Modellfotos mit KI. Es ging nicht darum, möglichst perfekte Bilder zu erzeugen, sondern KI als Experimentierraum im Entwurfsprozess zu nutzen.',
+        'Überraschend war, was einzelne Bildfragmente auslösen konnten: Ideen, auf die man ohne diesen Umweg vielleicht nicht gekommen wäre. Im Pingpong zwischen Modell und Skizze wurden sie weiterentwickelt. Doch generische Bilder entstehen genauso schnell. Und hochrealistische Darstellungen können den Blick verengen, wenn sie vor allem über die Oberfläche sprechen.',
+        'Die entscheidende Fähigkeit ist deshalb, einen KI-Output im Verhältnis zur eigenen Entwurfsabsicht zu beurteilen. Nach jedem Bild bleibt die Frage: Was ist die architektonische Idee in meinem Entwurf? Für mich heißt das: Fragmente mit Potenzial weiterentwickeln und immer wieder zum eigenen Kontext zurückkehren, zum eigenen Kopf und zum Stift.',
+        'Am meisten mitgenommen habe ich den Austausch mit den Studierenden. Er hat gezeigt, dass sich eine Haltung zu KI entwickeln lässt, die weder in unkritische Begeisterung noch in pauschale Ablehnung kippt. Der Weg dorthin: ausprobieren, darüber sprechen, im Dialog bleiben.'
       ] },
     ];
   }
@@ -1662,7 +1715,33 @@ class Component extends DCLogic {
       toggleIndex: this.toggleIndex,
       anfrageOpen: this.state.anfrageOpen,
       toggleAnfrage: this.toggleAnfrage,
-      aktuelleProjekteCards: this.praxisDefs().map((c, i) => ({ ...c, onMore: this.openPraxisModal(i) })),
+      aktuelleProjekteCards: (() => {
+        const defs = this.praxisDefs().map((c, i) => ({ ...c, hasImage: !!c.image, isReal: true, onMore: c.directProject
+          ? (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ indexOpen: true, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false }); this.selectProject(c.directProject); }
+          : this.openPraxisModal(i) }));
+        while (defs.length < 5) defs.push({ date: '', partner: '', format: '', hasImage: false, isReal: false, onMore: (e) => { if (e && e.preventDefault) e.preventDefault(); } });
+        return defs;
+      })(),
+      attachPraxisTrack: this.attachPraxisTrack,
+      advancePraxis: this.advancePraxis,
+      praxisCardStyle: {
+        flex: this.state.isNarrow ? '0 0 84%' : '0 0 calc((100% - 3 * clamp(20px,2.4vw,28px)) / 3.5)',
+        minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px', scrollSnapAlign: 'start',
+      },
+      praxisModalLink: (this.praxisDefs()[this.state.praxisModal] || {}).link || '',
+      praxisModalHasLink: !!(this.praxisDefs()[this.state.praxisModal] || {}).link,
+      praxisModalHasProject: !!(this.praxisDefs()[this.state.praxisModal] || {}).projectKey,
+      praxisModalProjectLabel: (this.praxisDefs()[this.state.praxisModal] || {}).projectLabel || '',
+      openPraxisProject: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        const d = this.praxisDefs()[this.state.praxisModal];
+        this.setState({ praxisModal: null, indexOpen: true, anfrageOpen: false, impressumOpen: false, datenschutzOpen: false, cvOpen: false });
+        if (d && d.projectKey) this.selectProject(d.projectKey);
+      },
+      praxisModalWhen: (this.praxisDefs()[this.state.praxisModal] || {}).when || '',
+      praxisModalHasWhen: !!(this.praxisDefs()[this.state.praxisModal] || {}).when,
+      praxisModalHasTitle: !!(this.praxisDefs()[this.state.praxisModal] || {}).title,
+      praxisModalTitle: (this.praxisDefs()[this.state.praxisModal] || {}).title || '',
       praxisModalOpen: this.state.praxisModal !== null && this.state.praxisModal !== undefined,
       closePraxisModal: this.closePraxisModal,
       praxisModalDate: (this.praxisDefs()[this.state.praxisModal] || {}).date || '',
@@ -1743,7 +1822,7 @@ class Component extends DCLogic {
         return {
           formatCards: rotated,
           formatCardStyle: {
-            flex: narrow ? '0 0 84%' : '0 0 calc((100% - 3 * clamp(16px,2vw,24px)) / 3.5)',
+            flex: narrow ? '0 0 84%' : '1 1 0',
             minWidth: 0,
             height: 'clamp(420px,32vw,520px)',
             boxSizing: 'border-box',
@@ -1767,7 +1846,7 @@ class Component extends DCLogic {
             gridColumn: 'span 4',
             minWidth: 0,
             overflow: 'hidden',
-            width: 'calc(100% - 0.5 * ((100% - 3 * clamp(16px,2vw,24px)) / 4))',
+            width: '100%',
           },
           formateTrackStyle: narrow ? { display: 'contents' } : {
             display: 'flex',
@@ -1783,7 +1862,7 @@ class Component extends DCLogic {
             : { position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 'clamp(16px,2vw,24px)', alignItems: 'stretch' },
           formateArrowWrapStyle: narrow
             ? { display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }
-            : { position: 'absolute', right: 0, bottom: 0, display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' },
+            : { display: 'none' },
           advanceFormate: this.advanceFormate,
           goToFormate: this.goToFormate,
           formatModalOpen: !!m,
