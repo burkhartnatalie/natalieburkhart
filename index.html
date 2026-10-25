@@ -198,6 +198,8 @@
       </div>
     </div>
 
+    <p style="grid-column:1 / -1; max-width:44rem; font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(20px,2.6vw,28px) 0 0; text-align:left; text-wrap:pretty;">Für gestalterische Zusammenarbeit schreib mir direkt eine <a href="mailto:mail@natalieburkhart.com?subject=Gestalterische%20Zusammenarbeit" style="color:var(--black); text-decoration:underline; text-underline-offset:3px;">Mail</a>.</p>
+
   </div>
 
   <!-- SCREEN 3 — Haltungen + Bild, fills the viewport -->
@@ -631,7 +633,7 @@
           <a href="#projekt" onClick="{{ openPraxisProject }}" style="display:inline-block; margin-top:clamp(16px,2vw,20px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;" style-hover="opacity:0.62;">{{ praxisModalProjectLabel }} →</a>
         </sc-if>
         <sc-if value="{{ praxisModalHasLink }}" hint-placeholder-val="{{ false }}">
-          <a href="{{ praxisModalLink }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:clamp(16px,2vw,20px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;" style-hover="opacity:0.62;">Link zur Sammlung ↗</a>
+          <a href="{{ praxisModalLink }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:clamp(16px,2vw,20px); font-family:var(--font-display); font-weight:600; font-size:0.8rem; letter-spacing:0.02em; color:var(--black); text-decoration:none;" style-hover="opacity:0.62;">{{ praxisModalLinkLabel }}</a>
         </sc-if>
       </div>
     </div>
@@ -645,7 +647,12 @@
         <h3 style="font-family:var(--font-display); font-weight:700; letter-spacing:-0.01em; font-size:clamp(1.2rem,1.8vw,1.45rem); line-height:1.3; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty;">{{ modalKonkret }}</h3>
         <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(16px,2vw,20px) 0 0; text-wrap:pretty;">{{ modalTeaser }}</p>
         <sc-for list="{{ modalBody }}" as="para" hint-placeholder-count="2">
-          <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty; white-space:pre-line;">{{ para }}</p>
+          <sc-if value="{{ para.isHeading }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:var(--font-display); font-weight:700; font-size:clamp(0.95rem,1.2vw,1.05rem); letter-spacing:-0.01em; color:var(--black); margin:clamp(20px,2.4vw,26px) 0 0;">{{ para.text }}</div>
+          </sc-if>
+          <sc-if value="{{ para.isPara }}" hint-placeholder-val="{{ true }}">
+            <p style="font-family:var(--font-serif); font-style:normal; font-weight:400; letter-spacing:0; font-size:clamp(1.06rem,1.24vw,1.14rem); line-height:1.4; color:var(--black); margin:clamp(12px,1.6vw,16px) 0 0; text-wrap:pretty; white-space:pre-line;">{{ para.text }}</p>
+          </sc-if>
         </sc-for>
         <sc-if value="{{ modalHasItems }}" hint-placeholder-val="{{ false }}">
           <ul style="list-style:none; margin:clamp(10px,1.4vw,14px) 0 0; padding:0; display:flex; flex-direction:column; gap:4px;">
@@ -1325,15 +1332,15 @@ class Component extends DCLogic {
         ctaLabel: 'Beitrag anfragen', ctaHref: mail('Anfrage: Beitrag'),
       },
       {
-        format: 'Wissen vermitteln', audience: 'Für Institutionen', konkret: 'Vortrag · Formatentwicklung',
-        teaser: 'Du möchtest ein Format zu Architektur und KI entwickeln?',
-        body: ['Ich begleite die Konzeption von Formaten, die aktuelle Entwicklungen einordnen und mit Fragen zu Gestaltung, Verantwortung und Praxis verbinden. Oder vermittle selbst direkt Wissen in Form eines Vortrages.', 'Dabei kann es um ein konkretes Veranstaltungsformat, eine Ausstellung, ein Bildungsangebot oder eine längerfristige Zusammenarbeit gehen.', 'Schreibe mir deine Idee für einen ersten Austausch.'],
+        format: 'Wissen vermitteln', audience: 'Für Institutionen', konkret: 'Keynote · Formatentwicklung',
+        teaser: 'Du suchst eine Keynote oder ein Format – von der Positionierung eigener Expertise bis zu KI als kulturelle Praxis?',
+        body: ['Ich begleite die Konzeption von Formaten, die aktuelle Entwicklungen einordnen und mit Fragen zu Gestaltung, Verantwortung und Praxis verbinden. Oder vermittle selbst direkt Wissen und Einblicke in meine Arbeit als KI-Expertin in Form einer Keynote.', 'Dabei kann es um ein konkretes Veranstaltungsformat, eine Ausstellung, ein Bildungsangebot oder eine längerfristige Zusammenarbeit gehen.', 'Schreibe mir deine Idee für einen ersten Austausch.'],
         items: [], after: '', ctaLabel: 'Format anfragen', ctaHref: mail('Anfrage: Format'),
       },
       {
-        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: 'Orientierungsgespräch und 1:1 Sessions',
+        format: '1:1 Begleitung', audience: 'Für Architekt:innen', konkret: 'Orientierungsgespräch · 1:1 Sessions',
         teaser: 'Du möchtest verstehen, was KI für deine architektonische Praxis bedeutet, oder sie an konkreten Aufgaben sinnvoll einsetzen?',
-        body: ['Im Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten – ohne dass du dich durch die tägliche Flut an Tools und Entwicklungen arbeiten musst. Du gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.', 'In den 1:1 Sessions arbeiten wir an konkreten Aufgaben aus deiner eigenen Praxis. Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
+        body: ['Es gibt zwei Wege, wie wir zusammen arbeiten können.', { h: 'Orientierungsgespräch' }, 'Im Orientierungsgespräch ordnen wir aktuelle Entwicklungen ein, schauen auf relevante Werkzeuge und klären, welche Möglichkeiten für deine Arbeit tatsächlich interessant sein könnten – ohne dass du dich durch die tägliche Flut an Tools und Entwicklungen arbeiten musst. Du gehst mit einem besseren Überblick, einer Einschätzung deiner Möglichkeiten und konkreten nächsten Schritten aus dem Gespräch.', { h: '1:1 Sessions' }, 'In den 1:1 Sessions arbeiten wir an konkreten Aufgaben aus deiner eigenen Praxis. Vielleicht fehlen dir konsistente Bilder, du möchtest ein Agentensystem aufbauen oder dein Wissen zu Claude vertiefen, oder Claude mit deinem CAD-Programm verbinden. Wir arbeiten direkt an deinen eigenen Use Cases und entwickeln dafür passende Lösungswege und anwendbare Vorgehensweisen.', 'Ich gebe etablierte und in eigener Praxis getestete Workflows weiter – inklusive Erkenntnissen für eine bewusste KI-Nutzung. Ich kann mich auch anwendungsfallbezogen mit neuen Werkzeugen beschäftigen und dieses Wissen dann weitergeben.', 'Mögliche Themen sind zum Beispiel:'],
         items: ['Einführung in Claude', 'Konsistente Bilder mit KI', 'MCPs von Claude zu CAD-Programmen', 'Aufbau von Agentensystemen, z. B. mit Langdock'],
         after: 'Dabei lernst du nicht nur einzelne Tools kennen, sondern entwickelst deine eigene Lösungsfähigkeit im Umgang mit KI weiter. Schreibe mir dein Anliegen und wir schauen in dem kostenlosen Erstgespräch, wie ich dir konkret helfen kann und in welchem Umfang.',
         ctaLabel: 'Kostenloses Erstgespräch anfragen', ctaHref: mail('Anliegen: 1:1 Begleitung'),
@@ -1396,7 +1403,8 @@ class Component extends DCLogic {
       { when: 'Oktober 2026', date: 'Anerkennung', partner: 'AI Architecture Awards 2026', format: 'Anerkennung in der Kategorie Interior für das Projekt "After Macbeth"', image: './uploads/After Macbeth.png',
         projectKey: 'schnelle-bilder', projectLabel: 'Zum Projekt',
         title: 'After Macbeth', body: [
-        'After Macbeth spiegelt mein Interesse an KI als kreativer Komplizin in der Architektur wider. Mein Ansatz verbindet digitale Systeme mit räumlicher und sinnlicher Intelligenz: KI-generierte Bilder können Möglichkeiten eröffnen, bleiben aber Fragmente, die ausgewählt, bewertet und mit einer klaren Entwurfsabsicht verbunden werden müssen.',
+        'After Macbeth ist eine räumliche Reflexion über Macht und Sichtbarkeit: Eine Corten-Doppelhelix auf der Bühne, zum Publikum hin offen, nach hinten geschlossen, übersetzt Shakespeares Tragödie in eine Geometrie aus Gesehenwerden und Verstecken.',
+        'Entstanden ist das Bild über ein Jahr hinweg – von ersten Midjourney-Studien über ArchiCad und ChatGPT bis zu Gendo und Nano Banana Pro. Dabei zeigte sich: KI-generierte Bilder eröffnen Möglichkeiten, bleiben aber Fragmente, die ausgewählt, bewertet und mit einer klaren Entwurfsabsicht verbunden werden müssen. Bessere Tools bedeuten nicht automatisch bessere Bilder.',
         'Ich freue mich sehr, dass das Projekt bei den AI Architecture Awards 2026 eine Anerkennung in der Kategorie Interior erhalten hat.'
       ] },
       { when: 'Juli 2026', date: 'Sammlung', partner: 'Women Writing Architecture', format: 'Gründung der Sammlung "Artificial Accomplices in Architecture"', image: './uploads/AAA.png',
@@ -1411,18 +1419,18 @@ class Component extends DCLogic {
         'Anhand von Beispielen aus der Lehre zeige ich, wie sich Recherche, Argumentation und Bildproduktion verschieben, sobald ein Modell im Team mitarbeitet – und welche Verantwortung dabei bei den Entwerfenden bleibt.'
       ] },
       { when: 'Oktober 2026', date: 'KEYNOTE', partner: 'Akademie für Raum und Wandel', format: 'Keynote über meine KI-Praxis, vom Interesse über Bildung bis zur Sichtbarkeit zum Angebot', image: './uploads/Keynote Raum und Wandel.png', title: 'Über Expertise, Sichtbarkeit und Positionierung', body: [
-        'Im Rahmen der KI-Ausbildung der Akademie für Raum und Wandel spreche ich als Gastdozentin über das Verhältnis von fachlicher Expertise und generativen Werkzeugen.',
-        'Der Vortrag verbindet Praxisbeispiele aus Architekturkommunikation und Redaktion mit einer Methodik, die Fachwissen zur Voraussetzung guter KI-Arbeit macht.'
+        'Als Gastreferentin der KI-Expert:innen-Ausbildung der Akademie für Raum und Wandel erzähle ich von meinem Weg mit KI in der Architektur: vom ersten Interesse über Weiterbildung und den Aufbau eigener Expertise bis zur Sichtbarkeit und zu einem klar formulierten Angebot.',
+        'Im Mittelpunkt stehen die Learnings dieses Wegs – Themen verbinden statt wechseln, eigenverantwortlich lernen statt warten, architektonisches Urteilsvermögen als wertvollsten Filter für KI-Output nutzen und das Unfertige zeigen, weil Expertise beim Machen entsteht.'
       ] },
       { when: 'Herbst 2026', date: 'VORTRAG + Workshop', partner: 'Brown University, Providence (US)', format: 'Online-Vortrag zu AI in Architectural Design, inkl. Workshop und Reviews', image: './uploads/Brown.png',
-        projectKey: 'intuition-algorithmus', projectLabel: 'Zum Essay',
+        projectKey: 'intuition-algorithmus', projectLabel: 'Zum Essay Intuition und Algorithmus',
         title: 'KI in der Lehre. Und die Frage nach der architektonischen Idee', body: [
         'Ein schönes Rendering lässt sich aus einem Modell mit KI auf Knopfdruck erzeugen. Ein konsistenter Entwurf entsteht dadurch aber noch nicht.',
-        'Die Initiative entstand durch meinen Essay „Intuition und Algorithmus“ bei Baunetz Campus.',
         'An der Brown University durfte ich eine Online-Gastvorlesung halten und einen Workshop zum Thema „Intuition und Algorithmus“ mitkonzipieren. Die Studierenden bearbeiteten darin abstrakte Modellfotos mit KI. Es ging nicht darum, möglichst perfekte Bilder zu erzeugen, sondern KI als Experimentierraum im Entwurfsprozess zu nutzen.',
         'Überraschend war, was einzelne Bildfragmente auslösen konnten: Ideen, auf die man ohne diesen Umweg vielleicht nicht gekommen wäre. Im Pingpong zwischen Modell und Skizze wurden sie weiterentwickelt. Doch generische Bilder entstehen genauso schnell. Und hochrealistische Darstellungen können den Blick verengen, wenn sie vor allem über die Oberfläche sprechen.',
         'Die entscheidende Fähigkeit ist deshalb, einen KI-Output im Verhältnis zur eigenen Entwurfsabsicht zu beurteilen. Nach jedem Bild bleibt die Frage: Was ist die architektonische Idee in meinem Entwurf? Für mich heißt das: Fragmente mit Potenzial weiterentwickeln und immer wieder zum eigenen Kontext zurückkehren, zum eigenen Kopf und zum Stift.',
-        'Am meisten mitgenommen habe ich den Austausch mit den Studierenden. Er hat gezeigt, dass sich eine Haltung zu KI entwickeln lässt, die weder in unkritische Begeisterung noch in pauschale Ablehnung kippt. Der Weg dorthin: ausprobieren, darüber sprechen, im Dialog bleiben.'
+        'Am meisten mitgenommen habe ich den Austausch mit den Studierenden. Er hat gezeigt, dass sich eine Haltung zu KI entwickeln lässt, die weder in unkritische Begeisterung noch in pauschale Ablehnung kippt. Der Weg dorthin: ausprobieren, darüber sprechen, im Dialog bleiben.',
+        'Zustande kam die Zusammenarbeit über meinen Essay „Zwischen Intuition und Algorithmus“ bei Baunetz Campus.'
       ] },
     ];
   }
@@ -1729,6 +1737,7 @@ class Component extends DCLogic {
         minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px', scrollSnapAlign: 'start',
       },
       praxisModalLink: (this.praxisDefs()[this.state.praxisModal] || {}).link || '',
+      praxisModalLinkLabel: (this.praxisDefs()[this.state.praxisModal] || {}).linkLabel || 'Link zur Sammlung ↗',
       praxisModalHasLink: !!(this.praxisDefs()[this.state.praxisModal] || {}).link,
       praxisModalHasProject: !!(this.praxisDefs()[this.state.praxisModal] || {}).projectKey,
       praxisModalProjectLabel: (this.praxisDefs()[this.state.praxisModal] || {}).projectLabel || '',
@@ -1871,7 +1880,7 @@ class Component extends DCLogic {
           modalAudience: m ? m.audience : '',
           modalKonkret: m ? m.konkret : '',
           modalTeaser: m ? m.teaser : '',
-          modalBody: m ? m.body : [],
+          modalBody: m ? m.body.map(p => (p && p.h) ? { text: p.h, isHeading: true, isPara: false } : { text: p, isHeading: false, isPara: true }) : [],
           modalItems: m ? m.items : [],
           modalHasItems: !!(m && m.items && m.items.length),
           modalAfter: m ? m.after : '',
